@@ -37,4 +37,52 @@
     </header>
     <main class="container mx-auto py-16 flex-grow">
         <section class="text-center mb-16">
-            <h2 class="font-inter text-5xl md:text-6xl font-black text-white mb-6 animate-fade-in">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+            <h2 class="font-inter text-5xl md:text-6xl font-black text-white mb-6 animate-fade-in">
+                <a href="guide.html" class="hover:text-cyan-400 transition duration-300">Build a Website for $1!</a>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Grok and I crafted this killer site with a $1 IONOS domain, GitHub, and Netlify. Click the headline to learn how in minutes!</p>
+            <a href="guide.html" class="inline-block bg-cyan-400 text-blue-950 font-bold text-lg py-4 px-8 rounded-full hover:bg-cyan-500 hover:scale-105 transition duration-300 shadow-2xl">Launch Your Site Now</a>
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+                    <a href="https://www.ionos.com" class="hover:text-cyan-300">Why $1 Domains?</a>
+                </h3>
+                <p class="text-gray-300 text-base">Grab a domain for a buck and use free tools like GitHub and Netlify to go live, with Grok’s AI coding magic.</p>
+            </div>
+            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+                    <a href="issues.html" class="hover:text-cyan-300">Our Challenges</a>
+                </h3>
+                <p class="text-gray-300 text-base">Hit snags with IONOS? Click to see how we tackled domain and DNS issues.</p>
+            </div>
+            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+                    <a href="guide.html" class="hover:text-cyan-300">Step-by-Step Guide</a>
+                </h3>
+                <p class="text-gray-300 text-base">Follow our tutorial to code and deploy your site with Grok’s help.</p>
+            </div>
+        </section>
+        <section class="bg-blue-950 bg-opacity-90 p-6 rounded-lg text-center">
+            <h3 class="font-inter text-xl font-bold text-white mb-4">Pro Tips</h3>
+            <div class="marquee overflow-hidden whitespace-nowrap">
+                <p class="text-base text-gray-300 inline-block animate-marquee">Test DNS in a private tab! | Check spam for IONOS emails! | Keep your repo public!</p>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-blue-950 text-gray-200 text-center p-8">
+        <p class="font-inter text-lg">Built with 🔥 by You & Grok, 2025</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <a href="https://x.com" class="text-cyan-400 hover:text-cyan-300 transition">X</a>
+            <a href="https://github.com/your-username/webfor1" class="text-cyan-400 hover:text-cyan-300 transition">GitHub</a>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
