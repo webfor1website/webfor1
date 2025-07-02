@@ -5,62 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web for $1 - Built with Grok</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-poppins text-gray-200 min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('https://source.unsplash.com/random/1920x1080?night,stars');">
-    <header class="bg-black bg-opacity-80 sticky top-0 shadow-lg z-10">
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col bg-gradient-to-br from-blue-900 to-purple-900">
+    <header class="bg-blue-950 shadow-lg sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-inter text-4xl font-bold text-yellow-400">Web for $1</h1>
-            <ul class="flex space-x-8 text-lg">
-                <li><a href="index.html" class="hover:text-yellow-300 transition duration-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-yellow-300 transition duration-300">About</a></li>
-                <li><a href="guide.html" class="hover:text-yellow-300 transition duration-300">Guide</a></li>
-                <li><a href="issues.html" class="hover:text-yellow-300 transition duration-300">Issues & Fixes</a></li>
+            <h1 class="font-inter text-3xl font-extrabold text-cyan-400">Web for $1</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-cyan-400 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex md:space-x-6 text-lg">
+                <li><a href="index.html" class="hover:text-cyan-300 transition duration-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-cyan-300 transition duration-300">About</a></li>
+                <li><a href="guide.html" class="hover:text-cyan-300 transition duration-300">Guide</a></li>
+                <li><a href="issues.html" class="hover:text-cyan-300 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-950">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-lg">
+                <li><a href="index.html" class="hover:text-cyan-300 transition duration-300">Home</a></li>
+                <li><a href="about.html" class="hover:text-cyan-300 transition duration-300">About</a></li>
+                <li><a href="guide.html" class="hover:text-cyan-300 transition duration-300">Guide</a></li>
+                <li><a href="issues.html" class="hover:text-cyan-300 transition duration-300">Issues & Fixes</a></li>
+            </ul>
+        </div>
     </header>
     <main class="container mx-auto py-16 flex-grow">
         <section class="text-center mb-16">
-            <h2 class="font-inter text-6xl font-extrabold text-white mb-6 animate-fade-in">
-                <a href="guide.html" class="hover:text-yellow-400 transition duration-300">Build a Website for $1!</a>
-            </h2>
-            <p class="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Grok and I built this dope site with a $1 IONOS domain, GitHub, and Netlify’s free plan. Click the headline to learn how in minutes!</p>
-            <a href="guide.html" class="inline-block bg-yellow-400 text-black font-bold text-xl py-4 px-8 rounded-full hover:bg-yellow-500 hover:scale-105 transition duration-300 shadow-xl">Launch Your Site Now</a>
-        </section>
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="bg-black bg-opacity-60 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-3xl font-bold text-yellow-400 mb-4">
-                    <a href="https://www.ionos.com" class="hover:text-yellow-300">Why $1 Domains?</a>
-                </h3>
-                <p class="text-gray-300">Snag a domain for a buck and use free tools like GitHub and Netlify to go live fast, with Grok’s AI guiding your code.</p>
-            </div>
-            <div class="bg-black bg-opacity-60 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-3xl font-bold text-yellow-400 mb-4">
-                    <a href="issues.html" class="hover:text-yellow-300">Our Challenges</a>
-                </h3>
-                <p class="text-gray-300">We hit snags with IONOS and DNS. Click to see how we fixed them and avoid the same pitfalls.</p>
-            </div>
-            <div class="bg-black bg-opacity-60 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-3xl font-bold text-yellow-400 mb-4">
-                    <a href="guide.html" class="hover:text-yellow-300">Step-by-Step Guide</a>
-                </h3>
-                <p class="text-gray-300">Follow our tutorial to code and deploy your own site, powered by Grok’s smarts.</p>
-            </div>
-        </section>
-        <section class="bg-black bg-opacity-50 p-6 rounded-lg text-center">
-            <h3 class="font-inter text-2xl font-bold text-white mb-4">Quick Tips</h3>
-            <div class="marquee overflow-hidden whitespace-nowrap">
-                <p class="text-lg text-gray-300 inline-block animate-marquee">Use a private browser tab to test DNS changes! | Check spam for IONOS verification emails! | Keep your GitHub repo public for easy sharing!</p>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-black bg-opacity-80 text-gray-200 text-center p-8">
-        <p class="font-inter text-lg">Built with 🔥 by You & Grok, 2025</p>
-        <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://x.com" class="text-yellow-400 hover:text-yellow-300 transition">X</a>
-            <a href="https://github.com/your-username/webfor1" class="text-yellow-400 hover:text-yellow-300 transition">GitHub</a>
-        </div>
-    </footer>
-</body>
-</html>
+            <h2 class="font-inter text-5xl md:text-6xl font-black text-white mb-6 animate-fade-in">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
