@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web for $1 - Built with Grok</title>
+    <meta name="description" content="Build a stunning website for just $1 with Grok, IONOS, GitHub, and Netlify.">
+    <title>Web for $1 - Powered by Grok</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-poppins text-gray-200 min-h-screen flex flex-col bg-gradient-to-br from-blue-900 to-purple-900">
-    <header class="bg-blue-950 shadow-lg sticky top-0 z-20">
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col bg-gradient-to-br from-blue-950 to-purple-950">
+    <header class="bg-blue-950 bg-opacity-90 sticky top-0 z-20 shadow-lg">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-inter text-3xl font-extrabold text-cyan-400">Web for $1</h1>
+            <h1 class="font-inter text-3xl md:text-4xl font-extrabold text-cyan-400">Web for $1</h1>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-cyan-400 focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
-            <ul id="nav-menu" class="hidden md:flex md:space-x-6 text-lg">
+            <ul id="nav-menu" class="hidden md:flex md:space-x-8 text-lg font-semibold">
                 <li><a href="index.html" class="hover:text-cyan-300 transition duration-300">Home</a></li>
                 <li><a href="about.html" class="hover:text-cyan-300 transition duration-300">About</a></li>
                 <li><a href="guide.html" class="hover:text-cyan-300 transition duration-300">Guide</a></li>
                 <li><a href="issues.html" class="hover:text-cyan-300 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-950">
-            <ul class="flex flex-col items-center space-y-4 py-4 text-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-950 bg-opacity-90">
+            <ul class="flex flex-col items-center space-y-6 py-6 text-xl font-semibold">
                 <li><a href="index.html" class="hover:text-cyan-300 transition duration-300">Home</a></li>
                 <li><a href="about.html" class="hover:text-cyan-300 transition duration-300">About</a></li>
                 <li><a href="guide.html" class="hover:text-cyan-300 transition duration-300">Guide</a></li>
@@ -35,38 +36,44 @@
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-16 flex-grow">
-        <section class="text-center mb-16">
-            <h2 class="font-inter text-5xl md:text-6xl font-black text-white mb-6 animate-fade-in">
-                <a href="guide.html" class="hover:text-cyan-400 transition duration-300">Build a Website for $1!</a>
-            </h2>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Grok and I crafted this killer site with a $1 IONOS domain, GitHub, and Netlify. Click the headline to learn how in minutes!</p>
-            <a href="guide.html" class="inline-block bg-cyan-400 text-blue-950 font-bold text-lg py-4 px-8 rounded-full hover:bg-cyan-500 hover:scale-105 transition duration-300 shadow-2xl">Launch Your Site Now</a>
+    <main class="container mx-auto py-12 md:py-20 flex-grow">
+        <section class="relative text-center mb-16">
+            <img src="images/hero.jpg" alt="Hero image of a laptop with code" class="w-full h-96 object-cover rounded-lg shadow-xl animate-fade-in" />
+            <div class="absolute inset-0 flex flex-col justify-center items-center bg-blue-950 bg-opacity-50 rounded-lg">
+                <h2 class="font-inter text-5xl md:text-7xl font-black text-white mb-6">
+                    <a href="guide.html" class="hover:text-pink-400 transition duration-300">Build a Website for $1!</a>
+                </h2>
+                <p class="text-lg md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">Grok and I built this fire site with a $1 IONOS domain, GitHub, and Netlify. Click the headline to learn how!</p>
+                <a href="guide.html" class="inline-block bg-pink-500 text-white font-bold text-lg md:text-xl py-4 px-10 rounded-full hover:bg-pink-600 hover:scale-105 transition duration-300 shadow-2xl">Start Now</a>
+            </div>
         </section>
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+            <div class="bg-blue-950 bg-opacity-80 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <img src="images/feature1.jpg" alt="Feature image of a domain purchase" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="font-inter text-xl md:text-2xl font-bold text-cyan-400 mb-4">
                     <a href="https://www.ionos.com" class="hover:text-cyan-300">Why $1 Domains?</a>
                 </h3>
-                <p class="text-gray-300 text-base">Grab a domain for a buck and use free tools like GitHub and Netlify to go live, with Grok’s AI coding magic.</p>
+                <p class="text-base text-gray-300">Snag a domain for a buck and use free tools to launch fast, powered by Grok’s AI.</p>
             </div>
-            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+            <div class="bg-blue-950 bg-opacity-80 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <img src="images/feature2.jpg" alt="Feature image of coding setup" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="font-inter text-xl md:text-2xl font-bold text-cyan-400 mb-4">
                     <a href="issues.html" class="hover:text-cyan-300">Our Challenges</a>
                 </h3>
-                <p class="text-gray-300 text-base">Hit snags with IONOS? Click to see how we tackled domain and DNS issues.</p>
+                <p class="text-base text-gray-300">Hit roadblocks? Click to see how we fixed IONOS and DNS issues.</p>
             </div>
-            <div class="bg-blue-950 bg-opacity-90 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
-                <h3 class="font-inter text-2xl font-bold text-cyan-400 mb-4">
+            <div class="bg-blue-950 bg-opacity-80 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <img src="images/feature3.jpg" alt="Feature image of a website launch" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="font-inter text-xl md:text-2xl font-bold text-cyan-400 mb-4">
                     <a href="guide.html" class="hover:text-cyan-300">Step-by-Step Guide</a>
                 </h3>
-                <p class="text-gray-300 text-base">Follow our tutorial to code and deploy your site with Grok’s help.</p>
+                <p class="text-base text-gray-300">Code and deploy your site with Grok’s step-by-step tutorial.</p>
             </div>
         </section>
-        <section class="bg-blue-950 bg-opacity-90 p-6 rounded-lg text-center">
-            <h3 class="font-inter text-xl font-bold text-white mb-4">Pro Tips</h3>
+        <section class="bg-blue-950 bg-opacity-80 p-6 rounded-lg text-center">
+            <h3 class="font-inter text-lg md:text-xl font-bold text-white mb-4">Pro Tips</h3>
             <div class="marquee overflow-hidden whitespace-nowrap">
-                <p class="text-base text-gray-300 inline-block animate-marquee">Test DNS in a private tab! | Check spam for IONOS emails! | Keep your repo public!</p>
+                <p class="text-base text-gray-300 inline-block animate-marquee">Test DNS in a private tab! | Check spam for IONOS emails! | Keep your repo public for sharing!</p>
             </div>
         </section>
     </main>
