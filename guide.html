@@ -7,7 +7,7 @@
     <title>Guide - Web for $1</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="font-roboto-mono text-gray-200 min-h-screen flex flex-col bg-gray-900">
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
@@ -21,25 +21,25 @@
                 </button>
             </div>
             <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
-                <li><a href="index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
             <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
-                <li><a href="index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </div>
     </header>
     <main class="container mx-auto py-12 md:py-20 flex-grow bg-gray-900">
         <h2 class="font-inter text-5xl md:text-6xl font-black text-gray-100 mb-8 text-center animate-fade-in">Build a $1 Website with Grok</h2>
         <article class="bg-gray-800 p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
-            <img src="images/guide.jpg" alt="Website building screenshot" class="w-full h-64 md:h-80 object-cover rounded-lg mb-6" />
+            <img src="/images/guide.jpg" alt="Website building screenshot" class="w-full h-64 md:h-80 object-cover rounded-lg mb-6" />
             <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4">1. Buy a $1 Domain</h3>
             <p class="text-base md:text-lg text-gray-300 mb-4">Grab a domain from <a href="https://www.ionos.com" class="text-blue-400 hover:underline">IONOS</a> for $1. Verify your email via the ICANN link (check spam).</p>
             <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">2. Set Up GitHub Repo</h3>
@@ -48,7 +48,7 @@
             <p class="text-base md:text-lg text-gray-300 mb-4">Connect your repo to <a href="https://app.netlify.com" class="text-blue-400 hover:underline">Netlify</a>. Set branch to <code>main</code>, build command to blank, publish directory to <code>/</code>. Deploy in 1-2 minutes.</p>
             <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">4. Configure DNS</h3>
             <p class="text-base md:text-lg text-gray-300 mb-4">In IONOS, add CNAME (<code>www</code> → <code>webfor1.netlify.app</code>) and A (<code>@</code> → <code>75.2.60.5</code>). Add domain in Netlify’s Domain settings. Wait 1-2 hours for propagation.</p>
-            <p class="text-base md:text-lg text-gray-300 mt-6">Hit issues? See our <a href="issues.html" class="text-blue-400 hover:underline">Issues & Fixes</a>.</p>
+            <p class="text-base md:text-lg text-gray-300 mt-6">Hit issues? See our <a href="/issues.html" class="text-blue-400 hover:underline">Issues & Fixes</a>.</p>
         </article>
     </main>
     <footer class="bg-gray-950 text-gray-200 text-center p-8">
