@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and dominate the cosmos!">
+    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and conquer the cosmos!">
     <meta name="keywords" content="$1 Web Revolution, Grok AI, xAI, IONOS domain, GitHub, Netlify, cheap website">
     <meta name="author" content="You & Grok">
     <title>$1 Web Revolution - Build Your Dream Site</title>
@@ -33,10 +33,10 @@
             margin-bottom: 2rem;
             z-index: 1;
         }
-        .hero-video {
+        .hero-media {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             position: absolute;
             top: 0;
             left: 0;
@@ -97,40 +97,44 @@
             }
         }
         .feature-card {
-            perspective: 1000px;
             background: #1a2332;
             border: 2px solid #2dd4bf;
             border-radius: 12px;
-            padding: 1rem;
-            transition: transform 0.6s ease;
+            padding: 2rem;
             z-index: 1;
-            min-height: 350px;
-        }
-        .feature-card-inner {
+            min-height: 420px;
             position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
         }
-        .feature-card:hover .feature-card-inner {
-            transform: rotateY(180deg);
-        }
-        .feature-card-front, .feature-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
+        .feature-card-front {
             display: flex;
             flex-direction: column;
+            word-wrap: break-word;
+            overflow: auto;
         }
-        .feature-card-back {
+        .tip-panel {
+            max-height: 0;
+            overflow: hidden;
             background: #2c3e50;
             border: 2px solid #2dd4bf;
-            border-radius: 12px;
+            border-radius: 8px;
+            padding: 0;
+            margin-top: 1rem;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+        .tip-panel.active {
+            max-height: 200px;
             padding: 1rem;
-            transform: rotateY(180deg);
-            color: #e5e7eb;
+        }
+        .tip-button {
+            background: #2dd4bf;
+            color: #0a0e1a;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0.5rem;
+            cursor: pointer;
         }
         .feature-card img {
             max-height: 200px;
@@ -150,7 +154,10 @@
             transform: rotate(360deg);
             filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.7));
         }
-        .feature-card:hover, .hero-card:hover {
+        .feature-card:hover {
+            box-shadow: 0 8px 20px rgba(45, 212, 191, 0.5);
+        }
+        .hero-card:hover {
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.5);
         }
         .highlight {
@@ -201,7 +208,20 @@
             bottom: 20px;
             right: 20px;
             z-index: 100;
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 2sBIG  ease-in-out infinite;
+        }
+        .sticky-cta::before {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .sticky-cta:hover::before {
+            opacity: 1;
+            transform: scale(1.2);
         }
         .header-pulse:hover {
             transform: scale(1.05);
@@ -236,46 +256,34 @@
             position: relative;
             margin-top: 2rem;
         }
-        footer {
-            position: sticky;
-            bottom: 0;
-            z-index: 10;
+        .x-feed {
+            background: #1a2332;
+            border: 2px solid #2dd4bf;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
         }
-        .modal {
-            display: none;
+        .x-post {
+            background: #2c3e50;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .x-post:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(45, 212, 191, 0.5);
+        }
+        .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background: #1a2332;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 2px solid #2dd4bf;
-            max-width: 500px;
-            width: 90%;
-        }
-        .modal-content input, .modal-content textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #2dd4bf;
-            border-radius: 4px;
-            background: #2c3e50;
-            color: #e5e7eb;
-        }
-        .modal-content button {
+            width: 0;
+            height: 4px;
             background: #2dd4bf;
-            color: #0a0e1a;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-weight: 600;
+            z-index: 1000;
+            transition: width 0.2s ease;
+            box-shadow: 0 0 10px rgba(45, 212, 191, 0.7);
         }
         .cursor-trail {
             position: absolute;
@@ -297,14 +305,6 @@
             0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
             50% { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8); }
         }
-        @keyframes parallax {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-20%); }
-        }
-        @keyframes zoom {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
         @keyframes slideInText {
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -324,6 +324,7 @@
     </style>
 </head>
 <body class="font-poppins text-gray-200 min-h-screen flex flex-col">
+    <div class="progress-bar" id="progress-bar"></div>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
             <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow header-pulse">$1 Web Revolution</h1>
@@ -353,7 +354,10 @@
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
-            <video src="/videos/hero.mp4" autoplay loop muted playsinline class="hero-video"></video>
+            <picture>
+                <source src="/videos/hero.mp4" type="video/mp4">
+                <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-media" aria-label="Hero image showcasing $1 Web Revolution">
+            </picture>
             <div class="hero-overlay">
                 <h2 class="font-poppins text-4xl md:text-7xl font-extrabold text-teal-400 mb-6 hero-text">
                     <a href="/guide.html" class="hover:text-teal-300 transition duration-300">
@@ -368,7 +372,7 @@
                         <span style="--i:22">$</span><span style="--i:23">1</span><span style="--i:24">!</span>
                     </a>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and build your digital empire. Click the headline to ignite your journey!</p>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and conquer the cosmos. Click the headline to blast off!</p>
                 <a href="/guide.html" class="cta-button inline-block font-bold">Build Your Site Now</a>
             </div>
         </section>
@@ -405,49 +409,43 @@
         </section>
         <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-4xl mx-auto pb-12">
             <div class="feature-card">
-                <div class="feature-card-inner">
-                    <div class="feature-card-front">
-                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                        <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="IONOS domain purchase interface" />
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
-                            <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
-                        </h3>
-                        <p class="text-sm md:text-base text-gray-300">A $1 domain from IONOS gives your site a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
-                    </div>
-                    <div class="feature-card-back">
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">Quick Tip</h3>
+                <div class="feature-card-front">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
+                    <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="IONOS domain purchase interface" />
+                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                        <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-300">A $1 domain from IONOS gives your site a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
+                    <div class="tip-button">Quick Tip</div>
+                    <div class="tip-panel">
                         <p class="text-sm md:text-base text-gray-300">Pick a short domain like yourname.online. Ask Grok for ideas: “Suggest names for a tech blog!”</p>
                     </div>
                 </div>
             </div>
             <div class="feature-card">
-                <div class="feature-card-inner">
-                    <div class="feature-card-front">
-                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                        <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="GitHub repository setup" />
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
-                            <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
-                        </h3>
-                        <p class="text-sm md:text-base text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page keeps you on track.</p>
-                    </div>
-                    <div class="feature-card-back">
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">Quick Tip</h3>
+                <div class="feature-card-front">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
+                    <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="GitHub repository setup" />
+                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                        <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page keeps you on track.</p>
+                    <div class="tip-button">Quick Tip</div>
+                    <div class="tip-panel">
                         <p class="text-sm md:text-base text-gray-300">Check Netlify’s <span class="highlight">Deploys</span> tab if your site fails. Ask Grok: “Why’s my page blank?”</p>
                     </div>
                 </div>
             </div>
             <div class="feature-card">
-                <div class="feature-card-inner">
-                    <div class="feature-card-front">
-                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                        <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="Netlify deployment interface" />
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
-                            <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
-                        </h3>
-                        <p class="text-sm md:text-base text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through domain setup, coding with Grok, and launching!</p>
-                    </div>
-                    <div class="feature-card-back">
-                        <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">Quick Tip</h3>
+                <div class="feature-card-front">
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
+                    <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="Netlify deployment interface" />
+                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                        <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through domain setup, coding with Grok, and launching!</p>
+                    <div class="tip-button">Quick Tip</div>
+                    <div class="tip-panel">
                         <p class="text-sm md:text-base text-gray-300">Test your site in a private tab. Ask Grok to tweak: “Make my buttons glow!”</p>
                     </div>
                 </div>
@@ -460,6 +458,21 @@
             <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“No coding skills, no problem! Grok made my business site pop for just $1. Elon would be proud!” — Mia, Entrepreneur</p>
             <div class="tip-box">
                 <p><strong>Pro Tip</strong>: Share your story on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution to join the creator crew!</p>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto mb-16 hero-card x-feed">
+            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Join the #1WebRevolution on X</h3>
+            <div class="x-post">
+                <p class="text-base md:text-lg text-gray-300">"Just launched my site for $1 with Grok’s help! #1WebRevolution is 🔥!" — @CreatorX</p>
+            </div>
+            <div class="x-post">
+                <p class="text-base md:text-lg text-gray-300">"Grok made my portfolio pop for a buck! Join the revolution! #1WebRevolution" — @ArtVibe</p>
+            </div>
+            <div class="x-post">
+                <p class="text-base md:text-lg text-gray-300">"No coding, no problem. $1 site live in hours thanks to Grok! #1WebRevolution" — @TechBit</p>
+            </div>
+            <div class="tip-box">
+                <p><strong>Pro Tip</strong>: Tweet your site with #1WebRevolution and tag us on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> to get featured!</p>
             </div>
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
@@ -495,12 +508,13 @@
         </div>
     </footer>
     <script>
-        // Particle Background
+        // Particle Background with Connections
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = document.querySelector('.hero-section').offsetHeight;
         const particlesArray = [];
+        let mouseX = 0, mouseY = 0;
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
@@ -526,6 +540,34 @@
                 particlesArray.push(new Particle());
             }
         }
+        function connectParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    let dx = particlesArray[i].x - particlesArray[j].x;
+                    let dy = particlesArray[i].y - particlesArray[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.strokeStyle = 'rgba(45, 212, 191, ' + (1 - distance / 100) + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+                let dx = particlesArray[i].x - mouseX;
+                let dy = particlesArray[i].y - mouseY;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 150) {
+                    ctx.strokeStyle = 'rgba(45, 212, 191, ' + (1 - distance / 150) + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(mouseX, mouseY);
+                    ctx.stroke();
+                }
+            }
+        }
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
@@ -537,6 +579,7 @@
                     particlesArray.push(new Particle());
                 }
             }
+            connectParticles();
             requestAnimationFrame(animateParticles);
         }
         initParticles();
@@ -544,6 +587,10 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = document.querySelector('.hero-section').offsetHeight;
+        });
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
 
         // Cursor Trail
@@ -559,6 +606,41 @@
             const trail = createTrail();
             trail.style.left = `${e.clientX}px`;
             trail.style.top = `${e.clientY}px`;
+        });
+
+        // 3D Tilt for Feature Cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const tiltX = (centerY - y) / 10;
+                const tiltY = (x - centerX) / 10;
+                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // Tip Panel Toggle
+        const tipButtons = document.querySelectorAll('.tip-button');
+        tipButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                panel.classList.toggle('active');
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
         });
 
         // Menu and Modal
