@@ -20,7 +20,8 @@
         }
         .hero-section {
             position: relative;
-            height: 80vh;
+            min-height: 60vh;
+            max-height: 80vh;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -30,8 +31,8 @@
         }
         .hero-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-height: 100%;
+            object-fit: contain;
             position: absolute;
             top: 0;
             left: 0;
@@ -43,6 +44,15 @@
             padding: 2rem;
             border-radius: 12px;
             max-width: 90%;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                padding: 1rem;
+            }
+            .hero-overlay {
+                padding: 1.5rem;
+            }
         }
         .hero-card {
             background: #1a2332;
@@ -180,7 +190,7 @@
                 <p><strong>Pro Tip</strong>: Ask Grok for customizations like “Add a neon glow to my buttons” or “Make my site mobile-friendly.” Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for details!</p>
             </div>
         </section>
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        < |section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div class="feature-card">
                 <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="IONOS domain purchase interface" />
                 <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4">
