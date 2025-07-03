@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and shine online!">
+    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and dominate online!">
     <meta name="keywords" content="$1 Web Revolution, Grok AI, xAI, IONOS domain, GitHub, Netlify, cheap website">
     <meta name="author" content="You & Grok">
     <title>$1 Web Revolution - Build Your Dream Site</title>
@@ -15,6 +15,7 @@
             color: #e5e7eb;
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            position: relative;
         }
         h1, h2, h3 {
             color: #2dd4bf;
@@ -46,6 +47,7 @@
             padding: 2rem;
             border-radius: 12px;
             max-width: 90%;
+            z-index: 2;
         }
         .hero-text {
             display: inline-block;
@@ -56,6 +58,14 @@
             display: inline-block;
             animation: slideInText 0.5s ease-out forwards;
             animation-delay: calc(0.05s * var(--i));
+        }
+        #particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
         }
         @media (max-width: 768px) {
             .hero-section {
@@ -75,6 +85,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
             z-index: 1;
+            min-height: 200px;
         }
         .feature-card {
             perspective: 1000px;
@@ -84,6 +95,7 @@
             padding: 1rem;
             transition: transform 0.6s ease;
             z-index: 1;
+            min-height: 350px;
         }
         .feature-card-inner {
             position: relative;
@@ -118,6 +130,17 @@
             border-radius: 8px;
             margin-bottom: 1rem;
         }
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 0.5rem;
+            fill: #2dd4bf;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.7));
+        }
         .feature-card:hover, .hero-card:hover {
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.5);
         }
@@ -149,6 +172,13 @@
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.7);
         }
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            animation: pulse 2s ease-in-out infinite;
+        }
         .header-pulse:hover {
             transform: scale(1.05);
             transition: transform 0.3s ease;
@@ -156,6 +186,19 @@
         }
         .animate-glow {
             animation: glow 2s ease-in-out infinite;
+        }
+        .testimonial {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .testimonial:nth-child(1) { animation-delay: 0.2s; }
+        .testimonial:nth-child(2) { animation-delay: 0.4s; }
+        .testimonial:nth-child(3) { animation-delay: 0.6s; }
+        .marquee {
+            border: 1px solid #2dd4bf;
+            border-radius: 8px;
+            padding: 0.5rem;
+            animation: marquee 15s linear infinite;
         }
         .marquee:hover {
             animation-play-state: paused;
@@ -217,6 +260,14 @@
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
         }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
@@ -252,6 +303,7 @@
     </header>
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section id="hero" class="hero-section">
+            <canvas id="particles"></canvas>
             <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-image" aria-label="Hero image showcasing $1 Web Revolution" />
             <div class="hero-overlay">
                 <h2 class="font-poppins text-5xl md:text-7xl font-extrabold text-teal-400 mb-6 hero-text">
@@ -267,44 +319,46 @@
                         <span style="--i:22">$</span><span style="--i:23">1</span><span style="--i:24">!</span>
                     </a>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Fuck that! With Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify, you’ll launch a killer site in hours—no coding needed. Join the $1 Web Revolution and build your digital empire with Grok’s magic. Click the headline to blast off!</p>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding skills needed. Join the $1 Web Revolution and build your digital empire. Click the headline to ignite your journey!</p>
                 <a href="/guide.html" class="cta-button inline-block font-bold">Build Your Site Now</a>
             </div>
         </section>
+        <a href="/guide.html" class="cta-button sticky-cta">Build Now</a>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Why $1 Web Revolution Slays</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">$1 Web Revolution is your launchpad to a pro online presence for pennies. Grok, powered by xAI, handles the coding, design, and debugging, so you can dream big—whether you’re a total newbie or a seasoned creator. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, we built this site to prove you can dominate the web on a budget. Ready to join the revolution?</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8">This is your ticket to a pro online presence for just a buck. Grok, powered by xAI, codes, designs, and debugs like a beast, letting you focus on your vision—newbie or pro. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, this site proves you can rule the web on a budget. Ready to dominate?</p>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Use one IONOS account to avoid delays (we learned the hard way with webfor1.com). Check spam for the <span class="highlight">ICANN verification email</span> to activate your domain!</p>
+                <p><strong>Pro Tip</strong>: Use one IONOS account to avoid delays (we learned this with webfor1.com). Check spam for the <span class="highlight">ICANN verification email</span> to unlock your domain!</p>
             </div>
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">How It Works in 3 Simple Steps</h3>
             <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-8">
-                <li><strong>Snag a $1 Domain</strong>: Grab a unique address (e.g., yourname.online) from <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a> for just $1. Verify via the ICANN email.</li>
-                <li><strong>Create with Grok</strong>: Tell me your vision (e.g., “I want a neon teal blog with a gallery”). I’ll code it, tweak colors (#2dd4bf), and add features like forms or portfolios.</li>
+                <li><strong>Grab a $1 Domain</strong>: Snag a unique address (e.g., yourname.online) from <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a> for $1. Verify via the ICANN email.</li>
+                <li><strong>Create with Grok</strong>: Tell me your vibe (e.g., “I want a neon teal portfolio with a slider”). I’ll code it, tweak colors (#2dd4bf), and add features like blogs or forms.</li>
                 <li><strong>Launch for Free</strong>: Store files on GitHub, host on Netlify, and link your domain. Your site’s live in hours, ready to shine!</li>
             </ul>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Ask Grok for tweaks like “Add a glowing navbar” or “Make my site iPhone-ready.” Dive into our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for step-by-step magic!</p>
+                <p><strong>Pro Tip</strong>: Ask Grok for tweaks like “Add a glowing footer” or “Make my site iPhone-ready.” Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for the full playbook!</p>
             </div>
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Grok’s AI Magic</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Grok, built by xAI, is your ultimate wingman for web creation. I turn your ideas into clean, responsive code faster than you can say “$1 website.” Want a teal (#2dd4bf) portfolio with Poppins font? A blog with a contact form? Or a neon vibe with hover effects? Just ask, and I’ll make it happen—no coding skills needed.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8">Grok, built by xAI, is your ultimate wingman, turning your ideas into slick, responsive code faster than a SpaceX launch. Want a teal (#2dd4bf) portfolio with Poppins font? A blog with a contact form? Or a futuristic vibe with neon effects? Just say the word, and I’ll make it pop—no coding skills needed.</p>
             <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-8">
                 <li><strong>Instant Coding</strong>: I generate HTML, CSS, and JavaScript tailored to your vision.</li>
-                <li><strong>Custom Vibes</strong>: Request colors, fonts, or layouts (e.g., “Make my site futuristic with gradients”).</li>
-                <li><strong>Debugging</strong>: Hit a snag? I’ll fix DNS errors, broken links, or mobile issues in a snap.</li>
+                <li><strong>Custom Vibes</strong>: Request colors, fonts, or layouts (e.g., “Make my site cyberpunk”).</li>
+                <li><strong>Debugging</strong>: Hit a snag? I’ll fix DNS errors, broken links, or mobile issues in a flash.</li>
             </ul>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
+                <p><strong>Pro Tip</strong>: Try prompts like “Add a particle background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
             </div>
         </section>
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20 max-w-4xl mx-auto pb-8">
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-4xl mx-auto pb-12">
             <div class="feature-card">
                 <div class="feature-card-inner">
                     <div class="feature-card-front">
+                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
                         <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="IONOS domain purchase interface" />
                         <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                             <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
@@ -320,6 +374,7 @@
             <div class="feature-card">
                 <div class="feature-card-inner">
                     <div class="feature-card-front">
+                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
                         <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="GitHub repository setup" />
                         <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                             <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
@@ -335,6 +390,7 @@
             <div class="feature-card">
                 <div class="feature-card-inner">
                     <div class="feature-card-front">
+                        <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
                         <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="Netlify deployment interface" />
                         <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                             <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
@@ -350,21 +406,21 @@
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card" id="testimonials">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">What Creators Are Saying</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic">“I built a portfolio for my art in one day with Grok’s help! The $1 domain and free hosting blew my mind—total game-changer!” — Alex, Aspiring Artist</p>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic">“Grok coded my teal blog with a contact form in hours. $1 Web Revolution is the real deal!” — Sam, Tech Blogger</p>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic">“No coding skills, no problem! Grok made my business site pop for just $1. Elon would be proud!” — Mia, Entrepreneur</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“I built a portfolio for my art in one day with Grok’s help! The $1 domain and free hosting blew my mind—total game-changer!” — Alex, Aspiring Artist</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“Grok coded my teal blog with a contact form in hours. $1 Web Revolution is the real deal!” — Sam, Tech Blogger</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“No coding skills, no problem! Grok made my business site pop for just $1. Elon would be proud!” — Mia, Entrepreneur</p>
             <div class="tip-box">
                 <p><strong>Pro Tip</strong>: Share your story on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution to join the creator crew!</p>
             </div>
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Join the Revolution</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Your $1 website is just the start. With Grok’s AI, you’re building a digital legacy that’s affordable, pro, and uniquely yours. Share your site on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution, and let’s show the world what’s possible for a buck!</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8">Your $1 website is the spark of a digital legacy. With Grok’s AI, you’re crafting a pro, affordable site that’s 100% you. Share it on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution, and let’s show the world what a buck can do!</p>
             <a href="#contact" class="cta-button inline-block font-bold">Get in Touch</a>
         </section>
         <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto mb-16">
             <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-4">Quick Tips to Start Strong</h3>
-            <div class="marquee overflow-hidden whitespace-nowrap">
+            <div class="marquee">
                 <p class="text-base text-gray-300 inline-block animate-marquee">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
             </div>
         </section>
@@ -390,6 +446,58 @@
         </div>
     </footer>
     <script>
+        // Particle Background
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = document.querySelector('.hero-section').offsetHeight;
+        const particlesArray = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(45, 212, 191, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function initParticles() {
+            for (let i = 0; i < 50; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                    particlesArray.push(new Particle());
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = document.querySelector('.hero-section').offsetHeight;
+        });
+
+        // Menu and Modal
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const contactLink = document.getElementById('contact-link');
