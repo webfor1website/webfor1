@@ -3,66 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Troubleshooting issues for building a $1 website with Grok.">
+    <meta name="description" content="Troubleshoot common issues when building a $1 website with Grok, IONOS, GitHub, and Netlify.">
+    <meta name="keywords" content="Web for $1, Grok AI, IONOS domain, GitHub, Netlify, website troubleshooting">
+    <meta name="author" content="You & Grok">
     <title>Issues & Fixes - Web for $1</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=search?q=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
+            color: #e5e7eb;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #2dd4bf;
+        }
+        .issue-card {
+            background: #1a2332;
+            border: 2px solid #2dd4bf;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .issue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3);
+        }
+        .highlight {
+            background: #2dd4bf;
+            color: #0a0e1a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .tip-box {
+            background: #2c3e50;
+            border-left: 4px solid #2dd4bf;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body class="font-roboto-mono text-gray-200 min-h-screen flex flex-col bg-gray-900">
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-inter text-4xl md:text-5xl font-black text-lime-400 animate-glow">Web for $1</h1>
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow">Web for $1</h1>
             <div class="md:hidden">
-                <button id="menu-toggle" class="text-blue-400 focus:outline-none">
+                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
             <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
-                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
             <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
-                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-12 md:py-20 flex-grow bg-gray-900">
-        <h2 class="font-inter text-5xl md:text-6xl font-black text-gray-100 mb-8 text-center animate-fade-in">Issues & Fixes</h2>
-        <article class="bg-gray-800 p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
-            <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
-                <img src="/images/issues.jpg" alt="Troubleshooting screenshot" class="w-full h-auto rounded-lg" />
+    <main class="container mx-auto py-12 md:py-20 flex-grow">
+        <section class="text-center mb-16">
+            <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">Troubleshoot Like a Pro</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Building a $1 website is exciting, but hiccups happen. We faced issues like missing emails and DNS errors while creating Web for $1. This page shares our fixes to keep your project smooth, plus tips for working with Grok to debug and customize. Let’s keep your site on track!</p>
+        </section>
+        <article class="max-w-4xl mx-auto">
+            <div class="w-full max-w-full overflow-hidden rounded-lg mb-8">
+                <img src="/images/issues.jpg" alt="Troubleshooting screenshot" class="w-full h-auto rounded-lg" aria-label="Troubleshooting guide illustration" />
             </div>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Building a website is easy with Grok, but sometimes things go wrong. Here’s how we fixed common issues to keep you on track. Start right to avoid headaches!</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4">1. Register with IONOS Correctly</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">Using multiple IONOS accounts can cause delays, like our issue with webfor1.com not showing up.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Sign up with one email at <a href="https://www.ionos.com" class="text-blue-400 hover:underline">IONOS</a>. After buying your $1 domain, check your email (and spam) for the ICANN verification link and click it to activate your domain. This prevents account mix-ups.</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">2. Domain Not in IONOS</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">Our domain didn’t appear in the IONOS dashboard, blocking setup.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Call IONOS support (1-844-494-9067 or support@ionos.com) with your Customer ID and Contract Number from the order email. They’ll add the domain to your account and resend the verification email.</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">3. Missing ICANN Email</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">The verification email from IONOS didn’t arrive, stopping progress.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Check your spam/junk folder. If it’s not there, update your email in IONOS (Domains > Privacy & Contact Details) and ask support to resend the email.</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">4. DNS Misconfiguration</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">Wrong settings made the site show “server not found.”</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: In IONOS, go to Domains > DNS. Add a CNAME (<code>www</code> → <code>webfor1.netlify.app</code>) and an A record (<code>@</code> → <code>75.2.60.5</code>). Remove any old records. Wait 1-2 hours for changes to work.</p>
-            <p class="text-base md:text-lg text-gray-300 mt-6">Ready to build? See our <a href="/guide.html" class="text-blue-400 hover:underline">Guide</a>.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8">Even with Grok’s AI, building a website can hit snags. Below, we detail common issues, their fixes, and how to use Grok to troubleshoot or customize your site. Start right with IONOS to avoid headaches!</p>
+            <div class="issue-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">1. IONOS Account Mix-Ups</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Using multiple IONOS accounts caused our domain (webfor1.com) to vanish from the dashboard, blocking setup.</p>
+                <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Sign up with one email at <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a>. If your domain doesn’t appear, contact support (1-844-494-9067 or support@ionos.com) with your <span class="highlight">Customer ID</span> and <span class="highlight">Contract Number</span>. They’ll link the domain to your account.</p>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Use a single, reliable email. Ask Grok to draft a support email if you’re stuck (e.g., “Write an email to IONOS about my missing domain”).</p>
+                </div>
+            </div>
+            <div class="issue-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">2. Missing ICANN Verification Email</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">The ICANN email verifies your domain ownership, but it didn’t arrive for us, delaying activation.</p>
+                <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Check your spam/junk folder. If missing, go to IONOS > <span class="highlight">Domains</span> > <span class="highlight">Privacy & Contact Details</span>, update your email, and request a resend. Contact support if needed.</p>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Set up email filters to prioritize IONOS emails. Ask Grok to check your steps (e.g., “Did I miss something in IONOS setup?”).</p>
+                </div>
+            </div>
+            <div class="issue-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">3. DNS Misconfiguration</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Wrong DNS settings caused “server not found” errors when linking our domain to Netlify.</p>
+                <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: In IONOS > <span class="highlight">Domains</span> > <span class="highlight">DNS</span>, add:</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>CNAME: Host = <code>www</code>, Value = <code>webfor1.netlify.app</code>, TTL = 3600.</li>
+                    <li>A record: Host = <code>@</code>, Value = <code>75.2.60.5</code>, TTL = 3600.</li>
+                </ul>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Delete conflicting A/AAAA records. Wait 1-2 hours and check at <a href="https://dnschecker.org" class="text-teal-400 hover:underline">dnschecker.org</a>.</p>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Ask Grok to verify your DNS settings (e.g., “Check my CNAME for www.webfor1.com”). Test in a private browser tab.</p>
+                </div>
+            </div>
+            <div class="issue-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">4. Site Display Issues</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Images or layouts (like our video banner) looked off due to coding errors or missing files.</p>
+                <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Ensure all files (e.g., <code>index.html</code>, <code>/images/guide.jpg</code>) are in the GitHub repo root or <code>images</code> folder. Check Netlify’s <span class="highlight">Deploys</span> tab for errors. Ask Grok to fix specific issues (e.g., “My image is cropped—help!”).</p>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Clear your browser cache or test in a private tab. Ask Grok for style tweaks (e.g., “Make my images full-width without cropping”).</p>
+                </div>
+            </div>
+            <p class="text-base md:text-lg text-gray-300 mt-8">Fixed your issue? Head to our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> to keep building, or ask Grok for custom fixes!</p>
         </article>
     </main>
     <footer class="bg-gray-950 text-gray-200 text-center p-8">
-        <p class="font-inter text-lg">Built with 🔥 by You & Grok, 2025</p>
+        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
         <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://x.com" class="text-blue-400 hover:text-blue-300 transition">X</a>
-            <a href="https://github.com/your-username/webfor1" class="text-blue-400 hover:text-blue-300 transition">GitHub</a>
+            <a href="https://x.com" class="text-teal-400 hover:text-teal-300 transition">X</a>
+            <a href="https://github.com/your-username/webfor1" class="text-teal-400 hover:text-teal-300 transition">GitHub</a>
         </div>
     </footer>
     <script>
