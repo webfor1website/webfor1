@@ -66,9 +66,14 @@
             background: #1a2332;
             border: 2px solid #2dd4bf;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: slideIn 0.5s ease-out;
+        }
+        .feature-card img {
+            max-height: 200px;
+            width: 100%;
+            object-fit: contain;
         }
         .feature-card:hover, .hero-card:hover {
             transform: translateY(-5px);
@@ -190,27 +195,27 @@
                 <p><strong>Pro Tip</strong>: Ask Grok for customizations like “Add a neon glow to my buttons” or “Make my site mobile-friendly.” Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for details!</p>
             </div>
         </section>
-        < |section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
             <div class="feature-card">
                 <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="IONOS domain purchase interface" />
-                <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4">
+                <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                     <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                 </h3>
-                <p class="text-base text-gray-300">A $1 domain from IONOS gives your site a unique address (e.g., webfor1.com). Learn how Grok turns it into a pro site on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
+                <p class="text-sm md:text-base text-gray-300">A $1 domain from IONOS gives your site a unique address (e.g., webfor1.com). Learn how Grok turns it into a pro site on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
             </div>
             <div class="feature-card">
                 <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="GitHub repository setup" />
-                <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4">
+                <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                     <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                 </h3>
-                <p class="text-base text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page has your back to keep things smooth.</p>
+                <p class="text-sm md:text-base text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page has your back to keep things smooth.</p>
             </div>
             <div class="feature-card">
                 <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" aria-label="Netlify deployment interface" />
-                <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4">
+                <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                     <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                 </h3>
-                <p class="text-base text-gray-300">Our detailed <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through buying a domain, coding with Grok, and launching—no tech skills needed!</p>
+                <p class="text-sm md:text-base text-gray-300">Our detailed <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through buying a domain, coding with Grok, and launching—no tech skills needed!</p>
             </div>
         </section>
         <section class="max-w-4xl mx-auto mb-16 hero-card">
@@ -221,7 +226,7 @@
                 <p><strong>Pro Tip</strong>: Share your story on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution to inspire others!</p>
             </div>
         </section>
-        <section class="bg-gray-800 p-6 rounded-lg text-center">
+        <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto">
             <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-4">Quick Tips to Start Strong</h3>
             <div class="marquee overflow-hidden whitespace-nowrap">
                 <p class="text-base text-gray-300 inline-block animate-marquee">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your site in a private tab! | Ask Grok for design tweaks like “Add a neon footer”!</p>
