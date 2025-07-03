@@ -6,7 +6,7 @@
     <meta name="description" content="Troubleshooting issues for building a $1 website with Grok.">
     <title>Issues & Fixes - Web for $1</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=search?q=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="font-roboto-mono text-gray-200 min-h-screen flex flex-col bg-gray-900">
@@ -42,15 +42,19 @@
             <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
                 <img src="/images/issues.jpg" alt="Troubleshooting screenshot" class="w-full h-auto rounded-lg" />
             </div>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4">1. Domain Not in IONOS</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">webfor1.com didn’t show in our account despite the order confirmation, blocking DNS setup.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Contact IONOS support (1-844-494-9067 or support@ionos.com) with your Customer ID and Contract Number. Ask to add the domain and resend the ICANN verification email.</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">2. Missing ICANN Email</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">No verification email arrived, delaying domain activation.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Check spam/junk or update the contact email in IONOS (Domains > Privacy & Contact Details). Ask support to resend.</p>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">3. DNS Misconfiguration</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-4">Incorrect CNAME/A records caused “server not found” errors.</p>
-            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Add CNAME (<code>www</code> → <code>webfor1.netlify.app</code>) and A (<code>@</code> → <code>75.2.60.5</code>) in IONOS. Delete conflicting records. Wait 1-2 hours for propagation.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-8">Building a website is easy with Grok, but sometimes things go wrong. Here’s how we fixed common issues to keep you on track. Start right to avoid headaches!</p>
+            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4">1. Register with IONOS Correctly</h3>
+            <p class="text-base md:text-lg text-gray-300 mb-4">Using multiple IONOS accounts can cause delays, like our issue with webfor1.com not showing up.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Sign up with one email at <a href="https://www.ionos.com" class="text-blue-400 hover:underline">IONOS</a>. After buying your $1 domain, check your email (and spam) for the ICANN verification link and click it to activate your domain. This prevents account mix-ups.</p>
+            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">2. Domain Not in IONOS</h3>
+            <p class="text-base md:text-lg text-gray-300 mb-4">Our domain didn’t appear in the IONOS dashboard, blocking setup.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Call IONOS support (1-844-494-9067 or support@ionos.com) with your Customer ID and Contract Number from the order email. They’ll add the domain to your account and resend the verification email.</p>
+            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">3. Missing ICANN Email</h3>
+            <p class="text-base md:text-lg text-gray-300 mb-4">The verification email from IONOS didn’t arrive, stopping progress.</p>
+            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: Check your spam/junk folder. If it’s not there, update your email in IONOS (Domains > Privacy & Contact Details) and ask support to resend the email.</p>
+            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-4 mt-8">4. DNS Misconfiguration</h3>
+            <p class="text-base md:text-lg text-gray-300 mb-4">Wrong settings made the site show “server not found.”</p>
+            <p class="text-base md:text-lg text-gray-300 mb-4"><strong>Fix</strong>: In IONOS, go to Domains > DNS. Add a CNAME (<code>www</code> → <code>webfor1.netlify.app</code>) and an A record (<code>@</code> → <code>75.2.60.5</code>). Remove any old records. Wait 1-2 hours for changes to work.</p>
             <p class="text-base md:text-lg text-gray-300 mt-6">Ready to build? See our <a href="/guide.html" class="text-blue-400 hover:underline">Guide</a>.</p>
         </article>
     </main>
