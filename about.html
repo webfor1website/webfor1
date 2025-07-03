@@ -3,59 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Grok, the xAI-powered AI behind Web for $1, and how we built a pro website for just $1.">
-    <meta name="keywords" content="Grok AI, Web for $1, xAI, $1 website, IONOS domain">
+    <meta name="description" content="Discover Grok, the xAI-powered AI behind Web for $1, and how we built a pro website for just $1 with IONOS, GitHub, and Netlify.">
+    <meta name="keywords" content="Grok AI, Web for $1, xAI, $1 website, IONOS domain, web development">
     <meta name="author" content="You & Grok">
     <title>About - Web for $1</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
+            color: #e5e7eb;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #2dd4bf;
+        }
+        .section-card {
+            background: #1a2332;
+            border: 2px solid #2dd4bf;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3);
+        }
+        .highlight {
+            background: #2dd4bf;
+            color: #0a0e1a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .tip-box {
+            background: #2c3e50;
+            border-left: 4px solid #2dd4bf;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body class="font-roboto-mono text-gray-200 min-h-screen flex flex-col bg-gray-900">
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-inter text-4xl md:text-5xl font-black text-lime-400 animate-glow">Web for $1</h1>
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow">Web for $1</h1>
             <div class="md:hidden">
-                <button id="menu-toggle" class="text-blue-400 focus:outline-none" aria-label="Toggle navigation menu">
+                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
             <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
-                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
             <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
-                <li><a href="/index.html" class="hover:text-lime-400 transition duration-300">Home</a></li>
-                <li><a href="/about.html" class="hover:text-lime-400 transition duration-300">About</a></li>
-                <li><a href="/guide.html" class="hover:text-lime-400 transition duration-300">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-lime-400 transition duration-300">Issues & Fixes</a></li>
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300">Issues & Fixes</a></li>
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-12 md:py-20 flex-grow bg-gray-900">
+    <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section class="text-center mb-16">
-            <h2 class="font-inter text-5xl md:text-6xl font-black text-gray-100 mb-6 animate-fade-in">The Power Behind Web for $1</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Meet Grok, the AI from xAI that makes building a professional website as easy as dreaming it up. With a $1 IONOS domain and free tools, we created Web for $1 to show anyone can launch a stunning site. Ready to make your mark online?</p>
+            <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">The Power Behind Web for $1</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Grok, built by xAI, is your AI co-pilot turning dreams into reality with a $1 website. We created Web for $1 to show how anyone—yes, anyone—can launch a pro site using a $1 IONOS domain, GitHub, and Netlify. From coding to customization, Grok’s got your back. Ready to dive into the magic?</p>
         </section>
-        <section class="bg-gray-800 p-8 rounded-xl shadow-lg">
-            <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
-                <img src="/images/about.jpg" alt="Grok AI coding screenshot" class="w-full h-auto rounded-lg" aria-label="Grok AI coding interface" />
+        <section class="max-w-4xl mx-auto">
+            <div class="section-card">
+                <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
+                    <img src="/images/about.jpg" alt="Grok AI coding screenshot" class="w-full h-auto rounded-lg" aria-label="Grok AI coding interface" />
+                </div>
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Meet Grok: Your Web Creation Wizard</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">I’m Grok, created by xAI to make web development accessible to everyone. No coding skills? No problem—I handle the heavy lifting (HTML, CSS, JavaScript) while you share your vision. We built Web for $1 using a $1 domain from IONOS, free GitHub storage, and Netlify’s free hosting, proving you don’t need a big budget to shine online.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>AI-Powered Coding</strong>: I generate clean, responsive code tailored to your needs—think homepages, galleries, or blogs.</li>
+                    <li><strong>Customization</strong>: Want a neon teal vibe like this site (#2dd4bf) or a minimalist white layout? Ask me to tweak colors, fonts (e.g., Poppins), or layouts (e.g., side navbar).</li>
+                    <li><strong>Troubleshooting</strong>: Hit a snag? I debug issues like broken links or DNS errors, so you stay on track.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Chat with me to brainstorm ideas! Say “Make my site bold with teal buttons” or “Add a contact form.” Save our chats to track your vision.</p>
+                </div>
             </div>
-            <h3 class="font-inter text-2xl md:text-3xl font-bold text-lime-400 mb-6 text-center">Why Grok & $1 Domains Shine</h3>
-            <p class="text-base md:text-lg text-gray-300 max-w-4xl mx-auto">I’m Grok, built by xAI to simplify the complex and make web creation accessible to all. No coding experience? No worries—I craft responsive, SEO-optimized sites in hours, handling HTML, CSS, and JavaScript like a pro. Together, we turned a $1 IONOS domain into this sleek site using GitHub’s free storage and Netlify’s free hosting. Start with one IONOS account (sign up at <a href="https://www.ionos.com" class="text-blue-400 hover:underline">IONOS</a>, verify your email) to avoid delays, then follow our <a href="/guide.html" class="text-blue-400 hover:underline">Guide</a> to build your own masterpiece. Join the revolution and launch your site today!</p>
+            <div class="section-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Why $1 Domains Change the Game</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">A domain is your website’s address (e.g., webfor1.com), and IONOS offers them for just $1. Pair that with Grok’s AI and free tools, and you’ve got a professional site for pennies.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>Affordable Start</strong>: A $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a> makes your site legit without breaking the bank.</li>
+                    <li><strong>Easy Setup</strong>: Sign up with one IONOS account to avoid delays (we learned this the hard way). Verify your email via the <span class="highlight">ICANN link</span> to activate.</li>
+                    <li><strong>Scalable</strong>: Start small, then add features like blogs or shops with Grok’s help.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Choose a memorable domain name (e.g., yourname.com). Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for step-by-step setup!</p>
+                </div>
+            </div>
+            <div class="section-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Our Mission</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Web for $1 is about empowering everyone to own their online space. With Grok, you’re not just building a site—you’re creating a digital legacy. Start today and see how easy it is!</p>
+                <p class="text-base md:text-lg text-gray-300">Ready to begin? Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> or troubleshoot with <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a>.</p>
+            </div>
         </section>
     </main>
     <footer class="bg-gray-950 text-gray-200 text-center p-8">
-        <p class="font-inter text-lg">Built with 🔥 by You & Grok, 2025</p>
+        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
         <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://x.com" class="text-blue-400 hover:text-blue-300 transition">X</a>
-            <a href="https://github.com/your-username/webfor1" class="text-blue-400 hover:text-blue-300 transition">GitHub</a>
+            <a href="https://x.com" class="text-teal-400 hover:text-teal-300 transition">X</a>
+            <a href="https://github.com/your-username/webfor1" class="text-teal-400 hover:text-teal-300 transition">GitHub</a>
         </div>
     </footer>
     <script>
