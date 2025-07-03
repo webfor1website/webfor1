@@ -29,6 +29,7 @@
             justify-content: center;
             text-align: center;
             margin-bottom: 2rem;
+            z-index: 1;
         }
         .hero-image {
             width: 100%;
@@ -73,6 +74,7 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
+            z-index: 1;
         }
         .feature-card {
             perspective: 1000px;
@@ -81,6 +83,7 @@
             border-radius: 12px;
             padding: 1rem;
             transition: transform 0.6s ease;
+            z-index: 1;
         }
         .feature-card-inner {
             position: relative;
@@ -210,10 +213,6 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        @keyframes slideIn {
-            0% { transform: translateX(-50px); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
         @keyframes slideInText {
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -302,7 +301,7 @@
                 <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
             </div>
         </section>
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20 max-w-4xl mx-auto pb-8">
             <div class="feature-card">
                 <div class="feature-card-inner">
                     <div class="feature-card-front">
@@ -349,7 +348,7 @@
                 </div>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card">
+        <section class="max-w-4xl mx-auto mb-16 hero-card" id="testimonials">
             <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">What Creators Are Saying</h3>
             <p class="text-base md:text-lg text-gray-300 mb-8 italic">“I built a portfolio for my art in one day with Grok’s help! The $1 domain and free hosting blew my mind—total game-changer!” — Alex, Aspiring Artist</p>
             <p class="text-base md:text-lg text-gray-300 mb-8 italic">“Grok coded my teal blog with a contact form in hours. $1 Web Revolution is the real deal!” — Sam, Tech Blogger</p>
@@ -363,7 +362,7 @@
             <p class="text-base md:text-lg text-gray-300 mb-8">Your $1 website is just the start. With Grok’s AI, you’re building a digital legacy that’s affordable, pro, and uniquely yours. Share your site on <a href="https://x.com" class="text-teal-400 hover:underline">X</a> with #1WebRevolution, and let’s show the world what’s possible for a buck!</p>
             <a href="#contact" class="cta-button inline-block font-bold">Get in Touch</a>
         </section>
-        <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto">
+        <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto mb-16">
             <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-4">Quick Tips to Start Strong</h3>
             <div class="marquee overflow-hidden whitespace-nowrap">
                 <p class="text-base text-gray-300 inline-block animate-marquee">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
