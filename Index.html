@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and dominate online!">
+    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and dominate the cosmos!">
     <meta name="keywords" content="$1 Web Revolution, Grok AI, xAI, IONOS domain, GitHub, Netlify, cheap website">
     <meta name="author" content="You & Grok">
     <title>$1 Web Revolution - Build Your Dream Site</title>
@@ -16,6 +16,7 @@
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
             position: relative;
+            overflow-x: hidden;
         }
         h1, h2, h3 {
             color: #2dd4bf;
@@ -32,27 +33,26 @@
             margin-bottom: 2rem;
             z-index: 1;
         }
-        .hero-image {
+        .hero-video {
             width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
             z-index: -1;
-            animation: parallax 20s linear infinite, zoom 10s ease-in-out infinite;
         }
         .hero-overlay {
             background: rgba(10, 14, 26, 0.7);
             padding: 2rem;
             border-radius: 12px;
-            max-width: 90%;
+            max-width: 95%;
             z-index: 2;
         }
         .hero-text {
             display: inline-block;
             overflow: hidden;
-            white-space: nowrap;
+            white-space: normal;
         }
         .hero-text span {
             display: inline-block;
@@ -73,19 +73,28 @@
                 padding: 1rem;
             }
             .hero-overlay {
-                padding: 1.5rem;
+                padding: 1rem;
+            }
+            .hero-text {
+                font-size: 2.5rem; /* text-4xl */
             }
         }
         .hero-card {
             background: #1a2332;
             border: 2px solid #2dd4bf;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 3rem;
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
             z-index: 1;
             min-height: 200px;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .hero-card {
+                padding: 2rem;
+            }
         }
         .feature-card {
             perspective: 1000px;
@@ -135,10 +144,10 @@
             height: 40px;
             margin: 0 auto 0.5rem;
             fill: #2dd4bf;
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: transform 0.5s ease, filter 0.3s ease;
         }
         .feature-card:hover .feature-icon {
-            transform: scale(1.2);
+            transform: rotate(360deg);
             filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.7));
         }
         .feature-card:hover, .hero-card:hover {
@@ -167,10 +176,25 @@
             font-weight: 700;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
+            position: relative;
+            overflow: hidden;
         }
         .cta-button:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.7);
+        }
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(45, 212, 191, 0.3), transparent);
+            top: 0;
+            left: -200%;
+            transition: left 0.5s ease;
+        }
+        .cta-button:hover::after {
+            left: 0;
         }
         .sticky-cta {
             position: fixed;
@@ -190,6 +214,10 @@
         .testimonial {
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+        .testimonial:hover {
+            transform: scale(1.02);
         }
         .testimonial:nth-child(1) { animation-delay: 0.2s; }
         .testimonial:nth-child(2) { animation-delay: 0.4s; }
@@ -202,6 +230,11 @@
         }
         .marquee:hover {
             animation-play-state: paused;
+        }
+        #testimonials {
+            clear: both;
+            position: relative;
+            margin-top: 2rem;
         }
         footer {
             position: sticky;
@@ -243,6 +276,22 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             font-weight: 600;
+        }
+        .cursor-trail {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #2dd4bf;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.5;
+            transition: transform 0.2s ease;
+        }
+        @media (max-width: 768px) {
+            .cursor-trail {
+                display: none;
+            }
         }
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
@@ -304,9 +353,9 @@
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
-            <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-image" aria-label="Hero image showcasing $1 Web Revolution" />
+            <video src="/videos/hero.mp4" autoplay loop muted playsinline class="hero-video"></video>
             <div class="hero-overlay">
-                <h2 class="font-poppins text-5xl md:text-7xl font-extrabold text-teal-400 mb-6 hero-text">
+                <h2 class="font-poppins text-4xl md:text-7xl font-extrabold text-teal-400 mb-6 hero-text">
                     <a href="/guide.html" class="hover:text-teal-300 transition duration-300">
                         <span style="--i:1">L</span><span style="--i:2">a</span><span style="--i:3">u</span><span style="--i:4">n</span><span style="--i:5">c</span><span style="--i:6">h</span>
                         <span style="--i:7"> </span>
@@ -319,7 +368,7 @@
                         <span style="--i:22">$</span><span style="--i:23">1</span><span style="--i:24">!</span>
                     </a>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding skills needed. Join the $1 Web Revolution and build your digital empire. Click the headline to ignite your journey!</p>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and build your digital empire. Click the headline to ignite your journey!</p>
                 <a href="/guide.html" class="cta-button inline-block font-bold">Build Your Site Now</a>
             </div>
         </section>
@@ -351,7 +400,7 @@
                 <li><strong>Debugging</strong>: Hit a snag? I’ll fix DNS errors, broken links, or mobile issues in a flash.</li>
             </ul>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Try prompts like “Add a particle background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
+                <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
             </div>
         </section>
         <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-4xl mx-auto pb-12">
@@ -495,6 +544,21 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = document.querySelector('.hero-section').offsetHeight;
+        });
+
+        // Cursor Trail
+        const trailContainer = document.body;
+        function createTrail() {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trailContainer.appendChild(trail);
+            setTimeout(() => trail.remove(), 500);
+            return trail;
+        }
+        document.addEventListener('mousemove', (e) => {
+            const trail = createTrail();
+            trail.style.left = `${e.clientX}px`;
+            trail.style.top = `${e.clientY}px`;
         });
 
         // Menu and Modal
