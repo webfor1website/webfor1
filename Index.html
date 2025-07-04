@@ -10,23 +10,19 @@
     <meta name="easter-egg" content="Elon, stop trolling, let’s build Mars sites for $1!">
     <meta property="og:title" content="$1 Web Revolution - Build Your Dream Site">
     <meta property="og:description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify. No coding needed! Join the $1 Web Revolution.">
-    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.webp">
+    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.jpg">
     <meta property="og:url" content="https://webfor1.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@WebFor1">
     <title>$1 Web Revolution - Build Your $1 Website</title>
-    <!-- Pre preload critical resources -->
-    <link rel="preload" href="images/hero.webp" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     </noscript>
-    <!-- Defer non-critical CSS -->
     <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
     <style>
-        /* Critical CSS for above-the-fold content */
         body {
             background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
             color: #e5e7eb;
@@ -95,12 +91,10 @@
             transform: scale(1.05);
             opacity: 0.9;
         }
-        /* Font display to prevent CLS */
         @font-face {
             font-family: 'Poppins';
             font-display: swap;
         }
-        /* Marquee animation to prevent CLS */
         .marquee {
             overflow: hidden;
             white-space: nowrap;
@@ -134,7 +128,6 @@
                 font-size: 0.875rem;
             }
         }
-        /* Non-critical styles moved to styles.css */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 100; justify-content: center; align-items: center; }
         .modal-content { background: #1a2332; padding: 1.5rem; border-radius: 8px; border: 2px solid #2dd4bf; max-width: 90%; width: 500px; box-sizing: border-box; }
         .modal-content input, .modal-content textarea { width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; background: #2c3e50; color: #e5e7eb; border: 1px solid #2dd4bf; border-radius: 4px; }
@@ -167,7 +160,7 @@
             "@type": "Organization",
             "name": "$1 Web Revolution",
             "url": "https://webfor1.com",
-            "logo": "https://webfor1.netlify.app/images/hero.webp",
+            "logo": "https://webfor1.netlify.app/images/hero.jpg",
             "sameAs": [
                 "https://x.com/WebFor1",
                 "https://github.com/your-username/webfor1"
@@ -180,7 +173,8 @@
     <div class="progress-bar" id="progress-bar"></div>
     <section id="hero" class="hero-section">
         <canvas id="particles"></canvas>
-        <img src="images/hero.webp" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
+        <!-- Restored hero image to hero.jpg with fallback -->
+        <img src="images/hero.jpg" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image" onerror="this.src='images/fallback.jpg'; console.error('Hero image failed to load')">
     </section>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-4 flex justify-between items-center">
@@ -255,7 +249,8 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <img src="images/feature1.webp" alt="Screenshot of IONOS domain purchase interface for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
+                    <!-- Use WebP with fallback to JPG -->
+                    <img src="images/feature1.webp" alt="Screenshot of IONOS domain purchase interface for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="this.src='images/feature1.jpg'; console.error('Feature1 image failed to load')">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                     </h3>
@@ -269,7 +264,7 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <img src="images/feature2.webp" alt="Screenshot of GitHub setup for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
+                    <img src="images/feature2.webp" alt="Screenshot of GitHub setup for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="this.src='images/feature2.jpg'; console.error('Feature2 image failed to load')">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                     </h3>
@@ -283,7 +278,7 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <img src="images/feature3.webp" alt="Screenshot of Netlify deployment for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
+                    <img src="images/feature3.webp" alt="Screenshot of Netlify deployment for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment" onerror="this.src='images/feature3.jpg'; console.error('Feature3 image failed to load')">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                     </h3>
@@ -442,6 +437,14 @@
             });
         }, { threshold: 0.1 });
         observer.observe(marquee);
+
+        // Log image loading issues
+        window.addEventListener('load', () => {
+            const heroImage = document.querySelector('.hero-media');
+            if (!heroImage.complete || heroImage.naturalWidth === 0) {
+                console.error('Hero image failed to load or is broken');
+            }
+        });
     </script>
 </body>
 </html>
