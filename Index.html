@@ -230,8 +230,8 @@
             transition: transform 0.3s ease;
             box-shadow: 0 0 15px rgba(45, 212, 191, 0.5);
         }
-        .animate-glow {
-            animation: glow 2s ease-in-out infinite;
+        .animate-glow:hover {
+            text-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
         }
         .testimonial {
             opacity: 0;
@@ -303,10 +303,6 @@
                 display: none;
             }
         }
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8); }
-        }
         @keyframes slideInText {
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -354,6 +350,7 @@
         link.onload = () => console.log('Tailwind loaded');
         document.head.appendChild(link);
     </script>
+    <script defer src="/js/main.js"></script>
 </head>
 <body class="min-h-screen flex flex-col">
     <div class="progress-bar" id="progress-bar"></div>
@@ -557,139 +554,15 @@
         </div>
     </footer>
     <script>
-        // Particle Background with Connections
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = document.querySelector('.hero-section').offsetHeight;
-        const particlesArray = [];
-        let mouseX = 0, mouseY = 0;
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
+        // Chatbot functionality (kept inline for instant interactivity)
+        document.getElementById('chat-submit').addEventListener('click', () => {
+            const input = document.getElementById('chat-input').value;
+            const response = document.getElementById('chat-response');
+            if (input.toLowerCase().includes('how do i start')) {
+                response.innerHTML = 'Grab a $1 domain from IONOS, use Grok to code your site, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline">our Guide</a>!';
+            } else {
+                response.innerHTML = 'Ask me anything about building your $1 site! Try: "Suggest a domain name" or "Make my site mobile-friendly."';
             }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.size > 0.2) this.size -= 0.01;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(45, 212, 191, 0.5)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        function initParticles() {
-            for (let i = 0; i < 50; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-        function connectParticles() {
-            for (let i = 0; i < particlesArray.length; i++) {
-                for (let j = i + 1; j < particlesArray.length; j++) {
-                    let dx = particlesArray[i].x - particlesArray[j].x;
-                    let dy = particlesArray[i].y - particlesArray[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
-                        ctx.strokeStyle = 'rgba(45, 212, 191, ' + (1 - distance / 100) + ')';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                        ctx.stroke();
-                    }
-                }
-                let dx = particlesArray[i].x - mouseX;
-                let dy = particlesArray[i].y - mouseY;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 150) {
-                    ctx.strokeStyle = 'rgba(45, 212, 191, ' + (1 - distance / 150) + ')';
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(mouseX, mouseY);
-                    ctx.stroke();
-                }
-            }
-        }
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                if (particlesArray[i].size <= 0.2) {
-                    particlesArray.splice(i, 1);
-                    i--;
-                    particlesArray.push(new Particle());
-                }
-            }
-            connectParticles();
-            requestAnimationFrame(animateParticles);
-        }
-        initParticles();
-        animateParticles();
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = document.querySelector('.hero-section').offsetHeight;
-        });
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        // Cursor Trail
-        const trailContainer = document.body;
-        function createTrail() {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trailContainer.appendChild(trail);
-            setTimeout(() => trail.remove(), 500);
-            return trail;
-        }
-        document.addEventListener('mousemove', (e) => {
-            const trail = createTrail();
-            trail.style.left = `${e.clientX}px`;
-            trail.style.top = `${e.clientY}px`;
-        });
-
-        // 3D Tilt for Feature Cards
-        const featureCards = document.querySelectorAll('.feature-card');
-        featureCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const tiltX = (centerY - y) / 10;
-                const tiltY = (x - centerX) / 10;
-                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
-        });
-
-        // Tip Panel Toggle
-        const tipButtons = document.querySelectorAll('.tip-button');
-        tipButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const panel = button.nextElementSibling;
-                panel.classList.toggle('active');
-            });
-        });
-
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress-bar').style.width = scrolled + '%';
         });
 
         // Menu and Modal
@@ -726,15 +599,12 @@
             }
         });
 
-        // Chatbot functionality
-        document.getElementById('chat-submit').addEventListener('click', () => {
-            const input = document.getElementById('chat-input').value;
-            const response = document.getElementById('chat-response');
-            if (input.toLowerCase().includes('how do i start')) {
-                response.innerHTML = 'Grab a $1 domain from IONOS, use Grok to code your site, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline">our Guide</a>!';
-            } else {
-                response.innerHTML = 'Ask me anything about building your $1 site! Try: "Suggest a domain name" or "Make my site mobile-friendly."';
-            }
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
         });
     </script>
 </body>
