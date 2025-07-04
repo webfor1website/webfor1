@@ -68,7 +68,7 @@
             border-radius: 50px;
             font-size: 1.25rem;
             font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
             box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
             position: relative;
             overflow: hidden;
@@ -76,6 +76,7 @@
         .cta-button:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.7);
+            opacity: 0.9;
         }
         @media (max-width: 768px) {
             .hero-section {
@@ -192,19 +193,6 @@
             margin: 1rem 0;
             border-radius: 8px;
         }
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(45, 212, 191, 0.3), transparent);
-            top: 0;
-            left: -200%;
-            transition: left 0.5s ease;
-        }
-        .cta-button:hover::after {
-            left: 0;
-        }
         .sticky-cta {
             position: fixed;
             bottom: 20px;
@@ -248,9 +236,9 @@
             border: 1px solid #2dd4bf;
             border-radius: 8px;
             padding: 0.5rem;
-            animation: marquee 15s linear infinite;
+            animation: marquee 10s linear infinite; /* Reduced duration */
         }
-        .marquee:hover {
+        .marquee:not(.in-view) {
             animation-play-state: paused;
         }
         #testimonials {
@@ -286,22 +274,6 @@
             z-index: 1000;
             transition: width 0.2s ease;
             box-shadow: 0 0 10px rgba(45, 212, 191, 0.7);
-        }
-        .cursor-trail {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #2dd4bf;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 999;
-            opacity: 0.5;
-            transition: transform 0.2s ease;
-        }
-        @media (max-width: 768px) {
-            .cursor-trail {
-                display: none;
-            }
         }
         @keyframes slideInText {
             0% { transform: translateY(20px); opacity: 0; }
@@ -356,7 +328,7 @@
     <div class="progress-bar" id="progress-bar"></div>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow header-pulse">$1 Web Revolution</h1>
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 header-pulse">$1 Web Revolution</h1>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -528,7 +500,7 @@
         <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto mb-16">
             <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-4">Quick Tips to Start Strong</h3>
             <div class="marquee">
-                <p class="text-base text-gray-300 inline-block animate-marquee">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
+                <p class="text-base text-gray-300 inline-block">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
             </div>
         </section>
         <div id="contact" class="modal">
@@ -566,36 +538,29 @@
         });
 
         // Menu and Modal
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const contactLink = document.getElementById('contact-link');
-        const contactModal = document.getElementById('contact');
-        const closeModal = document.getElementById('close-modal');
-        const contactForm = document.getElementById('contact-form');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        contactLink.addEventListener('click', (e) => {
+        document.getElementById('contact-link').addEventListener('click', (e) => {
             e.preventDefault();
-            contactModal.style.display = 'flex';
+            document.getElementById('contact').style.display = 'flex';
         });
 
-        closeModal.addEventListener('click', () => {
-            contactModal.style.display = 'none';
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('contact').style.display = 'none';
         });
 
-        contactForm.addEventListener('submit', (e) => {
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Message sent! We’ll get back to you soon.');
-            contactForm.reset();
-            contactModal.style.display = 'none';
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact').style.display = 'none';
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === contactModal) {
-                contactModal.style.display = 'none';
+            if (e.target === document.getElementById('contact')) {
+                document.getElementById('contact').style.display = 'none';
             }
         });
 
@@ -606,6 +571,19 @@
             const scrolled = (winScroll / height) * 100;
             document.getElementById('progress-bar').style.width = scrolled + '%';
         });
+
+        // Marquee Animation Control
+        const marquee = document.querySelector('.marquee');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    marquee.classList.add('in-view');
+                } else {
+                    marquee.classList.remove('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(marquee);
     </script>
 </body>
 </html>
