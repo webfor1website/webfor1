@@ -37,7 +37,7 @@
         }
         .hero-section {
             position: relative;
-            min-height: 40vh;
+            min-height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,12 +47,12 @@
         .hero-media {
             width: 100%;
             height: auto;
-            max-height: 40vh;
             object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
             z-index: -1;
+            aspect-ratio: 1080 / 720;
         }
         .hero-overlay {
             background: rgba(10, 14, 26, 0.7);
@@ -85,7 +85,7 @@
                 padding: 0.5rem;
             }
             .hero-media {
-                max-height: 30vh;
+                aspect-ratio: 412 / 275;
             }
             .hero-overlay {
                 padding: 0.75rem;
@@ -239,10 +239,10 @@
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-8 md:py-12 flex-grow" style="margin-top: 40vh;">
+    <main class="container mx-auto py-8 md:py-12 flex-grow" style="margin-top: 50vh;">
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
-            <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="$1 website builder hero image for Web Revolution" class="hero-media" width="412" height="275" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
+            <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="$1 website builder hero image for Web Revolution" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
             <div class="hero-overlay">
                 <h2 class="font-poppins text-3xl md:text-6xl font-extrabold text-teal-400 mb-4">Launch Your $1 Website!</h2>
                 <p class="text-base md:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">Think a pro website costs a fortune? Hell no! Our $1 website builder, powered by Grok’s AI, a cheap IONOS domain, and free GitHub/Netlify hosting, lets you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and conquer the cosmos!</p>
