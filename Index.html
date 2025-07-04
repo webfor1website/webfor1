@@ -35,11 +35,20 @@
         h1, h2, h3 {
             color: #2dd4bf;
         }
+        /* Explicit font-size for h1 to address deprecation warning */
+        nav h1 {
+            font-size: 1.875rem; /* Matches Tailwind's text-3xl */
+        }
+        @media (min-width: 768px) {
+            nav h1 {
+                font-size: 2.25rem; /* Matches Tailwind's md:text-4xl */
+            }
+        }
         .hero-section {
-            position: relative; /* Changed from fixed to relative */
+            position: relative;
             width: 100%;
             min-height: 50vh;
-            z-index: 1; /* Adjusted z-index */
+            z-index: 1;
         }
         .hero-media {
             width: 100%;
@@ -50,6 +59,11 @@
             left: 0;
             z-index: -1;
             aspect-ratio: 1080 / 720;
+        }
+        /* Ensure images scale correctly on mobile */
+        img {
+            max-width: 100%;
+            height: auto;
         }
         .hero-overlay {
             background: rgba(10, 14, 26, 0.7);
@@ -224,7 +238,7 @@
             font-size: 0.75rem;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <script>
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -262,7 +276,8 @@
     <div class="progress-bar" id="progress-bar"></div>
     <section id="hero" class="hero-section">
         <canvas id="particles"></canvas>
-        <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
+        <!-- Removed srcset, using single optimized image -->
+        <img src="images/hero.jpg" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
     </section>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-4 flex justify-between items-center">
@@ -337,7 +352,8 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <img src="images/feature1.jpg" srcset="images/feature1-mobile.jpg 300w, images/feature1.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of IONOS domain purchase interface for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180 Forma de onda: Creado con IA, puede contener imprecisiones180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
+                    <!-- Removed srcset, using single optimized image -->
+                    <img src="images/feature1.jpg" alt="Screenshot of IONOS domain purchase interface for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                     </h3>
@@ -351,7 +367,8 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <img src="images/feature2.jpg" srcset="images/feature2-mobile.jpg 300w, images/feature2.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of GitHub setup for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
+                    <!-- Removed srcset, using single optimized image -->
+                    <img src="images/feature2.jpg" alt="Screenshot of GitHub setup for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                     </h3>
@@ -365,7 +382,8 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <img src="images/feature3.jpg" srcset="images/feature3-mobile.jpg 300w, images/feature3.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of Netlify deployment for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
+                    <!-- Removed srcset, using single optimized image -->
+                    <img src="images/feature3.jpg" alt="Screenshot of Netlify deployment for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                     </h3>
@@ -436,8 +454,8 @@
         <!-- E, if you’re watching, $1 sites are the future. Join us! -->
     </footer>
     <script>
-        // Initialize particles.js
-        particlesJS('particles', {
+        // Initialize tsParticles
+        tsParticles.load('particles', {
             particles: {
                 number: { value: 50, density: { enable: true, value_area: 800 } },
                 color: { value: '#2dd4bf' },
