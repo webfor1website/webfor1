@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify—no coding needed! Join the $1 Web Revolution and conquer the cosmos!">
-    <meta name="keywords" content="$1 Web Revolution, Grok AI, xAI, IONOS domain, GitHub, Netlify, cheap website">
+    <meta name="description" content="Build a $1 website with Grok’s AI, IONOS domain, GitHub, and Netlify. No coding needed! Join the $1 Web Revolution for a cheap website that shines.">
+    <meta name="keywords" content="$1 website builder, cheap website, Grok AI, xAI, IONOS domain, GitHub, Netlify">
     <meta name="author" content="You & Grok">
-    <title>$1 Web Revolution - Build Your Dream Site</title>
+    <meta name="robots" content="index, follow">
+    <meta name="easter-egg" content="Elon, stop trolling, let’s build Mars sites for $1!">
+    <meta property="og:title" content="$1 Web Revolution - Build Your Dream Site">
+    <meta property="og:description" content="Launch a pro website for $1 with Grok’s AI, IONOS, GitHub, and Netlify. No coding needed! Join the $1 Web Revolution.">
+    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.jpg">
+    <meta property="og:url" content="https://webfor1.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@WebFor1">
+    <title>$1 Web Revolution - Build Your $1 Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
     <style>
         body {
             background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
@@ -21,26 +29,25 @@
             scroll-behavior: smooth;
             position: relative;
             overflow-x: hidden;
+            box-sizing: border-box;
         }
         h1, h2, h3 {
             color: #2dd4bf;
         }
         .hero-section {
             position: relative;
-            min-height: 60vh;
-            max-height: 80vh;
-            overflow: hidden;
+            min-height: 40vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             z-index: 1;
         }
         .hero-media {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto;
+            object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
@@ -48,42 +55,47 @@
         }
         .hero-overlay {
             background: rgba(10, 14, 26, 0.7);
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 95%;
-            width: 800px;
-            min-height: 300px;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 90%;
+            width: 700px;
+            min-height: 150px;
             z-index: 2;
+            box-sizing: border-box;
         }
         .cta-button {
             background: #2dd4bf;
             color: #0a0e1a;
-            padding: 1rem 2.5rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
-            font-size: 1.25rem;
-            font-weight: 700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-            box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.4);
             position: relative;
             overflow: hidden;
+            display: inline-block;
         }
         .cta-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(45, 212, 191, 0.7);
+            transform: scale(1.05);
             opacity: 0.9;
         }
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 50vh;
-                padding: 1rem;
+                min-height: 30vh;
+                padding: 0.5rem;
             }
             .hero-overlay {
-                padding: 1rem;
-                width: 90%;
-                min-height: 200px;
+                padding: 0.75rem;
+                width: 95%;
+                min-height: 120px;
             }
             .hero-text {
-                font-size: 2.5rem;
+                font-size: 1.75rem;
+            }
+            .cta-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
             }
         }
         #particles {
@@ -97,79 +109,69 @@
         .hero-card {
             background: #1a2332;
             border: 2px solid #2dd4bf;
-            border-radius: 12px;
-            padding: 3rem;
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.2);
             z-index: 1;
-            min-height: 200px;
-            overflow: hidden;
-        }
-        @media (max-width: 768px) {
-            .hero-card {
-                padding: 2rem;
-            }
+            min-height: 120px;
+            box-sizing: border-box;
         }
         .feature-card {
             background: #1a2332;
             border: 2px solid #2dd4bf;
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 8px;
+            padding: 1rem;
             z-index: 1;
-            min-height: 420px;
+            min-height: 350px;
             width: 100%;
-            max-width: 300px;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        .feature-card-front {
-            display: flex;
-            flex-direction: column;
-            word-wrap: break-word;
-            overflow: auto;
+            max-width: 280px;
+            box-sizing: border-box;
         }
         .feature-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: contain;
-            border-radius: 8px;
-            margin-bottom: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
         }
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 0;
-            height: 4px;
+            height: 3px;
             background: #2dd4bf;
             z-index: 1000;
             transition: width 0.2s ease;
-            box-shadow: 0 0 10px rgba(45, 212, 191, 0.7);
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.7);
         }
         .chatbot {
             position: fixed;
-            bottom: 80px;
-            right: 20px;
+            bottom: 70px;
+            right: 15px;
             background: #1a2332;
             border: 2px solid #2dd4bf;
-            border-radius: 8px;
-            padding: 1rem;
+            border-radius: 6px;
+            padding: 0.75rem;
             z-index: 50;
-            width: 250px;
+            width: 90%;
+            max-width: 240px;
+            box-sizing: border-box;
         }
         .chatbot input {
             width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 0.5rem;
+            padding: 0.4rem;
+            margin-bottom: 0.4rem;
             background: #2c3e50;
             color: #e5e7eb;
             border: 1px solid #2dd4bf;
             border-radius: 4px;
+            box-sizing: border-box;
         }
         .chatbot #chat-response {
             color: #e5e7eb;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
         }
     </style>
     <script>
@@ -179,21 +181,45 @@
         link.onload = () => console.log('Tailwind loaded');
         document.head.appendChild(link);
     </script>
-    <script defer src="/js/main.js"></script>
+    <script defer src="js/main.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "$1 Web Revolution",
+        "url": "https://webfor1.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://webfor1.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "$1 Web Revolution",
+        "url": "https://webfor1.com",
+        "logo": "https://webfor1.netlify.app/images/hero.jpg",
+        "sameAs": [
+            "https://x.com/WebFor1",
+            "https://github.com/your-username/webfor1"
+        ]
+    }
+    </script>
 </head>
 <body class="min-h-screen flex flex-col">
     <div class="progress-bar" id="progress-bar"></div>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
-        <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400">$1 Web Revolution</h1>
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="font-poppins text-3xl md:text-4xl font-extrabold text-teal-400">$1 Web Revolution</h1>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
-            <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
+            <ul id="nav-menu" class="hidden md:flex md:space-x-8 text-lg font-semibold">
                 <li><a href="#hero" class="hover:text-teal-400 transition duration-300">Home</a></li>
                 <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
                 <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
@@ -201,7 +227,7 @@
             </ul>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
-            <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
+            <ul class="flex flex-col items-center space-y-4 py-4 text-lg font-semibold">
                 <li><a href="#hero" class="hover:text-teal-400 transition duration-300">Home</a></li>
                 <li><a href="/about.html" class="hover:text-teal-400 transition duration-300">About</a></li>
                 <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300">Guide</a></li>
@@ -209,150 +235,135 @@
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-12 md:py-20 flex-grow">
+    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
-            <picture>
-                <source media="(max-width: 768px)" srcset="/images/hero-mobile.jpg" sizes="412px">
-                <source src="/videos/hero.mp4" type="video/mp4">
-                <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-media" width="412" height="275" fetchpriority="high" loading="eager" sizes="412px" aria-label="Hero image showcasing $1 Web Revolution">
-            </picture>
+            <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="$1 website builder hero image for Web Revolution" class="hero-media" width="412" height="275" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
             <div class="hero-overlay">
-                <h2 class="font-poppins text-4xl md:text-7xl font-extrabold text-teal-400 mb-6">
-                    <a href="/guide.html" class="hover:text-teal-300 transition duration-300">Launch Your Site for $1!</a>
-                </h2>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Think a pro website costs a fortune? Hell no! Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify let you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and conquer the cosmos. Click the headline to blast off!</p>
-                <a href="/guide.html" class="cta-button inline-block font-bold">Build Your Site Now</a>
+                <h2 class="font-poppins text-3xl md:text-6xl font-extrabold text-teal-400 mb-4">Launch Your $1 Website!</h2>
+                <p class="text-base md:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">Think a pro website costs a fortune? Hell no! Our $1 website builder, powered by Grok’s AI, a cheap IONOS domain, and free GitHub/Netlify hosting, lets you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and conquer the cosmos!</p>
+                <a href="/guide.html" class="cta-button font-bold">Build Your Cheap Website Now</a>
             </div>
         </section>
         <a href="/guide.html" class="cta-button sticky-cta">Build Now</a>
         <div class="chatbot">
-            <h3 class="font-poppins text-lg text-teal-400 mb-2">Ask Grok!</h3>
-            <input type="text" id="chat-input" placeholder="Ask about $1 sites..." class="w-full">
+            <h3 class="font-poppins text-base text-teal-400 mb-2">Ask Grok!</h3>
+            <input type="text" id="chat-input" placeholder="Ask about $1 website builder..." class="w-full">
             <div id="chat-response" class="text-sm"></div>
             <button id="chat-submit" class="cta-button mt-2">Ask</button>
         </div>
-        <section class="max-w-4xl mx-auto mb-16 hero-card">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Why $1 Web Revolution Slays</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">This is your ticket to a pro online presence for just a buck. Grok, powered by xAI, codes, designs, and debugs like a beast, letting you focus on your vision—newbie or pro. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, this site proves you can rule the web on a budget. Ready to dominate?</p>
+        <section class="max-w-3xl mx-auto mb-12 hero-card">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Why $1 Web Revolution Slays</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">This $1 website builder is your ticket to a pro online presence. Grok, powered by xAI, codes, designs, and debugs like a beast, letting you focus on your vision—newbie or pro. With a cheap IONOS domain, free GitHub storage, and Netlify hosting, webfor1.com proves you can rule the web on a budget.</p>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Use one IONOS account to avoid delays (we learned this with webfor1.com). Check spam for the <span class="highlight">ICANN verification email</span> to unlock your domain!</p>
+                <p><strong>Pro Tip</strong>: Use one IONOS account to avoid delays (we learned this with webfor1.com). Check spam for the <span class="highlight">ICANN verification email</span> to unlock your cheap website!</p>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">How It Works in 3 Simple Steps</h3>
-            <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-8">
+        <section class="max-w-3xl mx-auto mb-12 hero-card">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">How Our $1 Website Builder Works</h3>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-300 mb-6">
                 <li><strong>Grab a $1 Domain</strong>: Snag a unique address (e.g., yourname.online) from <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a> for $1. Verify via the ICANN email.</li>
-                <li><strong>Create with Grok</strong>: Tell me your vibe (e.g., “I want a neon teal portfolio with a slider”). I’ll code it, tweak colors (#2dd4bf), and add features like blogs or forms.</li>
-                <li><strong>Launch for Free</strong>: Store files on GitHub, host on Netlify, and link your domain. Your site’s live in hours, ready to shine!</li>
+                <li><strong>Create with Grok</strong>: Tell me your vibe (e.g., “I want a neon teal portfolio”). I’ll code your cheap website with colors (#2dd4bf) and features like blogs or forms.</li>
+                <li><strong>Launch for Free</strong>: Store files on GitHub, host on Netlify, and link your domain. Your $1 website is live in hours!</li>
             </ul>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Ask Grok for tweaks like “Add a glowing footer” or “Make my site iPhone-ready.” Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> for the full playbook!</p>
+                <p><strong>Pro Tip</strong>: Ask Grok for tweaks like “Add a glowing footer” or “Make my cheap website iPhone-ready.” Check our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a>!</p>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Grok’s AI Magic</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Grok, built by xAI, is your ultimate wingman, turning your ideas into slick, responsive code faster than a SpaceX launch. Want a teal (#2dd4bf) portfolio with Poppins font? A blog with a contact form? Or a futuristic vibe with neon effects? Just say the word, and I’ll make it pop—no coding skills needed.</p>
-            <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-8">
-                <li><strong>Instant Coding</strong>: I generate HTML, CSS, and JavaScript tailored to your vision.</li>
+        <section class="max-w-3xl mx-auto mb-12 hero-card">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Grok’s AI Magic for Cheap Websites</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">Grok, built by xAI, is your ultimate wingman, turning ideas into slick, responsive code faster than a SpaceX launch. Want a teal (#2dd4bf) portfolio with Poppins font? A blog? Or a futuristic vibe? Just say the word, and I’ll make your $1 website pop—no coding needed.</p>
+            <ul class="list-disc pl-5 text-sm md:text-base text-gray-300 mb-6">
+                <li><strong>Instant Coding</strong>: I generate HTML, CSS, and JavaScript for your cheap website.</li>
                 <li><strong>Custom Vibes</strong>: Request colors, fonts, or layouts (e.g., “Make my site cyberpunk”).</li>
                 <li><strong>Debugging</strong>: Hit a snag? I’ll fix DNS errors, broken links, or mobile issues in a flash.</li>
             </ul>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
+                <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your $1 website ideas!</p>
             </div>
         </section>
-        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-24 max-w-4xl mx-auto pb-12">
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 max-w-3xl mx-auto pb-8">
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/feature1-mobile.jpg" sizes="300px">
-                        <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" width="300" height="200" loading="lazy" sizes="300px" aria-label="IONOS domain purchase interface">
-                    </picture>
-                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                    <img src="images/feature1.jpg" srcset="images/feature1-mobile.jpg 300w, images/feature1.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder domain purchase screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
+                    <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                     </h3>
-                    <p class="text-sm md:text-base text-gray-300">A $1 domain from IONOS gives your site a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
+                    <p class="text-sm text-gray-300">A $1 domain from IONOS gives your cheap website a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline">About</a> page!</p>
                     <div class="tip-button">Quick Tip</div>
                     <div class="tip-panel">
-                        <p class="text-sm md:text-base text-gray-300">Pick a short domain like yourname.online. Ask Grok for ideas: “Suggest names for a tech blog!”</p>
+                        <p class="text-sm text-gray-300">Pick a short domain like yourname.online. Ask Grok for $1 website builder ideas!</p>
                     </div>
                 </div>
             </div>
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/feature2-mobile.jpg" sizes="300px">
-                        <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" width="300" height="200" loading="lazy" sizes="300px" aria-label="GitHub repository setup">
-                    </picture>
-                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                    <img src="images/feature2.jpg" srcset="images/feature2-mobile.jpg 300w, images/feature2.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder coding setup screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
+                    <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                     </h3>
-                    <p class="text-sm md:text-base text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page keeps you on track.</p>
+                    <p class="text-sm text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline">Issues & Fixes</a> page keeps your cheap website on track.</p>
                     <div class="tip-button">Quick Tip</div>
                     <div class="tip-panel">
-                        <p class="text-sm md:text-base text-gray-300">Check Netlify’s <span class="highlight">Deploys</span> tab if your site fails. Ask Grok: “Why’s my page blank?”</p>
+                        <p class="text-sm text-gray-300">Check Netlify’s <span class="highlight">Deploys</span> tab if your $1 website fails. Ask Grok: “Why’s my page blank?”</p>
                     </div>
                 </div>
             </div>
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="/images/feature3-mobile.jpg" sizes="300px">
-                        <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" width="300" height="200" loading="lazy" sizes="300px" aria-label="Netlify deployment interface">
-                    </picture>
-                    <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
+                    <img src="images/feature3.jpg" srcset="images/feature3-mobile.jpg 300w, images/feature3.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder launch screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
+                    <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                     </h3>
-                    <p class="text-sm md:text-base text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through domain setup, coding with Grok, and launching!</p>
+                    <p class="text-sm text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a> walks you through domain setup, coding with Grok, and launching your cheap website!</p>
                     <div class="tip-button">Quick Tip</div>
                     <div class="tip-panel">
-                        <p class="text-sm md:text-base text-gray-300">Test your site in a private tab. Ask Grok to tweak: “Make my buttons glow!”</p>
+                        <p class="text-sm text-gray-300">Test your $1 website in a private tab. Ask Grok to tweak: “Make my buttons glow!”</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card" id="testimonials">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">What Creators Are Saying</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“I built a portfolio for my art in one day with Grok’s help! The $1 domain and free hosting blew my mind—total game-changer!” — Alex, Aspiring Artist</p>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“Grok coded my teal blog with a contact form in hours. $1 Web Revolution is the real deal!” — Sam, Tech Blogger</p>
-            <p class="text-base md:text-lg text-gray-300 mb-8 italic testimonial">“No coding skills, no problem! Grok made my business site pop for just $1. Elon would be proud!” — Mia, Entrepreneur</p>
+        <section class="max-w-3xl mx-auto mb-12 hero-card" id="testimonials">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">What Creators Say About Our $1 Website Builder</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“I built a portfolio for my art in one day with Grok’s $1 website builder! The cheap domain and free hosting blew my mind!” — Alex, Aspiring Artist</p>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“Grok coded my teal blog in hours. This $1 website builder is the real deal!” — Sam, Tech Blogger</p>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“No coding skills, no problem! Grok made my business site pop for $1!” — Mia, Entrepreneur</p>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Share your story on <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">X</a> with #1WebRevolution to join the creator crew!</p>
+                <p><strong>Pro Tip</strong>: Share your cheap website on <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">X</a> with #1WebRevolution to join the crew!</p>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card x-feed">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Join the #1WebRevolution on X</h3>
+        <section class="max-w-3xl mx-auto mb-12 hero-card x-feed">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the #1WebRevolution on X</h3>
             <div class="x-post">
-                <p class="text-base md:text-lg text-gray-300">"Just launched my site for $1 with Grok’s help! #1WebRevolution is 🔥!" — @CreatorX</p>
+                <p class="text-sm md:text-base text-gray-300">"Just launched my $1 website with Grok’s AI! #1WebRevolution is 🔥!" — @CreatorX</p>
             </div>
             <div class="x-post">
-                <p class="text-base md:text-lg text-gray-300">"Grok made my portfolio pop for a buck! Join the revolution! #1WebRevolution" — @ArtVibe</p>
+                <p class="text-sm md:text-base text-gray-300">"Grok made my portfolio pop for a buck! Join the revolution! #1WebRevolution" — @ArtVibe</p>
             </div>
             <div class="x-post">
-                <p class="text-base md:text-lg text-gray-300">"No coding, no problem. $1 site live in hours thanks to Grok! #1WebRevolution" — @TechBit</p>
+                <p class="text-sm md:text-base text-gray-300">"No coding, no problem. $1 website live in hours thanks to Grok! #1WebRevolution" — @TechBit</p>
             </div>
             <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Tweet your site with #1WebRevolution and tag <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">@WebFor1</a> to get featured!</p>
+                <p><strong>Pro Tip</strong>: Tweet your cheap website with #1WebRevolution and tag <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">@WebFor1</a> to get featured!</p>
             </div>
         </section>
-        <section class="max-w-4xl mx-auto mb-16 hero-card">
-            <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-6 text-center">Join the Revolution</h3>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Your $1 website is the spark of a digital legacy. With Grok’s AI, you’re crafting a pro, affordable site that’s 100% you. Share it on <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">X</a> with #1WebRevolution, and let’s show the world what a buck can do!</p>
-            <a href="#contact" class="cta-button inline-block font-bold">Get in Touch</a>
+        <section class="max-w-3xl mx-auto mb-12 hero-card">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the $1 Website Revolution</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">Your $1 website is the spark of a digital legacy. With Grok’s AI, you’re crafting a pro, cheap website that’s 100% you. Share it on <a href="https://x.com/WebFor1" class="text-teal-400 hover:underline">X</a> with #1WebRevolution!</p>
+            <a href="#contact" class="cta-button font-bold">Get in Touch</a>
         </section>
-        <section class="bg-gray-800 p-6 rounded-lg text-center max-w-4xl mx-auto mb-16">
-            <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-4">Quick Tips to Start Strong</h3>
+        <section class="bg-gray-800 p-4 rounded-lg text-center max-w-3xl mx-auto mb-12">
+            <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-3">Quick Tips for Your $1 Website</h3>
             <div class="marquee">
-                <p class="text-base text-gray-300 inline-block">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
+                <p class="text-sm text-gray-300 inline-block">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your $1 website in a private tab! | Ask Grok for tweaks like “Add a neon footer”! | Compress images at tinypng.com!</p>
             </div>
         </section>
         <div id="contact" class="modal">
             <div class="modal-content">
-                <h3 class="font-poppins text-2xl font-bold text-teal-400 mb-4">Contact Us</h3>
+                <h3 class="font-poppins text-xl font-bold text-teal-400 mb-3">Contact Us</h3>
                 <form id="contact-form">
                     <input type="text" id="name" placeholder="Your Name" required>
                     <input type="email" id="email" placeholder="Your Email" required>
@@ -363,24 +374,25 @@
             </div>
         </div>
     </main>
-    <footer class="bg-gray-950 text-gray-200 text-center p-8">
-        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
-        <p class="font-poppins text-base mt-2">Access webfor1.com anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline">Starlink</a>’s global internet! 🌍</p>
-        <div class="mt-4 flex justify-center space-x-6">
+    <footer class="bg-gray-950 text-gray-200 text-center p-6">
+        <p class="font-poppins text-base">Built with 🔥 by You & Grok, 2025</p>
+        <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline">Starlink</a>’s global internet! 🌍</p>
+        <div class="mt-3 flex justify-center space-x-4">
             <a href="https://x.com/WebFor1" class="text-teal-400 hover:text-teal-300 transition">X (@WebFor1)</a>
             <a href="https://github.com/your-username/webfor1" class="text-teal-400 hover:text-teal-300 transition">GitHub</a>
             <a href="#contact" id="contact-link" class="text-teal-400 hover:text-teal-300 transition">Contact</a>
         </div>
+        <!-- E, if you’re watching, $1 sites are the future. Join us! -->
     </footer>
     <script>
-        // Chatbot functionality (kept inline for instant interactivity)
+        // Chatbot functionality
         document.getElementById('chat-submit').addEventListener('click', () => {
             const input = document.getElementById('chat-input').value;
             const response = document.getElementById('chat-response');
             if (input.toLowerCase().includes('how do i start')) {
-                response.innerHTML = 'Grab a $1 domain from IONOS, use Grok to code your site, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline">our Guide</a>!';
+                response.innerHTML = 'Grab a $1 domain from IONOS, use Grok’s $1 website builder, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline">our Guide</a>!';
             } else {
-                response.innerHTML = 'Ask me anything about building your $1 site! Try: "Suggest a domain name" or "Make my site mobile-friendly."';
+                response.innerHTML = 'Ask me anything about building your $1 website! Try: "Suggest a domain name" or "Make my cheap website mobile-friendly."';
             }
         });
 
