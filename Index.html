@@ -36,12 +36,10 @@
             color: #2dd4bf;
         }
         .hero-section {
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: relative; /* Changed from fixed to relative */
             width: 100%;
             min-height: 50vh;
-            z-index: -1;
+            z-index: 1; /* Adjusted z-index */
         }
         .hero-media {
             width: 100%;
@@ -80,6 +78,50 @@
             transform: scale(1.05);
             opacity: 0.9;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #1a2332;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #2dd4bf;
+            max-width: 90%;
+            width: 500px;
+            box-sizing: border-box;
+        }
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: #2c3e50;
+            color: #e5e7eb;
+            border: 1px solid #2dd4bf;
+            border-radius: 4px;
+        }
+        .tip-panel {
+            display: none;
+            margin-top: 0.5rem;
+        }
+        .tip-button {
+            cursor: pointer;
+            color: #2dd4bf;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        .tip-button:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             .hero-section {
                 min-height: 30vh;
@@ -99,6 +141,9 @@
             .cta-button {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
+            }
+            .modal-content {
+                width: 95%;
             }
         }
         #particles {
@@ -179,14 +224,16 @@
             font-size: 0.75rem;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
         link.onload = () => console.log('Tailwind loaded');
+        link.onerror = () => console.error('Failed to load Tailwind CSS');
         document.head.appendChild(link);
     </script>
-    <script defer src="js/main.js"></script>
+    <script defer src="js/main.js" onerror="console.error('Failed to load main.js')"></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -197,18 +244,17 @@
             "@type": "SearchAction",
             "target": "https://webfor1.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "$1 Web Revolution",
+            "url": "https://webfor1.com",
+            "logo": "https://webfor1.netlify.app/images/hero.jpg",
+            "sameAs": [
+                "https://x.com/WebFor1",
+                "https://github.com/your-username/webfor1"
+            ]
         }
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "$1 Web Revolution",
-        "url": "https://webfor1.com",
-        "logo": "https://webfor1.netlify.app/images/hero.jpg",
-        "sameAs": [
-            "https://x.com/WebFor1",
-            "https://github.com/your-username/webfor1"
-        ]
     }
     </script>
 </head>
@@ -216,7 +262,7 @@
     <div class="progress-bar" id="progress-bar"></div>
     <section id="hero" class="hero-section">
         <canvas id="particles"></canvas>
-        <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="$1 website builder hero image for Web Revolution" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
+        <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
     </section>
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-4 flex justify-between items-center">
@@ -244,7 +290,7 @@
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-8 md:py-12 flex-grow" style="padding-top: 20vh;">
+    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <div class="hero-overlay">
             <h2 class="font-poppins text-3xl md:text-6xl font-extrabold text-teal-400 mb-4">Launch Your $1 Website!</h2>
             <p class="text-base md:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">Think a pro website costs a fortune? Hell no! Our $1 website builder, powered by Grok’s AI, a cheap IONOS domain, and free GitHub/Netlify hosting, lets you launch a slick site in hours—no coding needed. Join the $1 Web Revolution and conquer the cosmos!</p>
@@ -291,7 +337,7 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <img src="images/feature1.jpg" srcset="images/feature1-mobile.jpg 300w, images/feature1.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder domain purchase screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
+                    <img src="images/feature1.jpg" srcset="images/feature1-mobile.jpg 300w, images/feature1.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of IONOS domain purchase interface for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180 Forma de onda: Creado con IA, puede contener imprecisiones180" loading="lazy" aria-label="$1 website builder IONOS domain interface">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                     </h3>
@@ -305,7 +351,7 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <img src="images/feature2.jpg" srcset="images/feature2-mobile.jpg 300w, images/feature2.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder coding setup screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
+                    <img src="images/feature2.jpg" srcset="images/feature2-mobile.jpg 300w, images/feature2.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of GitHub setup for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                     </h3>
@@ -319,7 +365,7 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <img src="images/feature3.jpg" srcset="images/feature3-mobile.jpg 300w, images/feature3.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="$1 website builder launch screenshot" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
+                    <img src="images/feature3.jpg" srcset="images/feature3-mobile.jpg 300w, images/feature3.jpg 600w" sizes="(max-width: 768px) 300px, 600px" alt="Screenshot of Netlify deployment for $1 website builder" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                     </h3>
@@ -390,12 +436,34 @@
         <!-- E, if you’re watching, $1 sites are the future. Join us! -->
     </footer>
     <script>
+        // Initialize particles.js
+        particlesJS('particles', {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: '#2dd4bf' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#2dd4bf', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            }
+        });
+
         // Chatbot functionality
         document.getElementById('chat-submit').addEventListener('click', () => {
-            const input = document.getElementById('chat-input').value;
+            const input = document.getElementById('chat-input').value.toLowerCase();
             const response = document.getElementById('chat-response');
-            if (input.toLowerCase().includes('how do i start')) {
+            if (input.includes('how do i start')) {
                 response.innerHTML = 'Grab a $1 domain from IONOS, use Grok’s $1 website builder, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline">our Guide</a>!';
+            } else if (input.includes('domain')) {
+                response.innerHTML = 'Get a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline">IONOS</a>. Check spam for the ICANN verification email!';
+            } else if (input.includes('mobile')) {
+                response.innerHTML = 'I can make your site mobile-friendly! Try asking: “Add responsive design to my $1 website.” See the <a href="/guide.html" class="text-teal-400 hover:underline">Guide</a>.';
             } else {
                 response.innerHTML = 'Ask me anything about building your $1 website! Try: "Suggest a domain name" or "Make my cheap website mobile-friendly."';
             }
@@ -434,6 +502,14 @@
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (winScroll / height) * 100;
             document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Tip Panel Toggle
+        document.querySelectorAll('.tip-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = button.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
         });
 
         // Marquee Animation Control
