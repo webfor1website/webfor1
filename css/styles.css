@@ -3,132 +3,110 @@
     overflow: hidden;
     background: #2c3e50;
     border: 2px solid #2dd4bf;
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 0;
-    margin-top: 1rem;
-    transition: max-height 0.5s ease, padding 0.5s ease;
+    margin-top: 0.5rem;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 .tip-panel.active {
-    max-height: 200px;
-    padding: 1rem;
+    max-height: 120px;
+    padding: 0.5rem;
 }
 .tip-button {
     background: #2dd4bf;
     color: #0a0e1a;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 4px;
     font-weight: 600;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     cursor: pointer;
 }
 .feature-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 0.5rem;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 0.4rem;
     fill: #2dd4bf;
-    transition: transform 0.5s ease, filter 0.3s ease;
 }
 .feature-card:hover .feature-icon {
-    transform: rotate(360deg);
-    filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.7));
+    transform: scale(1.1);
 }
 .feature-card:hover {
-    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.5);
+    box-shadow: 0 3px 8px rgba(45, 212, 191, 0.3);
 }
 .hero-card:hover {
-    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.5);
+    box-shadow: 0 3px 8px rgba(45, 212, 191, 0.3);
 }
 .highlight {
     background: #2dd4bf;
     color: #0a0e1a;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-weight: 600;
 }
 .tip-box {
     background: #2c3e50;
-    border-left: 4px solid #2dd4bf;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
+    border-left: 3px solid #2dd4bf;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
 }
 .sticky-cta {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     z-index: 100;
-    animation: pulse 2s ease-in-out infinite;
 }
-.sticky-cta::before {
-    content: '✨';
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.sticky-cta:hover::before {
-    opacity: 1;
-    transform: scale(1.2);
+.sticky-cta:hover {
+    transform: scale(1.05);
 }
 .header-pulse:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 0 15px rgba(45, 212, 191, 0.5);
+    box-shadow: 0 0 8px rgba(45, 212, 191, 0.3);
 }
-.testimonial {
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
+.x-post {
+    background: #2c3e50;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
 }
-.testimonial:hover {
+.x-post:hover {
     transform: scale(1.02);
+    box-shadow: 0 2px 4px rgba(45, 212, 191, 0.3);
 }
-.testimonial:nth-child(1) { animation-delay: 0.2s; }
-.testimonial:nth-child(2) { animation-delay: 0.4s; }
-.testimonial:nth-child(3) { animation-delay: 0.6s; }
 .marquee {
     border: 1px solid #2dd4bf;
-    border-radius: 8px;
-    padding: 0.5rem;
-    animation: marquee 10s linear infinite;
+    border-radius: 6px;
+    padding: 0.4rem;
+    animation: marquee 8s linear infinite;
 }
 .marquee:not(.in-view) {
     animation-play-state: paused;
 }
-#testimonials {
-    clear: both;
-    position: relative;
-    margin-top: 2rem;
-}
-.x-feed {
-    background: #1a2332;
-    border: 2px solid #2dd4bf;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-.x-post {
-    background: #2c3e50;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.x-post:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(45, 212, 191, 0.5);
-}
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
 @keyframes marquee {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #1a2332;
+    padding: 0.75rem;
+    border-radius: 6px;
+    max-width: 90%;
+}
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+    }
 }
