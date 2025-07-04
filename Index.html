@@ -23,7 +23,6 @@
         h1, h2, h3 {
             color: #2dd4bf;
         }
-        /* Critical CSS for above-the-fold content */
         .hero-section {
             position: relative;
             min-height: 60vh;
@@ -90,7 +89,6 @@
                 font-size: 2.5rem;
             }
         }
-        /* Remaining styles for below-the-fold content */
         #particles {
             position: absolute;
             top: 0;
@@ -325,7 +323,6 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-        /* Chatbot styles */
         .chatbot {
             position: fixed;
             bottom: 80px;
@@ -351,7 +348,6 @@
         }
     </style>
     <script>
-        // Defer Tailwind CSS
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
@@ -391,8 +387,9 @@
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
             <picture>
+                <source media="(max-width: 768px)" srcset="/images/hero-mobile.jpg" sizes="412px">
                 <source src="/videos/hero.mp4" type="video/mp4">
-                <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-media" loading="lazy" aria-label="Hero image showcasing $1 Web Revolution">
+                <img src="/images/hero.jpg" alt="$1 Web Revolution hero image" class="hero-media" loading="lazy" sizes="412px" aria-label="Hero image showcasing $1 Web Revolution">
             </picture>
             <div class="hero-overlay">
                 <h2 class="font-poppins text-4xl md:text-7xl font-extrabold text-teal-400 mb-6 hero-text">
@@ -444,7 +441,6 @@
                 <li><strong>Instant Coding</strong>: I generate HTML, CSS, and JavaScript tailored to your vision.</li>
                 <li><strong>Custom Vibes</strong>: Request colors, fonts, or layouts (e.g., “Make my site cyberpunk”).</li>
                 <li><strong>Debugging</strong>: Hit a snag? I’ll fix DNS errors, broken links, or mobile issues in a flash.</li>
-           toxicology: A branch of science that deals with poisons and their effects.
             </ul>
             <div class="tip-box">
                 <p><strong>Pro Tip</strong>: Try prompts like “Add a video background” or “Create a one-page portfolio.” Save our chats to track your ideas!</p>
@@ -454,7 +450,10 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" aria-label="IONOS domain purchase interface" />
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/images/feature1-mobile.jpg" sizes="300px">
+                        <img src="/images/feature1.jpg" alt="Domain purchase screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" sizes="300px" aria-label="IONOS domain purchase interface">
+                    </picture>
                     <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                         <a href="/about.html" class="hover:text-teal-300">Why $1 Domains?</a>
                     </h3>
@@ -468,7 +467,10 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" aria-label="GitHub repository setup" />
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/images/feature2-mobile.jpg" sizes="300px">
+                        <img src="/images/feature2.jpg" alt="Coding setup screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" sizes="300px" aria-label="GitHub repository setup">
+                    </picture>
                     <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                         <a href="/issues.html" class="hover:text-teal-300">Overcome Challenges</a>
                     </h3>
@@ -482,7 +484,10 @@
             <div class="feature-card">
                 <div class="feature-card-front">
                     <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" aria-label="Netlify deployment interface" />
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="/images/feature3-mobile.jpg" sizes="300px">
+                        <img src="/images/feature3.jpg" alt="Website launch screenshot" class="w-full h-auto rounded-lg mb-4" loading="lazy" sizes="300px" aria-label="Netlify deployment interface">
+                    </picture>
                     <h3 class="font-poppins text-lg md:text-xl font-bold text-teal-400 mb-3">
                         <a href="/guide.html" class="hover:text-teal-300">Step-by-Step Guide</a>
                     </h3>
