@@ -30,6 +30,7 @@
             position: relative;
             overflow-x: hidden;
             box-sizing: border-box;
+            margin: 0;
         }
         h1, h2, h3 {
             color: #2dd4bf;
@@ -41,12 +42,12 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-bottom: 1.5rem;
-            z-index: 1;
+            z-index: 0;
         }
         .hero-media {
             width: 100%;
             height: auto;
+            max-height: 40vh;
             object-fit: cover;
             position: absolute;
             top: 0;
@@ -72,8 +73,6 @@
             font-weight: 600;
             transition: transform 0.3s ease, opacity 0.3s ease;
             box-shadow: 0 0 8px rgba(45, 212, 191, 0.4);
-            position: relative;
-            overflow: hidden;
             display: inline-block;
         }
         .cta-button:hover {
@@ -84,6 +83,9 @@
             .hero-section {
                 min-height: 30vh;
                 padding: 0.5rem;
+            }
+            .hero-media {
+                max-height: 30vh;
             }
             .hero-overlay {
                 padding: 0.75rem;
@@ -116,6 +118,7 @@
             z-index: 1;
             min-height: 120px;
             box-sizing: border-box;
+            position: relative;
         }
         .feature-card {
             background: #1a2332;
@@ -127,6 +130,7 @@
             width: 100%;
             max-width: 280px;
             box-sizing: border-box;
+            position: relative;
         }
         .feature-card img {
             width: 100%;
@@ -235,7 +239,7 @@
             </ul>
         </div>
     </header>
-    <main class="container mx-auto py-8 md:py-12 flex-grow">
+    <main class="container mx-auto py-8 md:py-12 flex-grow" style="margin-top: 40vh;">
         <section id="hero" class="hero-section">
             <canvas id="particles"></canvas>
             <img src="images/hero.jpg" srcset="images/hero-mobile.jpg 412w, images/hero.jpg 1080w" sizes="(max-width: 768px) 412px, 1080px" alt="$1 website builder hero image for Web Revolution" class="hero-media" width="412" height="275" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image">
