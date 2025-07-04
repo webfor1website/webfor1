@@ -346,9 +346,15 @@
             <a href="https://neuralink.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Neuralink">Neuralink</a>
         </div>
         <div class="visit-counter">
-            <p>Visitors: <div id="sfc5p5c7n4dulkfuex5lqx8wjsbz93myh3z"></div>
-            <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=5p5c7n4dulkfuex5lqx8wjsbz93myh3z&down=async" async></script>
-            <noscript><a href="https://www.freecounterstat.com" title="website counter widget"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=5p5c7n4dulkfuex5lqx8wjsbz93myh3z" border="0" title="website counter widget" alt="website counter widget"></a></noscript></p>
+            <p>Visitors: <img src="https://c.statcounter.com/12345678/0/2dd4bf/1/" alt="Website visitor counter" aria-label="Website visitor count"></p>
+            <script type="text/javascript">
+                var sc_project=12345678; 
+                var sc_invisible=0; 
+                var sc_security="2dd4bf"; 
+                var scJsHost=(("https:" == document.location.protocol) ? "https://secure." : "http://www.");
+                document.write("<script type='text/javascript' src='" + scJsHost + "statcounter.com/counter/counter.js'></" + "script>");
+            </script>
+            <noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12345678/0/2dd4bf/1/" alt="Web Analytics" aria-label="Website visitor count"></a></div></noscript>
         </div>
         <!-- Empowering the world, one $1 site at a time! -->
     </footer>
@@ -437,6 +443,13 @@
                     console.log(`Clicked link: ${link.href}`);
                 });
             });
+            // Debug counter
+            const counterImage = document.querySelector('.visit-counter img');
+            if (counterImage && (!counterImage.complete || counterImage.naturalWidth === 0)) {
+                console.error('Counter image failed to load. Check Statcounter URL or service status.');
+            } else {
+                console.log('Counter image loaded successfully.');
+            }
         });
     </script>
 </body>
