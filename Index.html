@@ -13,7 +13,7 @@
     <meta name="easter-egg" content="Elon, let’s empower the world with $1 sites via Starlink, Tesla, xAI, and Neuralink!">
     <meta property="og:title" content="$1 Web Revolution - Create Your Professional Site">
     <meta property="og:description" content="Launch a stunning website for $1 with Grok’s AI, IONOS, GitHub, and Netlify. Powered by Starlink, Tesla, xAI, and Neuralink, go live in hours!">
-    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.webp?v=4">
+    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.jpg?v=4">
     <meta property="og:url" content="https://webfor1.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@WebForOne">
@@ -252,7 +252,7 @@
             "@type": "Organization",
             "name": "$1 Web Revolution",
             "url": "https://webfor1.com",
-            "logo": "https://webfor1.netlify.app/images/hero.webp?v=4",
+            "logo": "https://webfor1.netlify.app/images/hero.jpg?v=4",
             "sameAs": [
                 "https://x.com/WebForOne",
                 "https://github.com/webfor1",
@@ -297,7 +297,7 @@
         <canvas id="particles"></canvas>
         <picture>
             <source srcset="images/hero.webp?v=4" type="image/webp">
-            <img src="images/fallback.jpg?v=4" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="lazy" aria-label="Professional $1 website builder hero image" onerror="this.onerror=null; this.src='images/fallback.jpg?v=4'; this.parentElement.classList.add('hero-fallback'); console.error('Hero image failed to load, using fallback.');">
+            <img src="images/hero.jpg?v=4" alt="Hero image showcasing $1 website builder with Grok AI, IONOS, GitHub, and Netlify" class="hero-media" width="1080" height="720" fetchpriority="high" loading="lazy" aria-label="Professional $1 website builder hero image" onerror="this.onerror=null; this.src='images/fallback.jpg?v=4'; this.parentElement.classList.add('hero-fallback'); console.error('Hero image failed to load, using fallback.');">
         </picture>
     </section>
     <main class="container mx-auto py-8 md:py-12 flex-grow" role="main">
@@ -516,9 +516,9 @@
         window.addEventListener('load', () => {
             const heroImage = document.querySelector('.hero-media');
             if (!heroImage.complete || heroImage.naturalWidth === 0) {
-                console.error('Hero image (images/hero.webp?v=4) failed to load. Check: 1) File exists in images/, 2) Correct filename/extension (hero.webp), 3) GitHub push, 4) Netlify deploy logs, 5) Image format (WebP, <100 KiB). URL: https://webfor1.netlify.app/images/hero.webp?v=4');
+                console.error('Hero image (images/hero.jpg?v=4) failed to load. Check: 1) File exists in images/, 2) Correct filename/extension (hero.jpg, not Hero.jpg or hero.png), 3) GitHub push, 4) Netlify deploy logs, 5) Image format (JPEG, <100 KiB). URL: https://webfor1.netlify.app/images/hero.jpg?v=4');
             } else {
-                console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.webp?v=4');
+                console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.jpg?v=4');
                 const rect = heroImage.getBoundingClientRect();
                 if (rect.right < window.innerWidth - 1) {
                     console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check .hero-media styles.');
