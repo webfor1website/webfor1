@@ -451,18 +451,62 @@
         }).then(() => console.log('tsParticles loaded')).catch(err => console.error('tsParticles error:', err));
 
         // Chatbot functionality
+        let lastQuery = '';
         document.getElementById('chat-submit').addEventListener('click', () => {
-            const input = document.getElementById('chat-input').value.toLowerCase();
+            const input = document.getElementById('chat-input').value.trim().toLowerCase();
             const response = document.getElementById('chat-response');
-            if (input.includes('how do i start')) {
-                response.innerHTML = 'Grab a $1 domain from IONOS, use Grok’s $1 website builder, and host free on Netlify. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">our Guide</a>!';
-            } else if (input.includes('domain')) {
-                response.innerHTML = 'Get a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Check spam for the ICANN verification email!';
-            } else if (input.includes('mobile')) {
-                response.innerHTML = 'I can make your site mobile-friendly! Try asking: “Add responsive design to my $1 website.” See the <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>.';
-            } else {
-                response.innerHTML = 'Ask me anything about building your $1 website! Try: "Suggest a domain name" or "Make my website mobile-friendly."';
+            
+            if (!input) {
+                response.innerHTML = 'Hey, give me something to work with! Ask about your $1 website, like “How do I add a neon footer?”';
+                return;
             }
+
+            // Show loading state
+            response.innerHTML = 'Grok is thinking...';
+            
+            // Simulate processing delay (mimics AI response time)
+            setTimeout(() => {
+                let answer = '';
+                const isFollowUp = input.includes('more') || input.includes('follow up') || input.includes('tell me more');
+
+                // Handle follow-up questions based on last query
+                if (isFollowUp && lastQuery) {
+                    if (lastQuery.includes('start')) {
+                        answer = 'Alright, you want more on starting your $1 website? After grabbing that IONOS domain, push your site files to a GitHub repo and link it to Netlify for free hosting. Need help with the setup? Try “Show me GitHub steps”!';
+                    } else if (lastQuery.includes('domain')) {
+                        answer = 'More domain tips? Choose a short, catchy name like yourname.online. After buying from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, set up DNS in Netlify’s dashboard. Ask “How do I set DNS?” for specifics!';
+                    } else if (lastQuery.includes('mobile')) {
+                        answer = 'Want more mobile-friendly tricks? Add meta viewport tags and use Tailwind’s responsive classes like `sm:`, `md:`. I can generate a mobile-first CSS snippet—just say “Give me mobile CSS”!';
+                    } else {
+                        answer = 'Not sure what you’re following up on! Try a specific question like “How do I make my $1 website faster?”';
+                    }
+                } else {
+                    // Handle new questions
+                    if (input.includes('how do i start') || input.includes('build a website')) {
+                        answer = 'Launch your $1 website like a pro: snag a domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a> for a buck, use my AI to code your site (just tell me your vibe, like “neon teal portfolio”), and host free on Netlify via GitHub. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">our Guide</a> for steps!';
+                    } else if (input.includes('domain')) {
+                        answer = 'Get a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Check your spam for the ICANN verification email—it’s your ticket to going live! Need a cool name? Try “yourname.online” or ask me for suggestions!';
+                    } else if (input.includes('mobile')) {
+                        answer = 'Making your $1 website mobile-friendly? I’ll whip up responsive HTML/CSS for you. Try asking: “Add responsive design to my site.” Want a quick tip? Use `meta viewport` and Tailwind’s `sm:`, `md:` classes. See <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
+                    } else if (input.includes('design') || input.includes('tweak') || input.includes('style')) {
+                        answer = 'Want your $1 website to pop? Tell me your vibe, like “Add a neon footer” or “Make it futuristic with teal #2dd4bf.” I’ll generate CSS or HTML tweaks. For now, try compressing images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> for faster load times!';
+                    } else if (input.includes('host') || input.includes('netlify') || input.includes('github')) {
+                        answer = 'Host your $1 website free! Push your code to a GitHub repo, then link it to Netlify for instant deployment. No server fees, just vibes. Need setup help? Ask “How do I connect GitHub to Netlify?” or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
+                    } else if (input.includes('debug') || input.includes('error') || input.includes('fix')) {
+                        answer = 'Got a bug on your $1 website? Tell me the issue, like “My page is blank” or “DNS error.” I’ll debug like a Starlink satellite—fast and precise. For now, check Netlify’s Deploy logs or ask for specific fixes!';
+                    } else if (input.includes('image') || input.includes('compress')) {
+                        answer = 'Images slowing your $1 website? Compress them at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> to keep it snappy. Want me to generate an image placeholder? Just say “Add a hero image”!';
+                    } else {
+                        answer = 'Hmm, that’s a spicy question! Try something like “How do I start my $1 website?” or “Add a glowing button to my site.” I’m here to code, debug, or vibe with your $1 Web Revolution!';
+                    }
+                }
+
+                // Store the current query for context
+                lastQuery = input;
+
+                // Display the response with a witty flair
+                response.innerHTML = `<span class="font-poppins">Grok says:</span> ${answer}`;
+            }, 1000); // 1-second delay for realism
         });
 
         // Menu toggle
