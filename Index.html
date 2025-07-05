@@ -71,8 +71,7 @@
             }
         }
         .hero-media {
-            width: 100vw;
-            max-width: 100%;
+            width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center;
@@ -82,6 +81,7 @@
             z-index: 0;
             aspect-ratio: 1080 / 720;
             opacity: 1;
+            transform: scaleX(1.1); /* Stretch 10% horizontally */
         }
         img {
             max-width: 100%;
@@ -133,6 +133,7 @@
         @media (max-width: 768px) {
             .hero-media {
                 aspect-ratio: 412 / 275;
+                transform: scaleX(1.1); /* Stretch 10% horizontally on mobile */
             }
             .hero-overlay {
                 padding: 0.75rem;
@@ -455,10 +456,11 @@
                 console.error('Hero image (images/hero.jpg?v=4) failed to load. Check: 1) File exists in images/, 2) Correct filename/extension (hero.jpg, not Hero.jpg or hero.png), 3) GitHub push, 4) Netlify deploy logs, 5) Image format (JPEG/WebP, <100 KiB). URL: https://webfor1.netlify.app/images/hero.jpg?v=4');
             } else {
                 console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.jpg?v=4');
-                // Verify no white space
                 const rect = heroImage.getBoundingClientRect();
-                if (rect.right < window.innerWidth) {
-                    console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px');
+                if (rect.right < window.innerWidth - 1) {
+                    console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check transform: scaleX(1.1).');
+                } else {
+                    console.log('Hero image spans full viewport width. No white sliver detected.');
                 }
             }
             const featureImages = document.querySelectorAll('.feature-card img');
