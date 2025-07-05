@@ -58,28 +58,29 @@
         .hero-section {
             position: relative;
             width: 100%;
-            min-height: 100vh; /* Use min-height for flexibility */
+            min-height: 100vh;
             z-index: 1;
             background: #0a0e1a;
             margin-top: 80px;
-            overflow: hidden; /* Ensure no overflow cropping */
+            overflow: hidden;
         }
         @media (max-width: 768px) {
             .hero-section {
                 margin-top: 64px;
-                min-height: 60vh; /* Adjusted for mobile */
+                min-height: 60vh;
             }
         }
         .hero-media {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-prevent: center;
+            object-position: center;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
             opacity: 1;
+            transform: scaleX(1.05); /* Stretch 5% horizontally to cover right white strip */
         }
         img {
             max-width: 100%;
@@ -132,6 +133,7 @@
             .hero-media {
                 object-fit: cover;
                 object-position: center;
+                transform: scaleX(1.05); /* Maintain 5% stretch on mobile */
             }
             .hero-overlay {
                 padding: 0.75rem;
@@ -148,7 +150,7 @@
         .tip-button { cursor: pointer; color: #2dd4bf; font-weight: 600; margin-top: 0.5rem; display: inline-block; }
         .tip-button:hover { text-decoration: underline; }
         #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-        .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 0 8px rgba(45, 212, 191, 0.2); z-index: 1; min-height: 120px; box-sizing: border-box; position: relative; }
+        .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0px 0px 8px rgba(45, 212, 191, 0.2); z-index: 1; min-height: 120px; box-sizing: border-box; position: relative; }
         .feature-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1rem; z-index: 1; min-height: 350px; width: 100%; max-width: 280px; box-sizing: border-box; position: relative; }
         .feature-card img { width: 100%; height: 180px; object-fit: contain; border-radius: 6px; margin-bottom: 0.75rem; }
         .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; box-shadow: 0 0 8px rgba(45, 212, 191, 0.7); }
@@ -191,7 +193,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <div class="progress-bar" id="progress-bar"></div>
-    <header class="bg-gray-950 shadow-2xl fixed top-0 z-20 w-full">
+    <header class="bg-gray-950 shadow-2HASE2xl fixed top-0 z-20 w-full">
         <nav class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="font-poppins text-3xl md:text-4xl font-extrabold text-teal-400">$1 Web Revolution</h1>
             <div class="md:hidden">
