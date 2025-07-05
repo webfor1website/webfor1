@@ -417,7 +417,6 @@
         </div>
         <div class="visit-counter">
             <p>Visitors: <img src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Website visitor counter" aria-label="Website visitor count"></p>
-            <!-- Default Statcounter code for WebFor1 https://webfor1.com -->
             <script type="text/javascript">
                 var sc_project=13148562; 
                 var sc_invisible=0; 
@@ -427,7 +426,6 @@
                 "statcounter.com/counter/counter.js'></"+"script>");
             </script>
             <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-            <!-- End of Statcounter Code -->
         </div>
         <!-- Empowering the world, one $1 site at a time! -->
     </footer>
@@ -451,12 +449,13 @@
         }).then(() => console.log('tsParticles loaded')).catch(err => console.error('tsParticles error:', err));
 
         // Chatbot functionality
+        let lastQuery = '';
         document.getElementById('chat-submit').addEventListener('click', () => {
             const input = document.getElementById('chat-input').value.trim().toLowerCase();
             const response = document.getElementById('chat-response');
 
             if (!input) {
-                response.innerHTML = 'Yo, give me something to chew on! Ask about your $1 website, like “How do I start?” or “Add a neon footer!”';
+                response.innerHTML = 'Yo, Wolverine, give me something to work with! Ask about your $1 website, like “How do I start?” or “Fix my site!”';
                 return;
             }
 
@@ -464,25 +463,56 @@
 
             setTimeout(() => {
                 let answer = '';
-                if (input.includes('start') || input.includes('build a website')) {
-                    answer = 'Ready to join the $1 Web Revolution? Grab a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, tell me your vibe (like “neon teal blog”), and I’ll code it. Host free on Netlify via GitHub. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for the full scoop!';
-                } else if (input.includes('domain')) {
-                    answer = 'Snag a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Check your spam for the ICANN verification email—it’s your golden ticket! Want a cool name? Try “yourname.online” or ask me for more ideas!';
-                } else if (input.includes('mobile') || input.includes('responsive')) {
-                    answer = 'Want your $1 website to shine on phones? I’ll whip up some responsive CSS with Tailwind’s `sm:`, `md:` classes. Add a meta viewport tag: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. Try asking “Make my site mobile-friendly” or see <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
-                } else if (input.includes('neon') || input.includes('footer') || input.includes('design')) {
-                    answer = 'Craving that neon #2dd4bf glow? I can code a footer with CSS like `box-shadow: 0 0 8px #2dd4bf`. Tell me your vibe, like “Make it futuristic!” or “Add a glowing button.” For now, compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> for speed!';
-                } else if (input.includes('error') || input.includes('fix') || input.includes('blank page')) {
-                    answer = 'Blank page blues? Check Netlify’s Deploy logs for errors. Common fixes: ensure your GitHub repo has `index.html`, verify DNS settings in IONOS, or clear your browser cache. Tell me the error, like “DNS issue,” and I’ll debug like a Starlink satellite! See <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues page">Issues & Fixes</a>.';
-                } else if (input.includes('suggest') || input.includes('domain name')) {
-                    answer = 'Need a dope domain for your $1 website? Try “coolvibe.online”, “neonhustle.com”, or “yourname.shop” for that $1 IONOS deal. Short and snappy wins! Want more? Ask “Give me 5 domain ideas” or check <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>.';
+                const isFollowUp = input.includes('more') || input.includes('details') || input.includes('follow up');
+
+                // Follow-up responses based on last query
+                if (isFollowUp && lastQuery) {
+                    if (lastQuery.includes('start') || lastQuery.includes('build')) {
+                        answer = 'More on your $1 website? After getting that IONOS domain, create a GitHub repo, push your `index.html`, and link it to Netlify. Want me to walk you through GitHub setup? Ask “How do I set up GitHub?”';
+                    } else if (lastQuery.includes('domain')) {
+                        answer = 'Domain deets? After buying from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, go to their DNS settings and point to Netlify’s nameservers. Need DNS help? Say “Guide me on DNS setup.”';
+                    } else if (lastQuery.includes('mobile') || lastQuery.includes('responsive')) {
+                        answer = 'More mobile magic? Use CSS media queries like `@media (max-width: 768px)` for responsive design. I can generate a full CSS snippet—ask “Give me mobile CSS!”';
+                    } else if (lastQuery.includes('neon') || lastQuery.includes('footer') || lastQuery.includes('design')) {
+                        answer = 'Want more neon vibes? Try CSS like `background: #2dd4bf; box-shadow: 0 0 10px #2dd4bf;` for a glowing footer. Need a full design? Ask “Code a neon homepage!”';
+                    } else if (lastQuery.includes('error') || lastQuery.includes('fix') || lastQuery.includes('blank')) {
+                        answer = 'More on fixing errors? Check your `index.html` for typos, ensure images are in `images/`, and verify Netlify’s build settings. Want a specific fix? Tell me the error code or issue!';
+                    } else if (lastQuery.includes('host') || lastQuery.includes('netlify') || lastQuery.includes('github')) {
+                        answer = 'Hosting follow-up? In Netlify, go to “Sites,” link your GitHub repo, and set the public folder to `/`. Need step-by-step? Ask “How do I connect Netlify to GitHub?”';
+                    } else if (lastQuery.includes('image') || lastQuery.includes('compress')) {
+                        answer = 'More image tips? Use <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> for compression. For placeholders, add `<img src="placeholder.jpg" alt="Placeholder">`. Want an image code snippet? Just ask!';
+                    } else if (lastQuery.includes('suggest') || lastQuery.includes('domain name')) {
+                        answer = 'More domain ideas? How about “tealrevolution.online”, “cheapvibe.shop”, or “wolverineweb.com”? Pick one and grab it for $1 at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Need five more? Ask “Give me 5 domain names!”';
+                    } else {
+                        answer = 'Not sure what you’re following up on, champ! Try a specific question like “How do I make my $1 site faster?” or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>.';
+                    }
                 } else {
-                    answer = 'That’s a wild one! I’m Grok, here to spark your $1 Web Revolution. Try asking “How do I start my site?” or “Fix my blank page.” Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for more ideas!';
+                    // New question responses
+                    if (input.includes('start') || input.includes('build a website')) {
+                        answer = 'Launch your $1 website like a boss! Get a domain for a buck at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, use my AI to code a slick site (say “neon teal portfolio”), and host free on Netlify via GitHub. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> to start!';
+                    } else if (input.includes('domain')) {
+                        answer = 'Need a $1 domain? Hit up <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a> and grab one. Don’t miss the ICANN verification email in your spam folder—it’s your ticket to go live! Try “yourname.online” or ask for name ideas!';
+                    } else if (input.includes('mobile') || input.includes('responsive')) {
+                        answer = 'Making your $1 site mobile-friendly? Add `<meta name="viewport" content="width=device-width, initial-scale=1.0">` to your HTML and use Tailwind’s `sm:`, `md:` classes. Want code? Ask “Make my site mobile-friendly!” or see <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>.';
+                    } else if (input.includes('neon') || input.includes('footer') || input.includes('design')) {
+                        answer = 'Let’s make your $1 site pop with neon #2dd4bf vibes! Want a glowing footer? I can code CSS like `box-shadow: 0 0 8px #2dd4bf`. Tell me “Add a futuristic design” or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for tips!';
+                    } else if (input.includes('error') || input.includes('fix') || input.includes('blank page')) {
+                        answer = 'Got a glitch on your $1 site? For blank pages, check Netlify’s Deploy logs, ensure `index.html` is in your GitHub repo, and verify DNS in IONOS. Tell me the issue (e.g., “404 error”) and I’ll fix it faster than a Starlink ping! See <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues page">Issues & Fixes</a>.';
+                    } else if (input.includes('host') || input.includes('netlify') || input.includes('github')) {
+                        answer = 'Host your $1 site for free! Push your code to a GitHub repo, link it to Netlify, and boom—your site’s live. No cash, just vibes. Need help? Ask “Connect GitHub to Netlify” or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
+                    } else if (input.includes('image') || input.includes('compress')) {
+                        answer = 'Slow site? Compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> to keep it snappy. Want a hero image? I can code `<img src="hero.jpg" alt="Cool hero">`. Ask for a snippet or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
+                    } else if (input.includes('suggest') || input.includes('domain name')) {
+                        answer = 'Domain name inspo? Go for “wolverineweb.online”, “tealhustle.com”, or “cheapshot.shop” at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a> for $1. Want more? Ask “Give me 5 domain names!”';
+                    } else {
+                        answer = 'Whoa, that’s a spicy one! I’m Grok, your $1 Web Revolution wingman. Try “How do I start my site?” or “Fix my blank page.” Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for more!';
+                    }
                 }
 
+                lastQuery = input; // Store query for follow-ups
                 response.innerHTML = `<span class="font-poppins">Grok says:</span> ${answer}`;
                 document.getElementById('chat-input').value = ''; // Clear input
-            }, 1000); // 1-second delay for realism
+            }, 1000); // 1-second delay
         });
 
         // Menu toggle
