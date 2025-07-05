@@ -58,30 +58,28 @@
         .hero-section {
             position: relative;
             width: 100%;
-            height: 720px; /* Match hero image height */
+            min-height: 100vh; /* Use min-height for flexibility */
             z-index: 1;
             background: #0a0e1a;
             margin-top: 80px;
-            overflow-x: hidden;
+            overflow: hidden; /* Ensure no overflow cropping */
         }
         @media (max-width: 768px) {
             .hero-section {
                 margin-top: 64px;
-                height: 412px; /* Match mobile aspect ratio 412/275 */
+                min-height: 60vh; /* Adjusted for mobile */
             }
         }
         .hero-media {
             width: 100%;
-            height: 100%; /* Fill container height */
+            height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-prevent: center;
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
-            aspect-ratio: 1080 / 720;
             opacity: 1;
-            transform: scaleX(1.1); /* 10% horizontal stretch */
         }
         img {
             max-width: 100%;
@@ -132,8 +130,8 @@
         }
         @media (max-width: 768px) {
             .hero-media {
-                aspect-ratio: 412 / 275;
-                transform: scaleX(1.1); /* 10% horizontal stretch on mobile */
+                object-fit: cover;
+                object-position: center;
             }
             .hero-overlay {
                 padding: 0.75rem;
@@ -458,16 +456,16 @@
                 console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.jpg?v=4');
                 const rect = heroImage.getBoundingClientRect();
                 if (rect.right < window.innerWidth - 1) {
-                    console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check transform: scaleX(1.1).');
+                    console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check .hero-media styles.');
                 } else {
-                    console.log('Hero image spans full viewport width. No white sliver detected.');
+                    console.log('Hero image spans full viewport width.');
                 }
-                if (rect.height < 720 && window.innerWidth >= 768) {
-                    console.warn('Hero image height is less than 720px. Current height: ' + rect.height + 'px. Check .hero-section height and aspect-ratio.');
-                } else if (rect.height < 412 && window.innerWidth < 768) {
-                    console.warn('Hero image height is less than 412px on mobile. Current height: ' + rect.height + 'px. Check .hero-section height and aspect-ratio.');
+                if (rect.height < window.innerHeight * 0.9 && window.innerWidth >= 768) {
+                    console.warn('Hero image height is less than expected. Current height: ' + rect.height + 'px. Check .hero-section min-height.');
+                } else if (rect.height < window.innerHeight * 0.5 && window.innerWidth < 768) {
+                    console.warn('Hero image height is less than expected on mobile. Current height: ' + rect.height + 'px. Check .hero-section min-height.');
                 } else {
-                    console.log('Hero image spans full vertical height. Desktop: 720px, Mobile: 412px.');
+                    console.log('Hero image spans appropriate vertical height.');
                 }
             }
             const featureImages = document.querySelectorAll('.feature-card img');
