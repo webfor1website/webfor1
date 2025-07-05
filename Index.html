@@ -147,12 +147,28 @@
             }
         }
         .tip-panel { display: none; margin-top: 0.5rem; }
-        .tip-button { cursor: pointer; color: #2dd4bf; font-weight: 600; margin-top: 0.5rem; display: inline-block; }
-        .tip-button:hover { text-decoration: underline; }
+        .tip-button { 
+            cursor: pointer; 
+            background: #2dd4bf; 
+            color: #0a0e1a; 
+            padding: 0.5rem 1rem; 
+            border-radius: 50px; 
+            font-size: 0.875rem; 
+            font-weight: 600; 
+            margin-top: 0.5rem; 
+            display: inline-block; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.4); 
+            font-family: 'Poppins', Arial, Helvetica, sans-serif; 
+        }
+        .tip-button:hover { 
+            transform: scale(1.05); 
+            opacity: 0.9; 
+        }
         #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0px 0px 8px rgba(45, 212, 191, 0.2); z-index: 1; min-height: 120px; box-sizing: border-box; position: relative; }
         .feature-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1rem; z-index: 1; min-height: 350px; width: 100%; max-width: 280px; box-sizing: border-box; position: relative; }
-        .feature-card img { width: 100%; height: 180px; object-fit: contain; border-radius: 6px; margin-bottom: 0.75rem; }
+        .feature-card img { width: 982px; height: 180px; object-fit: contain; border-radius: 6px; margin-bottom: 0.75rem; }
         .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; box-shadow: 0 0 8px rgba(45, 212, 191, 0.7); }
         .chatbot { position: fixed; bottom: 70px; right: 15px; background: #1a2332; border: 2px solid #2dd4bf; border-radius: 6px; padding: 0.75rem; z-index: 50; width: 90%; max-width: 240px; box-sizing: border-box; }
         .chatbot input { width: 100%; padding: 0.4rem; margin-bottom: 0.4rem; background: #2c3e50; color: #e5e7eb; border: 1px solid #2dd4bf; border-radius: 4px; box-sizing: border-box; }
@@ -278,7 +294,7 @@
                         <a href="/about.html" class="hover:text-teal-300" aria-label="Learn why $1 domains are great">Why $1 Domains?</a>
                     </h3>
                     <p class="text-sm text-gray-300">A $1 domain from IONOS gives your website a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline" aria-label="View about page">About</a> page!</p>
-                    <div class="tip-button" aria-label="Show quick tip">Quick Tip</div>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
                     <div class="tip-panel">
                         <p class="text-sm text-gray-300">Pick a short domain like yourname.online. Ask Grok for $1 website builder ideas!</p>
                     </div>
@@ -292,7 +308,7 @@
                         <a href="/issues.html" class="hover:text-teal-300" aria-label="Learn how to overcome challenges">Overcome Challenges</a>
                     </h3>
                     <p class="text-sm text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues and fixes page">Issues & Fixes</a> page keeps your website on track.</p>
-                    <div class="tip-button" aria-label="Show quick tip">Quick Tip</div>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
                     <div class="tip-panel">
                         <p class="text-sm text-gray-300">Check Netlify’s <span class="highlight">Deploys</span> tab if your $1 website fails. Ask Grok: “Why’s my page blank?”</p>
                     </div>
@@ -306,7 +322,7 @@
                         <a href="/guide.html" class="hover:text-teal-300" aria-label="View step-by-step guide">Step-by-Step Guide</a>
                     </h3>
                     <p class="text-sm text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> walks you through domain setup, coding with Grok, and launching your website!</p>
-                    <div class="tip-button" aria-label="Show quick tip">Quick Tip</div>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
                     <div class="tip-panel">
                         <p class="text-sm text-gray-300">Test your $1 website in a private tab. Ask Grok to tweak: “Make my buttons glow!”</p>
                     </div>
