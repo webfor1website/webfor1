@@ -451,61 +451,37 @@
         }).then(() => console.log('tsParticles loaded')).catch(err => console.error('tsParticles error:', err));
 
         // Chatbot functionality
-        let lastQuery = '';
         document.getElementById('chat-submit').addEventListener('click', () => {
             const input = document.getElementById('chat-input').value.trim().toLowerCase();
             const response = document.getElementById('chat-response');
-            
+
             if (!input) {
-                response.innerHTML = 'Hey, give me something to work with! Ask about your $1 website, like “How do I add a neon footer?”';
+                response.innerHTML = 'Yo, give me something to chew on! Ask about your $1 website, like “How do I start?” or “Add a neon footer!”';
                 return;
             }
 
-            // Show loading state
             response.innerHTML = 'Grok is thinking...';
-            
-            // Simulate processing delay (mimics AI response time)
+
             setTimeout(() => {
                 let answer = '';
-                const isFollowUp = input.includes('more') || input.includes('follow up') || input.includes('tell me more');
-
-                // Handle follow-up questions based on last query
-                if (isFollowUp && lastQuery) {
-                    if (lastQuery.includes('start')) {
-                        answer = 'Alright, you want more on starting your $1 website? After grabbing that IONOS domain, push your site files to a GitHub repo and link it to Netlify for free hosting. Need help with the setup? Try “Show me GitHub steps”!';
-                    } else if (lastQuery.includes('domain')) {
-                        answer = 'More domain tips? Choose a short, catchy name like yourname.online. After buying from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, set up DNS in Netlify’s dashboard. Ask “How do I set DNS?” for specifics!';
-                    } else if (lastQuery.includes('mobile')) {
-                        answer = 'Want more mobile-friendly tricks? Add meta viewport tags and use Tailwind’s responsive classes like `sm:`, `md:`. I can generate a mobile-first CSS snippet—just say “Give me mobile CSS”!';
-                    } else {
-                        answer = 'Not sure what you’re following up on! Try a specific question like “How do I make my $1 website faster?”';
-                    }
+                if (input.includes('start') || input.includes('build a website')) {
+                    answer = 'Ready to join the $1 Web Revolution? Grab a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>, tell me your vibe (like “neon teal blog”), and I’ll code it. Host free on Netlify via GitHub. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for the full scoop!';
+                } else if (input.includes('domain')) {
+                    answer = 'Snag a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Check your spam for the ICANN verification email—it’s your golden ticket! Want a cool name? Try “yourname.online” or ask me for more ideas!';
+                } else if (input.includes('mobile') || input.includes('responsive')) {
+                    answer = 'Want your $1 website to shine on phones? I’ll whip up some responsive CSS with Tailwind’s `sm:`, `md:` classes. Add a meta viewport tag: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. Try asking “Make my site mobile-friendly” or see <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
+                } else if (input.includes('neon') || input.includes('footer') || input.includes('design')) {
+                    answer = 'Craving that neon #2dd4bf glow? I can code a footer with CSS like `box-shadow: 0 0 8px #2dd4bf`. Tell me your vibe, like “Make it futuristic!” or “Add a glowing button.” For now, compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> for speed!';
+                } else if (input.includes('error') || input.includes('fix') || input.includes('blank page')) {
+                    answer = 'Blank page blues? Check Netlify’s Deploy logs for errors. Common fixes: ensure your GitHub repo has `index.html`, verify DNS settings in IONOS, or clear your browser cache. Tell me the error, like “DNS issue,” and I’ll debug like a Starlink satellite! See <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues page">Issues & Fixes</a>.';
+                } else if (input.includes('suggest') || input.includes('domain name')) {
+                    answer = 'Need a dope domain for your $1 website? Try “coolvibe.online”, “neonhustle.com”, or “yourname.shop” for that $1 IONOS deal. Short and snappy wins! Want more? Ask “Give me 5 domain ideas” or check <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>.';
                 } else {
-                    // Handle new questions
-                    if (input.includes('how do i start') || input.includes('build a website')) {
-                        answer = 'Launch your $1 website like a pro: snag a domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a> for a buck, use my AI to code your site (just tell me your vibe, like “neon teal portfolio”), and host free on Netlify via GitHub. Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">our Guide</a> for steps!';
-                    } else if (input.includes('domain')) {
-                        answer = 'Get a $1 domain from <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>. Check your spam for the ICANN verification email—it’s your ticket to going live! Need a cool name? Try “yourname.online” or ask me for suggestions!';
-                    } else if (input.includes('mobile')) {
-                        answer = 'Making your $1 website mobile-friendly? I’ll whip up responsive HTML/CSS for you. Try asking: “Add responsive design to my site.” Want a quick tip? Use `meta viewport` and Tailwind’s `sm:`, `md:` classes. See <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
-                    } else if (input.includes('design') || input.includes('tweak') || input.includes('style')) {
-                        answer = 'Want your $1 website to pop? Tell me your vibe, like “Add a neon footer” or “Make it futuristic with teal #2dd4bf.” I’ll generate CSS or HTML tweaks. For now, try compressing images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> for faster load times!';
-                    } else if (input.includes('host') || input.includes('netlify') || input.includes('github')) {
-                        answer = 'Host your $1 website free! Push your code to a GitHub repo, then link it to Netlify for instant deployment. No server fees, just vibes. Need setup help? Ask “How do I connect GitHub to Netlify?” or check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a>!';
-                    } else if (input.includes('debug') || input.includes('error') || input.includes('fix')) {
-                        answer = 'Got a bug on your $1 website? Tell me the issue, like “My page is blank” or “DNS error.” I’ll debug like a Starlink satellite—fast and precise. For now, check Netlify’s Deploy logs or ask for specific fixes!';
-                    } else if (input.includes('image') || input.includes('compress')) {
-                        answer = 'Images slowing your $1 website? Compress them at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Visit TinyPNG">tinypng.com</a> to keep it snappy. Want me to generate an image placeholder? Just say “Add a hero image”!';
-                    } else {
-                        answer = 'Hmm, that’s a spicy question! Try something like “How do I start my $1 website?” or “Add a glowing button to my site.” I’m here to code, debug, or vibe with your $1 Web Revolution!';
-                    }
+                    answer = 'That’s a wild one! I’m Grok, here to spark your $1 Web Revolution. Try asking “How do I start my site?” or “Fix my blank page.” Check <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for more ideas!';
                 }
 
-                // Store the current query for context
-                lastQuery = input;
-
-                // Display the response with a witty flair
                 response.innerHTML = `<span class="font-poppins">Grok says:</span> ${answer}`;
+                document.getElementById('chat-input').value = ''; // Clear input
             }, 1000); // 1-second delay for realism
         });
 
