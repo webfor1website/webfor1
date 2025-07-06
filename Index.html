@@ -21,7 +21,7 @@
     <meta name="easter-egg" content="Elon, let’s empower the world with $1 sites via Starlink, Tesla, xAI, and Neuralink!">
     <meta property="og:title" content="$1 Web Revolution - Build Your Dream Site">
     <meta property="og:description" content="$1 website builder with Grok AI, IONOS domain, and Netlify hosting. Launch a pro site in hours! #1WebRevolution">
-    <meta property="og:image" content="https://webfor1.com/images/hero.jpg?v=4">
+    <meta property="og:image" content="https://webfor1.netlify.app/images/hero.jpg?v=4">
     <meta property="og:url" content="https://webfor1.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@WebForOne">
@@ -31,8 +31,164 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/styles.css?v=4" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
+            color: #e5e7eb;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+            position: relative;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            color: #2dd4bf;
+        }
+        nav h1 {
+            font-size: 1.875rem;
+        }
+        @media (min-width: 768px) {
+            nav h1 {
+                font-size: 2.25rem;
+            }
+        }
+        header {
+            background: rgba(17, 24, 39, 0.9);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 20;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .hero-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            z-index: 1;
+            background: #0a0e1a;
+            margin-top: 80px;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .hero-section {
+                margin-top: 64px;
+                min-height: 60vh;
+            }
+        }
+        .hero-media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 1;
+            transform: scaleX(1.05);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .hero-overlay {
+            background: rgba(10, 14, 26, 0.7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 90%;
+            width: 700px;
+            min-height: 150px;
+            z-index: 2;
+            box-sizing: border-box;
+            margin: 20vh auto 0;
+            text-align: center;
+        }
+        .cta-button {
+            background: #2dd4bf;
+            color: #0a0e1a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.4);
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        @font-face {
+            font-family: 'Poppins';
+            font-display: swap;
+        }
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-content span {
+            display: inline-block;
+            padding-right: 2rem;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @media (max-width: 768px) {
+            .hero-media {
+                object-fit: cover;
+                object-position: center;
+                transform: scaleX(1.05);
+            }
+            .hero-overlay {
+                padding: 0.75rem;
+                width: 95%;
+                min-height: 120px;
+                margin-top: 10vh;
+            }
+            .cta-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+        .tip-panel { display: none; margin-top: 0.5rem; }
+        .tip-button { 
+            cursor: pointer; 
+            background: #2dd4bf; 
+            color: #0a0e1a; 
+            padding: 0.5rem 1rem; 
+            border-radius: 50px; 
+            font-size: 0.875rem; 
+            font-weight: 600; 
+            margin-top: 0.5rem; 
+            display: inline-block; 
+            transition: transform 0.3s ease, opacity 0.3s ease; 
+            box-shadow: 0 0 8px rgba(45, 212, 191, 0.4); 
+            font-family: 'Poppins', Arial, Helvetica, sans-serif; 
+        }
+        .tip-button:hover { 
+            transform: scale(1.05); 
+            opacity: 0.9; 
+        }
+        #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+        .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0px 0px 8px rgba(45, 212, 191, 0.2); z-index: 1; min-height: 120px; box-sizing: border-box; position: relative; }
+        .feature-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 8px; padding: 1rem; z-index: 1; min-height: 350px; width: 100%; max-width: 280px; box-sizing: border-box; position: relative; }
+        .feature-card img { width: 100%; height: 180px; object-fit: contain; border-radius: 6px; margin-bottom: 0.75rem; }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; box-shadow: 0 0 8px rgba(45, 212, 191, 0.7); }
+        .visit-counter { margin-top: 1rem; font-size: 0.875rem; color: #e5e7eb; }
+        .hero-fallback { background-color: #2c3e50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #e5e7eb; font-size: 1rem; }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script defer src="js/main.js?v=4" onerror="console.error('Failed to load main.js')"></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,7 +204,7 @@
             "@type": "Organization",
             "name": "$1 Web Revolution",
             "url": "https://webfor1.com",
-            "logo": "https://webfor1.com/images/hero.jpg?v=4",
+            "logo": "https://webfor1.netlify.app/images/hero.jpg?v=4",
             "sameAs": [
                 "https://x.com/WebForOne",
                 "https://github.com/webfor1",
@@ -60,29 +216,14 @@
         }
     }
     </script>
-    <style>
-        .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 4px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; }
-        .hero-section { position: relative; height: 100vh; background: url('/images/hero.jpg?v=4') no-repeat center/cover, #0a0e1a; }
-        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(10, 14, 26, 0.7); padding: 2rem; border-radius: 12px; max-width: 700px; text-align: center; }
-        #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hero-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3); }
-        @media (prefers-reduced-motion: reduce) {
-            .marquee, .header-pulse, .hero-card:hover, .feature-card:hover, .x-post:hover, .sticky-cta:hover {
-                animation: none;
-                transform: none;
-                box-shadow: none;
-            }
-        }
-    </style>
 </head>
-<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col">
     <div class="progress-bar" id="progress-bar"></div>
     <header class="bg-gray-950 shadow-2xl fixed top-0 z-20 w-full">
         <nav class="container mx-auto p-4 flex justify-between items-center">
-            <h1 class="font-poppins text-3xl md:text-4xl font-extrabold text-teal-400 header-pulse">$1 Web Revolution</h1>
+            <h1 class="font-poppins text-3xl md:text-4xl font-extrabold text-teal-400">$1 Web Revolution</h1>
             <div class="md:hidden">
-                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -107,17 +248,16 @@
     <section id="hero" class="hero-section">
         <canvas id="particles"></canvas>
         <picture>
-            <source srcset="/images/hero.webp?v=4" type="image/webp">
-            <source srcset="/images/hero.jpg?v=4" type="image/jpeg">
-            <img src="/images/fallback.jpg?v=4" alt="$1 website builder hero image with Grok AI, IONOS domain, and Netlify hosting" class="hero-media" loading="eager" aria-label="$1 website builder hero image" onerror="this.src='/images/fallback.jpg?v=4'; console.error('Hero image failed to load.');">
+            <source srcset="images/hero.jpg?v=4" type="image/jpeg">
+            <img src="images/fallback.jpg?v=4" alt="$1 website builder hero image with Grok AI, IONOS domain, and Netlify hosting" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image" onerror="this.onerror=null; this.src='images/fallback.jpg?v=4'; this.parentElement.classList.add('hero-fallback'); console.error('Hero image failed to load, using fallback.');">
         </picture>
+    </section>
+    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <div class="hero-overlay">
-            <h2 class="font-poppins text-3xl md:text-5xl font-extrabold text-teal-400 mb-4">Build Your $1 Website with Grok AI</h2>
+            <h2 class="font-poppins text-3xl md:text-6xl font-extrabold text-teal-400 mb-4">Build Your $1 Website with Grok AI</h2>
             <p class="text-base md:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">With Starlink connecting the world, our $1 website builder, powered by Grok’s AI from xAI, IONOS domains, and free GitHub/Netlify hosting, lets anyone create a pro site in hours—no coding needed. Inspired by Tesla and Neuralink, join the #1WebRevolution to transform lives!</p>
             <a href="/guide.html" class="cta-button font-bold" aria-label="Start building your $1 website">Build Your Cheap Website Now</a>
         </div>
-    </section>
-    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <a href="/guide.html" class="cta-button sticky-cta" aria-label="Start building your $1 website">Build Now</a>
         <section class="max-w-3xl mx-auto mb-12 hero-card">
             <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Why $1 Web Revolution Slays</h3>
@@ -152,17 +292,13 @@
         <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16 max-w-3xl mx-auto pb-8">
             <div class="feature-card">
                 <div class="feature-card-front">
-                    <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
-                    <picture>
-                        <source srcset="/images/feature1.webp?v=4" type="image/webp">
-                        <source srcset="/images/feature1.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load. Check path: /images/feature1.jpg?v=4');">
-                    </picture>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V19h2v.93A8.009 8.009 0 0 1 4.07 13H5v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h.93A8.009 8.009 0 0 1 11 19.93zM12 9H9V7H7v2H5V7H3v2H1v6h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v2h2v-2h2v-6h-2V9h-2V7h-2v2z"/></svg>
+                    <img src="images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load.');">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300" aria-label="Learn why $1 domains are great">Why $1 Domains?</a>
                     </h3>
                     <p class="text-sm text-gray-300">A $1 domain from IONOS gives your website a unique address (e.g., webfor1.com). Learn how Grok makes it pro on our <a href="/about.html" class="text-teal-400 hover:underline" aria-label="View about page">About</a> page!</p>
-                    <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
                     <div class="tip-panel">
                         <p class="text-sm text-gray-300">Pick a short domain like yourname.com. Visit our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for ideas!</p>
                     </div>
@@ -170,17 +306,13 @@
             </div>
             <div class="feature-card">
                 <div class="feature-card-front">
-                    <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
-                    <picture>
-                        <source srcset="/images/feature2.webp?v=4" type="image/webp">
-                        <source srcset="/images/feature2.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load. Check path: /images/feature2.jpg?v=4');">
-                    </picture>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 2.13-.92 4.05-2.39 5.38L12 21l-1.61-6.12A6.5 6.5 0 0 1 3 9.5 A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5S12 5 9.5 5z"/></svg>
+                    <img src="images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load.');">
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300" aria-label="Learn how to overcome challenges">Overcome Challenges</a>
                     </h3>
                     <p class="text-sm text-gray-300">Hit snags like missing emails or DNS errors? Our <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues and fixes page">Issues & Fixes</a> page keeps your website on track.</p>
-                    <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
                     <div class="tip-panel">
                         <p class="text-sm text-gray-300">Check Netlify’s <span class="highlight">Deploys</span> tab if your $1 website fails. Visit our <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="View issues page">Issues & Fixes</a> page!</p>
                     </div>
@@ -188,209 +320,176 @@
             </div>
             <div class="feature-card">
                 <div class="feature-card-front">
-                    <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
-                    <picture>
-                        <source srcset="/images/feature3.webp?v=4" type="image/webp">
-                        <source srcset="/images/feature3.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webaginal input to ensure proper rendering.
-- Added WebP support for images with `<picture>` tags.
-- Updated `og:image` to `https://webfor1.com`.
-- Added `aria-expanded` for menu toggle accessibility.
-- Added `prefers-reduced-motion` for accessibility.
-- Moved inline styles to `styles.css` where possible, keeping hero section styles inline to preserve layout.
-- Added live X search link in the X feed section.
-- Enhanced image error logging for debugging.
-
----
-
-### Updated `about.html`
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHD985QR7Y"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SHD985QR7Y');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="description" content="$1 website builder powered by Grok AI, IONOS domain, and Netlify hosting. Learn how $1 Web Revolution makes pro websites affordable!">
-    <meta name="keywords" content="$1 website builder, Grok AI, IONOS domain, Netlify hosting, cheap website, xAI, Starlink, Tesla, Neuralink, affordable web hosting">
-    <meta name="author" content="You & Grok">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="$1 Web Revolution - About Our $1 Website Builder">
-    <meta property="og:description" content="$1 website builder with Grok AI, IONOS domain, and Netlify hosting. Discover affordable web creation! #1WebRevolution">
-    <meta property="og:image" content="https://webfor1.com/images/about.jpg?v=4">
-    <meta property="og:url" content="https://webfor1.com/about.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@WebForOne">
-    <title>$1 Web Revolution - About Our $1 Website Builder</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    </noscript>
-    <link rel="stylesheet" href="css/styles.css?v=4" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "About $1 Web Revolution",
-        "url": "https://webfor1.com/about.html",
-        "description": "Learn about the $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "$1 Web Revolution",
-            "url": "https://webfor1.com"
-        }
-    }
-    </script>
-</head>
-<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
-    <div class="progress-bar" id="progress-bar"></div>
-    <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
-        <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 header-pulse">$1 Web Revolution</h1>
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+                    <svg class="feature-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h4l-6 6-6-6h4z"/></svg>
+                    <img src="images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment" onerror="console.error('Feature3 image failed to load.');">
+                    <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
+                        <a href="/guide.html" class="hover:text-teal-300" aria-label="View step-by-step guide">Step-by-Step Guide</a>
+                    </h3>
+                    <p class="text-sm text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> walks you through domain setup, coding with Grok, and launching your website!</p>
+                    <div class="tip-button" aria-label="Show quick tip">Click Here</div>
+                    <div class="tip-panel">
+                        <p class="text-sm text-gray-300">Test your $1 website in a private tab. Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for tips!</p>
+                    </div>
+                </div>
             </div>
-            <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
-                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
-                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
-                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
-            <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
-                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
-                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
-                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
-                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
-            </ul>
-        </div>
-    </header>
-    <main class="container mx-auto py-12 md:py-20 flex-grow">
-        <section class="text-center mb-16">
-            <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6">About $1 Website Builder with Grok AI</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Discover how $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting, makes professional websites affordable for everyone. Inspired by xAI, Starlink, and Tesla, we’re transforming lives one $1 site at a time!</p>
         </section>
-        <section class="max-w-4xl mx-auto">
-            <div class="section-card">
-                <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
-                    <picture>
-                        <source srcset="/images/about.webp?v=4" type="image/webp">
-                        <source srcset="/images/about.jpg?v=4" type="image/jpeg">
-                        <img src="/images/about.jpg?v=4" alt="Grok AI coding interface for $1 website builder" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Grok AI coding interface for $1 website" onerror="console.error('About image failed to load. Check path: /images/about.jpg?v=4');">
-                    </picture>
-                </div>
-                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Meet Grok: Your $1 Website Wizard</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">I’m Grok, created by xAI to make web development accessible. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, $1 Web Revolution proves you can build a pro site without coding skills or big budgets.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
-                    <li><strong>AI-Powered Coding</strong>: I generate clean, responsive HTML, CSS, and JavaScript for homepages, blogs, or portfolios.</li>
-                    <li><strong>Customization</strong>: Request a teal #2dd4bf vibe, Poppins font, or layouts like sticky navbars or hero sections.</li>
-                    <li><strong>Troubleshooting</strong>: Stuck on DNS or broken links? I debug fast—check <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</li>
-                    <li><strong>Collaboration</strong>: Tell me “Add a scrolling marquee” or “Make buttons glow,” and I’ll code it.</li>
-                </ul>
-                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
-                <div class="tip-panel">
-                    <p class="text-base text-gray-300">Save our chats to track your vision. Try prompts like “Design a teal portfolio with a sidebar” or “Add a contact form with email alerts.”</p>
-                </div>
+        <section class="max-w-3xl mx-auto mb-12 hero-card" id="testimonials">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">What Creators Say About Our $1 Website Builder</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“I built a portfolio for my art in one day with Grok’s $1 website builder! The cheap domain and free hosting blew my mind!” — Alex, Aspiring Artist</p>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“Grok coded my teal blog in hours. This $1 website builder is the real deal!” — Sam, Tech Blogger</p>
+            <p class="text-sm md:text-base text-gray-300 mb-6">“No coding skills, no problem! Grok made my business site pop for $1!” — Mia, Entrepreneur</p>
+            <div class="tip-box">
+                <p><strong>Pro Tip</strong>: Share your website on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a> with #1WebRevolution to join the crew!</p>
             </div>
-            <div class="section-card">
-                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Why $1 Domains Are Game-Changers</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">A $1 domain from IONOS gives your site a unique address (e.g., yourname.com). Paired with Grok AI and free hosting, it’s the ultimate affordable website solution.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
-                    <li><strong>Affordable Start</strong>: Get a domain for $1 at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>.</li>
-                    <li><strong>Easy Setup</strong>: Use one account to avoid delays. Verify via the <span class="highlight">ICANN link</span> (check spam).</li>
-                    <li><strong>Scalable Future</strong>: Start simple, then add blogs or shops with Grok’s help.</li>
-                    <li><strong>Brand Power</strong>: A custom domain builds trust over generic URLs.</li>
-                </ul>
-                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
-                <div class="tip-panel">
-                    <p class="text-base text-gray-300">Choose a short domain like yourname.com. Ask Grok for ideas like “Suggest domain names for a fitness blog.”</p>
-                </div>
+        </section>
+        <section class="max-w-3xl mx-auto mb-12 hero-card x-feed">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the #1WebRevolution on X</h3>
+            <div class="x-post">
+                <p class="text-sm md:text-base text-gray-300">"Just launched my $1 website with Grok’s AI! #1WebRevolution is !" — @CreatorX</p>
             </div>
-            <div class="section-card">
-                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">How We Built $1 Web Revolution</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Grok’s AI made $1 Web Revolution a reality. Here’s how we did it:</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
-                    <li><strong>Idea to Code</strong>: Planned a bold site with teal #2dd4bf and charcoal #0a0e1a, coded by Grok.</li>
-                    <li><strong>Customization</strong>: Added hover effects, gradients, and Poppins font—ask Grok for similar tweaks!</li>
-                    <li><strong>Deployment</strong>: Used GitHub for storage and Netlify for hosting, linked to a $1 domain.</li>
-                    <li><strong>Debugging</strong>: Fixed ICANN email and DNS issues (see <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>).</li>
-                </ul>
-                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
-                <div class="tip-panel">
-                    <p class="text-base text-gray-300">Experiment with prompts like “Add a neon glow navbar” or “Create a one-page portfolio.” Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a>!</p>
-                </div>
+            <div class="x-post">
+                <p class="text-sm md:text-base text-gray-300">"Grok made my portfolio pop for a buck! Join the revolution! #1WebRevolution" — @ArtVibe</p>
             </div>
-            <div class="section-card">
-                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Our Mission</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">$1 Web Revolution empowers everyone to own their online space with Grok AI, IONOS, and Netlify. Inspired by xAI, Starlink, and Tesla, we’re making professional websites affordable and accessible.</p>
-                <p class="text-base md:text-lg text-gray-300">Ready? Start with our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> or troubleshoot at <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</p>
-                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
-                <div class="tip-panel">
-                    <p class="text-base text-gray-300">Join the #1WebRevolution by sharing your site on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a>!</p>
+            <div class="x-post">
+                <p class="text-sm md:text-base text-gray-300">"No coding, no problem. $1 website live in hours thanks to Grok! #1WebRevolution" — @TechBit</p>
+            </div>
+            <div class="tip-box">
+                <p><strong>Pro Tip</strong>: Tweet your website with #1WebRevolution and tag <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Tag WebForOne on X">@WebForOne</a> to get featured!</p>
+            </div>
+        </section>
+        <section class="max-w-3xl mx-auto mb-12 hero-card">
+            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the $1 Website Revolution</h3>
+            <p class="text-sm md:text-base text-gray-300 mb-6">Your $1 website, built with Grok’s AI from xAI, can change lives. From rural villages to global markets via Starlink, create your digital legacy with inspiration from Tesla and Neuralink. Share it on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a> with #1WebRevolution!</p>
+            <a href="/contact.html" class="cta-button font-bold" aria-label="Contact us to join the revolution">Get in Touch</a>
+        </section>
+        <section class="bg-gray-800 p-4 rounded-lg text-center max-w-3xl mx-auto mb-12">
+            <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-3">Quick Tips for Your $1 Website</h3>
+            <div class="marquee">
+                <div class="marquee-content">
+                    <span>Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your $1 website in a private tab! | Compress images at tinypng.com!</span>
+                    <span aria-hidden="true">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your $1 website in a private tab! | Compress images at tinypng.com!</span>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-gray-950 text-gray-200 text-center p-8">
-        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
+    <footer class="bg-gray-950 text-gray-200 text-center p-6">
+        <p class="font-poppins text-base">Built with  by You & Grok, 2025</p>
         <p class="font-poppins text-sm mt-2">Contact us: <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a></p>
-        <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! 🌍</p>
-        <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://x.com/WebForOne" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
-            <a href="https://github.com/webfor1" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
+        <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! </p>
+        <div class="mt-3 flex justify-center space-x-4">
+            <a href="https://x.com/WebForOne" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
+            <a href="https://github.com/webfor1" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
             <a href="/contact.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to contact page">Contact</a>
-            <a href="https://starlink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>
-            <a href="https://tesla.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Tesla">Tesla</a>
-            <a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI">xAI</a>
-            <a href="https://neuralink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Neuralink">Neuralink</a>
+            <a href="https://starlink.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Starlink">Starlink</a>
+            <a href="https://tesla.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Tesla">Tesla</a>
+            <a href="https://x.ai" target="_blank" rel="noopener" class="text-teal-400 hover:underline" aria-label="Visit xAI">xAI</a>
+            <a href="https://neuralink.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Neuralink">Neuralink</a>
         </div>
+        <div class="visit-counter">
+            <p>Visitors: <img src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Website visitor counter" aria-label="Website visitor count"></p>
+            <script type="text/javascript">
+                var sc_project=13148562; 
+                var sc_invisible=0; 
+                var sc_security="d16e6059"; 
+                var scJsHost = "https://";
+                document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+                "statcounter.com/counter/counter.js'></"+"script>");
+            </script>
+            <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+        </div>
+        <!-- Empowering the world, one $1 site at a time! -->
     </footer>
-    <script defer src="js/main.js?v=4" onerror="console.error('Failed to load main.js')"></script>
     <script>
-        // Menu toggle with accessibility
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            const isExpanded = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            console.log('Mobile menu toggled');
-        });
+        // Initialize tsParticles
+        tsParticles.load('particles', {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: '#2dd4bf' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#2dd4bf', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onHover: { enable: true, mode: 'repulse' }, onClick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            }
+        }).then(() => console.log('tsParticles loaded')).catch(err => console.error('tsParticles error:', err));
 
-        // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress-bar').style.width = scrolled + '%';
-        });
+    // Menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        console.log('Mobile menu toggled');
+    });
 
-        // Image debug
-        window.addEventListener('load', () => {
-            const aboutImage = document.querySelector('img[alt*="Grok AI coding interface"]');
-            if (!aboutImage.complete || aboutImage.naturalWidth === 0) {
-                console.error('About image failed to load. Check path: /images/about.jpg?v=4');
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    // Tip Panel Toggle
+    document.querySelectorAll('.tip-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const panel = button.nextElementSibling;
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            console.log('Tip panel toggled');
+        });
+    });
+
+    // Marquee Animation Control
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (marqueeContent) {
+        marqueeContent.style.animationPlayState = 'running';
+    }
+
+    // Enhanced Debug for Images
+    window.addEventListener('load', () => {
+        const heroImage = document.querySelector('.hero-media');
+        if (!heroImage.complete || heroImage.naturalWidth === 0) {
+            console.error('Hero image (images/hero.jpg?v=4) failed to load. Check: 1) File exists in images/, 2) Correct filename/extension (hero.jpg, not Hero.jpg or hero.png), 3) GitHub push, 4) Netlify deploy logs, 5) Image format (JPEG, <100 KiB). URL: https://webfor1.netlify.app/images/hero.jpg?v=4');
+        } else {
+            console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.jpg?v=4');
+            const rect = heroImage.getBoundingClientRect();
+            if (rect.right < window.innerWidth - 1) {
+                console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check .hero-media styles.');
             } else {
-                console.log('About image loaded successfully.');
+                console.log('Hero image spans full viewport width.');
+            }
+            if (rect.height < window.innerHeight * 0.9 && window.innerWidth >= 768) {
+                console.warn('Hero image height is less than expected. Current height: ' + rect.height + 'px. Check .hero-section min-height.');
+            } else if (rect.height < window.innerHeight * 0.5 && window.innerWidth < 768) {
+                console.warn('Hero image height is less than expected on mobile. Current height: ' + rect.height + 'px. Check .hero-section min-height.');
+            } else {
+                console.log('Hero image spans appropriate vertical height.');
+            }
+        }
+        const featureImages = document.querySelectorAll('.feature-card img');
+        featureImages.forEach((img, index) => {
+            if (!img.complete || img.naturalWidth === 0) {
+                console.error(`Feature${index + 1} image (images/feature${index + 1}.jpg?v=4) failed to load. Check file path and deployment.`);
+            } else {
+                console.log(`Feature${index + 1} image loaded successfully.`);
             }
         });
-    </script>
-</body>
+        const counterImage = document.querySelector('.visit-counter img');
+        if (counterImage && (!counterImage.complete || counterImage.naturalWidth === 0)) {
+            console.error('Counter image failed to load. Check Statcounter URL: https://c.statcounter.com/13148562/0/d16e6059/0/');
+        } else {
+            console.log('Counter image loaded successfully.');
+        }
+        const links = document.querySelectorAll('footer a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                console.log(`Clicked link: ${link.href}`);
+            });
+        });
+    });
+</script></body>
 </html>
+
