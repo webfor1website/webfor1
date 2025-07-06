@@ -86,6 +86,191 @@
         @keyframes zoomIn {
             0% { transform: scale(0.95); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
+    </style>
+</head>
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
+    <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
+        <nav class="container mx-auto p-6 flex justify-between items-center">
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-[#A9A9A9]">$1 Web Revolution</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
+                <li><a href="/links.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to links page">Links</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
+            <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
+                <li><a href="/links.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to links page">Links</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container mx-auto py-12 md:py-20 flex-grow">
+        <section class="text-center mb-16">
+            <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">Build Your $1 Website with Grok AI</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Launch a professional website for just $1 with Grok AI, IONOS domains, and Netlify hosting. This guide walks you through every step to create a stunning site in hours—no coding required. Join the #1WebRevolution!</p>
+        </section>
+        <article class="max-w-4xl mx-auto">
+            <div class="w-full max-w-full overflow-hidden rounded-lg mb-8">
+                <img src="/images/guide.jpg?v=4" alt="Guide to $1 website builder with Grok AI and Netlify" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Guide to building a $1 website" onerror="console.error('Guide image failed to load.');">
+            </div>
+            <p class="text-base md:text-lg text-gray-300 mb-8">With Grok’s AI, a $1 IONOS domain, and free GitHub/Netlify tools, building a professional website is affordable and fast. Follow this guide to bring your vision to life!</p>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 1: Sign Up with a Single IONOS Account</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Start with a $1 domain from IONOS to secure your site’s unique address (e.g., yourname.com).</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>Visit <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a> and click “Sign Up.” Use one email to avoid mix-ups.</li>
+                    <li>Verify your account via the email IONOS sends (check spam).</li>
+                    <li>Look for the <span class="highlight">ICANN verification email</span> after buying your domain. Click the link to confirm ownership.</li>
+                    <li>Save your <span class="highlight">Customer ID</span> and <span class="highlight">Contract Number</span> for support.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Use a primary email. If the ICANN email is missing, go to IONOS > <span class="highlight">Domains</span> > <span class="highlight">Privacy & Contact Details</span> to resend, or contact support (1-844-494-9067 or support@ionos.com).</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 2: Purchase Your $1 Domain</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Choose a memorable domain name to reflect your brand.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>In IONOS dashboard, go to <span class="highlight">Domains</span> and search for a $1 domain (e.g., yourname.com).</li>
+                    <li>Check availability—try variations if .com is taken.</li>
+                    <li>Add to cart, complete purchase, and confirm it’s listed under <span class="highlight">Domains</span>.</li>
+                    <li>Click the ICANN verification link (check spam) to activate.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Ask Grok for domain ideas (e.g., “Suggest names for a tech blog”). Keep it short, like yourname.com.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 3: Brainstorm and Customize with Grok AI</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Grok turns your ideas into a pro site without coding.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>Define Your Vision</strong>: Tell Grok your goal (e.g., “Photography portfolio” or “Fitness blog”).</li>
+                    <li><strong>Customize Style</strong>: Request colors (e.g., teal #2dd4bf), fonts (e.g., Poppins), or moods (e.g., “Minimalist”).</li>
+                    <li><strong>Tweak Layout</strong>: Ask for layouts like “Single-page site” or “Sidebar menu.”</li>
+                    <li><strong>Add Features</strong>: Request a contact form, gallery, or blog.</li>
+                    <li><strong>Iterate</strong>: Test and ask for tweaks (e.g., “Make buttons glow”).</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Use specific prompts (e.g., “Add a teal button with shadow”). Save chats to revisit ideas.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 4: Set Up a GitHub Repository</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">GitHub stores your site’s files, generated by Grok.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>Sign up at <a href="https://github.com" class="text-teal-400 hover:underline" aria-label="Visit GitHub">GitHub</a>.</li>
+                    <li>Create a <span class="highlight">Public</span> repository (e.g., webfor1).</li>
+                    <li>Add files: Use “Add file” for <code>index.html</code>, <code>styles.css</code>, or upload Grok’s code.</li>
+                    <li>Create an <code>images</code> folder: Add a file like <code>images/placeholder.txt</code>, then upload images.</li>
+                    <li>Keep <code>.html</code>, <code>.css</code> in root, images in <code>images/</code>.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Use lowercase filenames (e.g., <code>index.html</code>). Ask Grok to check paths if images fail.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 5: Launch with Netlify Hosting</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Netlify hosts your site for free, with a custom URL.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>Sign up at <a href="https://app.netlify.com" class="text-teal-400 hover:underline" aria-label="Visit Netlify">Netlify</a> with GitHub or email.</li>
+                    <li>Click “New site from Git,” select your repository.</li>
+                    <li>Set: Branch = <span class="highlight">main</span>, Build Command = blank, Publish directory = <span class="highlight">/</span>.</li>
+                    <li>Deploy: Watch the <span class="highlight">Deploys</span> tab for success.</li>
+                    <li>Get your Netlify URL (e.g., yourname.netlify.app).</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: If deployment fails, check Netlify logs or ask Grok to debug your files.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 6: Link Your Domain to Netlify</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Connect your $1 domain for a custom address.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>In Netlify, go to <span class="highlight">Domain Management</span> > <span class="highlight">Custom Domains</span>.</li>
+                    <li>Add your domain (e.g., yourname.com).</li>
+                    <li>In IONOS, update DNS settings with Netlify’s nameservers (found in Netlify).</li>
+                    <li>Wait 1-48 hours for DNS propagation.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Use <a href="https://dnschecker.org" class="text-teal-400 hover:underline" aria-label="Check DNS propagation">DNS Checker</a> to verify propagation. Check <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a> if stuck.</p>
+                </div>
+            </div>
+            <div class="step-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Step 7: Publish and Share</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Your site is live—spread the word!</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li>Test your site in a private browser tab.</li>
+                    <li>Share on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a> with #1WebRevolution.</li>
+                    <li>Update with Grok (e.g., “Add a blog post section”).</li>
+                    <li>Engage your audience with contact forms or comments.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Pro Tip</strong>: Compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Compress images">TinyPNG</a> for faster loading.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="bg-gray-950 text-gray-200 text-center p-8">
+        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
+        <p class="font-poppins text-sm mt-2">Contact us: <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a></p>
+        <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! 🌍</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <a href="https://x.com/WebForOne" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
+            <a href="https://github.com/webfor1" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
+            <a href="/contact.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to contact page">Contact</a>
+            <a href="https://starlink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>
+            <a href="https://tesla.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Tesla">Tesla</a>
+            <a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI">xAI</a>
+            <a href="https://neuralink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Neuralink">Neuralink</a>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            console.log('Mobile menu toggled');
+        });
+    </script>
+</body>
+</html>
+            border-left: 4px solid #2dd4bf;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+        .header-pulse:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+        footer {
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8); }
+        }
+        @keyframes zoomIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
