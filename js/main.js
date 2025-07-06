@@ -1,3 +1,4 @@
+// js/main.js
 // Initialize tsParticles
 tsParticles.load('particles', {
   particles: {
@@ -40,83 +41,25 @@ document.querySelectorAll('.tip-button').forEach(button => {
   });
 });
 
-// Chat Modal Toggle
-const chatButton = document.getElementById('chat-grok-button');
-const chatModal = document.getElementById('chat-modal');
-const closeChat = document.getElementById('close-chat');
-const chatForm = document.getElementById('chat-form');
-const chatInput = document.getElementById('chat-input');
-const chatContainer = document.getElementById('chat-container');
-
-chatButton.addEventListener('click', () => {
-  chatModal.classList.remove('hidden');
-  chatModal.classList.add('show');
-  chatModal.setAttribute('aria-hidden', 'false');
-  chatInput.focus();
-  console.log('Chat modal opened');
-});
-
-closeChat.addEventListener('click', () => {
-  chatModal.classList.add('hidden');
-  chatModal.classList.remove('show');
-  chatModal.setAttribute('aria-hidden', 'true');
-  console.log('Chat modal closed');
-});
-
-// Close modal when clicking outside
-chatModal.addEventListener('click', (e) => {
-  if (e.target === chatModal) {
-    chatModal.classList.add('hidden');
-    chatModal.classList.remove('show');
-    chatModal.setAttribute('aria-hidden', 'true');
-    console.log('Chat modal closed by clicking outside');
-  }
-});
-
-// Mock chat submission (replace with xAI API call)
-chatForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const userMessage = chatInput.value.trim();
-  if (userMessage) {
-    // Append user message
-    const userMsgDiv = document.createElement('p');
-    userMsgDiv.className = 'user-message';
-    userMsgDiv.textContent = userMessage;
-    chatContainer.appendChild(userMsgDiv);
-
-    // Mock Grok response
-    const grokMsgDiv = document.createElement('p');
-    grokMsgDiv.className = 'grok-message';
-    grokMsgDiv.textContent = `Grok here! You said: "${userMessage}". I can help with your $1 website. Try asking for a specific feature, like "Add a contact form" or "Make my site teal". Check the Guide page for more!`;
-    chatContainer.appendChild(grokMsgDiv);
-
-    // Scroll to bottom
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-
-    // Clear input
-    chatInput.value = '';
-    console.log('Chat message sent:', userMessage);
-  }
-});
-
 // Marquee Animation Control
 const marqueeContent = document.querySelector('.marquee-content');
 if (marqueeContent) {
   marqueeContent.style.animationPlayState = 'running';
 }
 
-// Enhanced Debug for Images
-window.addEventListener('load', () => {
-  const heroImage = document.querySelector('.hero-media');
-  if (!heroImage.complete || heroImage.naturalWidth === 0) {
-    console.error('Hero image (images/hero.jpg?v=4) failed to load. Check: 1) File exists in images/, 2) Correct filename/extension (hero.jpg, not Hero.jpg or hero.png), 3) GitHub push, 4) Netlify deploy logs, 5) Image format (JPEG, <100 KiB). URL: https://webfor1.netlify.app/images/hero.jpg?v=4');
-  } else {
-    console.log('Hero image loaded successfully: https://webfor1.netlify.app/images/hero.jpg?v=4');
-    const rect = heroImage.getBoundingClientRect();
-    if (rect.right < window.innerWidth - 1) {
-      console.warn('Hero image does not span full viewport width. Right edge at: ' + rect.right + 'px, viewport width: ' + window.innerWidth + 'px. Check .hero-media styles.');
-    } else {
-      console.log('Hero image spans full viewport width.');
-    }
-    if (rect.height < window.innerHeight * 0.9 && window.innerWidth >= 768) {
-      console.warn('Hero image height is less than expected. Current height: ' + rect.height + 'px. Check .hero-section min-height.');
+// 3D Tilt Effect for Feature Cards
+document.querySelectorAll('.feature-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const tiltX = (centerY - y) / 25;
+    const tiltY = (x - centerX) / 25;
+    card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+  });
+});
