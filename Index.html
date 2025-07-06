@@ -156,7 +156,7 @@
                     <picture>
                         <source srcset="/images/feature1.webp?v=4" type="image/webp">
                         <source srcset="/images/feature1.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load.');">
+                        <img src="/images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load. Check path: /images/feature1.jpg?v=4');">
                     </picture>
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300" aria-label="Learn why $1 domains are great">Why $1 Domains?</a>
@@ -174,7 +174,7 @@
                     <picture>
                         <source srcset="/images/feature2.webp?v=4" type="image/webp">
                         <source srcset="/images/feature2.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load.');">
+                        <img src="/images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load. Check path: /images/feature2.jpg?v=4');">
                     </picture>
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300" aria-label="Learn how to overcome challenges">Overcome Challenges</a>
@@ -192,64 +192,167 @@
                     <picture>
                         <source srcset="/images/feature3.webp?v=4" type="image/webp">
                         <source srcset="/images/feature3.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder Netlify deployment" onerror="console.error('Feature3 image failed to load.');">
+                        <img src="/images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webaginal input to ensure proper rendering.
+- Added WebP support for images with `<picture>` tags.
+- Updated `og:image` to `https://webfor1.com`.
+- Added `aria-expanded` for menu toggle accessibility.
+- Added `prefers-reduced-motion` for accessibility.
+- Moved inline styles to `styles.css` where possible, keeping hero section styles inline to preserve layout.
+- Added live X search link in the X feed section.
+- Enhanced image error logging for debugging.
+
+---
+
+### Updated `about.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHD985QR7Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SHD985QR7Y');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="$1 website builder powered by Grok AI, IONOS domain, and Netlify hosting. Learn how $1 Web Revolution makes pro websites affordable!">
+    <meta name="keywords" content="$1 website builder, Grok AI, IONOS domain, Netlify hosting, cheap website, xAI, Starlink, Tesla, Neuralink, affordable web hosting">
+    <meta name="author" content="You & Grok">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="$1 Web Revolution - About Our $1 Website Builder">
+    <meta property="og:description" content="$1 website builder with Grok AI, IONOS domain, and Netlify hosting. Discover affordable web creation! #1WebRevolution">
+    <meta property="og:image" content="https://webfor1.com/images/about.jpg?v=4">
+    <meta property="og:url" content="https://webfor1.com/about.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@WebForOne">
+    <title>$1 Web Revolution - About Our $1 Website Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="css/styles.css?v=4" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About $1 Web Revolution",
+        "url": "https://webfor1.com/about.html",
+        "description": "Learn about the $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "$1 Web Revolution",
+            "url": "https://webfor1.com"
+        }
+    }
+    </script>
+</head>
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
+    <div class="progress-bar" id="progress-bar"></div>
+    <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
+        <nav class="container mx-auto p-6 flex justify-between items-center">
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 header-pulse">$1 Web Revolution</h1>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex md:space-x-10 text-xl font-semibold">
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950">
+            <ul class="flex flex-col items-center space-y-6 py-6 text-2xl font-semibold">
+                <li><a href="/index.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to home page">Home</a></li>
+                <li><a href="/about.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to about page">About</a></li>
+                <li><a href="/guide.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to guide page">Guide</a></li>
+                <li><a href="/issues.html" class="hover:text-teal-400 transition duration-300" aria-label="Go to issues and fixes page">Issues & Fixes</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container mx-auto py-12 md:py-20 flex-grow">
+        <section class="text-center mb-16">
+            <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6">About $1 Website Builder with Grok AI</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Discover how $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting, makes professional websites affordable for everyone. Inspired by xAI, Starlink, and Tesla, we’re transforming lives one $1 site at a time!</p>
+        </section>
+        <section class="max-w-4xl mx-auto">
+            <div class="section-card">
+                <div class="w-full max-w-full overflow-hidden rounded-lg mb-6">
+                    <picture>
+                        <source srcset="/images/about.webp?v=4" type="image/webp">
+                        <source srcset="/images/about.jpg?v=4" type="image/jpeg">
+                        <img src="/images/about.jpg?v=4" alt="Grok AI coding interface for $1 website builder" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Grok AI coding interface for $1 website" onerror="console.error('About image failed to load. Check path: /images/about.jpg?v=4');">
                     </picture>
-                    <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
-                        <a href="/guide.html" class="hover:text-teal-300" aria-label="View step-by-step guide">Step-by-Step Guide</a>
-                    </h3>
-                    <p class="text-sm text-gray-300">Our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> walks you through domain setup, coding with Grok, and launching your website!</p>
-                    <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
-                    <div class="tip-panel">
-                        <p class="text-sm text-gray-300">Test your $1 website in a private tab. Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="View guide page">Guide</a> for tips!</p>
-                    </div>
+                </div>
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Meet Grok: Your $1 Website Wizard</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">I’m Grok, created by xAI to make web development accessible. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, $1 Web Revolution proves you can build a pro site without coding skills or big budgets.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>AI-Powered Coding</strong>: I generate clean, responsive HTML, CSS, and JavaScript for homepages, blogs, or portfolios.</li>
+                    <li><strong>Customization</strong>: Request a teal #2dd4bf vibe, Poppins font, or layouts like sticky navbars or hero sections.</li>
+                    <li><strong>Troubleshooting</strong>: Stuck on DNS or broken links? I debug fast—check <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</li>
+                    <li><strong>Collaboration</strong>: Tell me “Add a scrolling marquee” or “Make buttons glow,” and I’ll code it.</li>
+                </ul>
+                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                <div class="tip-panel">
+                    <p class="text-base text-gray-300">Save our chats to track your vision. Try prompts like “Design a teal portfolio with a sidebar” or “Add a contact form with email alerts.”</p>
                 </div>
             </div>
-        </section>
-        <section class="max-w-3xl mx-auto mb-12 hero-card" id="testimonials">
-            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">What Creators Say About Our $1 Website Builder</h3>
-            <p class="text-sm md:text-base text-gray-300 mb-6">“I built a portfolio for my art in one day with Grok’s $1 website builder! The cheap domain and free hosting blew my mind!” — Alex, Aspiring Artist</p>
-            <p class="text-sm md:text-base text-gray-300 mb-6">“Grok coded my teal blog in hours. This $1 website builder is the real deal!” — Sam, Tech Blogger</p>
-            <p class="text-sm md:text-base text-gray-300 mb-6">“No coding skills, no problem! Grok made my business site pop for $1!” — Mia, Entrepreneur</p>
-            <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Share your website on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a> with #1WebRevolution to join the crew!</p>
+            <div class="section-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Why $1 Domains Are Game-Changers</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">A $1 domain from IONOS gives your site a unique address (e.g., yourname.com). Paired with Grok AI and free hosting, it’s the ultimate affordable website solution.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>Affordable Start</strong>: Get a domain for $1 at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>.</li>
+                    <li><strong>Easy Setup</strong>: Use one account to avoid delays. Verify via the <span class="highlight">ICANN link</span> (check spam).</li>
+                    <li><strong>Scalable Future</strong>: Start simple, then add blogs or shops with Grok’s help.</li>
+                    <li><strong>Brand Power</strong>: A custom domain builds trust over generic URLs.</li>
+                </ul>
+                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                <div class="tip-panel">
+                    <p class="text-base text-gray-300">Choose a short domain like yourname.com. Ask Grok for ideas like “Suggest domain names for a fitness blog.”</p>
+                </div>
             </div>
-        </section>
-        <section class="max-w-3xl mx-auto mb-12 hero-card x-feed">
-            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the #1WebRevolution on X</h3>
-            <div class="x-post">
-                <p class="text-sm md:text-base text-gray-300">"Just launched my $1 website with Grok’s AI! #1WebRevolution is 🔥!" — @CreatorX</p>
+            <div class="section-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">How We Built $1 Web Revolution</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">Grok’s AI made $1 Web Revolution a reality. Here’s how we did it:</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                    <li><strong>Idea to Code</strong>: Planned a bold site with teal #2dd4bf and charcoal #0a0e1a, coded by Grok.</li>
+                    <li><strong>Customization</strong>: Added hover effects, gradients, and Poppins font—ask Grok for similar tweaks!</li>
+                    <li><strong>Deployment</strong>: Used GitHub for storage and Netlify for hosting, linked to a $1 domain.</li>
+                    <li><strong>Debugging</strong>: Fixed ICANN email and DNS issues (see <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>).</li>
+                </ul>
+                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                <div class="tip-panel">
+                    <p class="text-base text-gray-300">Experiment with prompts like “Add a neon glow navbar” or “Create a one-page portfolio.” Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a>!</p>
+                </div>
             </div>
-            <div class="x-post">
-                <p class="text-sm md:text-base text-gray-300">"Grok made my portfolio pop for a buck! Join the revolution! #1WebRevolution" — @ArtVibe</p>
-            </div>
-            <div class="x-post">
-                <p class="text-sm md:text-base text-gray-300">"No coding, no problem. $1 website live in hours thanks to Grok! #1WebRevolution" — @TechBit</p>
-            </div>
-            <p class="text-sm md:text-base text-gray-300 mt-4"><a href="https://x.com/search?q=%231WebRevolution" class="text-teal-400 hover:underline" aria-label="View #1WebRevolution posts on X">See live #1WebRevolution posts</a></p>
-            <div class="tip-box">
-                <p><strong>Pro Tip</strong>: Tweet your website with #1WebRevolution and tag <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Tag WebForOne on X">@WebForOne</a> to get featured!</p>
-            </div>
-        </section>
-        <section class="max-w-3xl mx-auto mb-12 hero-card">
-            <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Join the $1 Website Revolution</h3>
-            <p class="text-sm md:text-base text-gray-300 mb-6">Your $1 website, built with Grok’s AI from xAI, can change lives. From rural villages to global markets via Starlink, create your digital legacy with inspiration from Tesla and Neuralink. Share it on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a> with #1WebRevolution!</p>
-            <a href="/contact.html" class="cta-button font-bold" aria-label="Contact us to join the revolution">Get in Touch</a>
-        </section>
-        <section class="bg-gray-800 p-4 rounded-lg text-center max-w-3xl mx-auto mb-12">
-            <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-3">Quick Tips for Your $1 Website</h3>
-            <div class="marquee">
-                <div class="marquee-content">
-                    <span>Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your $1 website in a private tab! | Compress images at tinypng.com!</span>
-                    <span aria-hidden="true">Use one IONOS account to avoid delays! | Check spam for verification emails! | Test your $1 website in a private tab! | Compress images at tinypng.com!</span>
+            <div class="section-card">
+                <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Our Mission</h3>
+                <p class="text-base md:text-lg text-gray-300 mb-4">$1 Web Revolution empowers everyone to own their online space with Grok AI, IONOS, and Netlify. Inspired by xAI, Starlink, and Tesla, we’re making professional websites affordable and accessible.</p>
+                <p class="text-base md:text-lg text-gray-300">Ready? Start with our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> or troubleshoot at <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</p>
+                <div class="tip-button" aria-label="Show quick tip">Click for Tip</div>
+                <div class="tip-panel">
+                    <p class="text-base text-gray-300">Join the #1WebRevolution by sharing your site on <a href="https://x.com/WebForOne" class="text-teal-400 hover:underline" aria-label="Share on X">X</a>!</p>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-gray-950 text-gray-200 text-center p-6">
-        <p class="font-poppins text-base">Built with 🔥 by You & Grok, 2025</p>
+    <footer class="bg-gray-950 text-gray-200 text-center p-8">
+        <p class="font-poppins text-lg">Built with 🔥 by You & Grok, 2025</p>
         <p class="font-poppins text-sm mt-2">Contact us: <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a></p>
         <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! 🌍</p>
-        <div class="mt-3 flex justify-center space-x-4">
+        <div class="mt-4 flex justify-center space-x-6">
             <a href="https://x.com/WebForOne" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
             <a href="https://github.com/webfor1" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
             <a href="/contact.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to contact page">Contact</a>
@@ -258,33 +361,9 @@
             <a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI">xAI</a>
             <a href="https://neuralink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Neuralink">Neuralink</a>
         </div>
-        <div class="visit-counter">
-            <p>Visitors: <img src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Website visitor counter" aria-label="Website visitor count"></p>
-            <script type="text/javascript">
-                var sc_project=13148562; 
-                var sc_invisible=0; 
-                var sc_security="d16e6059"; 
-                var scJsHost = "https://";
-                document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
-                "statcounter.com/counter/counter.js'></"+"script>");
-            </script>
-            <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-        </div>
     </footer>
     <script defer src="js/main.js?v=4" onerror="console.error('Failed to load main.js')"></script>
     <script>
-        // Lazy-load particles
-        const particles = document.getElementById('particles');
-        if (particles) {
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    initParticles();
-                    observer.disconnect();
-                }
-            });
-            observer.observe(particles);
-        }
-
         // Menu toggle with accessibility
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -303,27 +382,13 @@
             document.getElementById('progress-bar').style.width = scrolled + '%';
         });
 
-        // Enhanced Debug for Images
+        // Image debug
         window.addEventListener('load', () => {
-            const heroImage = document.querySelector('.hero-media');
-            if (!heroImage.complete || heroImage.naturalWidth === 0) {
-                console.error('Hero image failed to load. Check: 1) File exists in images/, 2) Correct filename/extension, 3) GitHub push, 4) Netlify deploy logs, 5) Image format (WebP/JPEG, <100 KiB). URL: https://webfor1.com/images/hero.jpg?v=4');
+            const aboutImage = document.querySelector('img[alt*="Grok AI coding interface"]');
+            if (!aboutImage.complete || aboutImage.naturalWidth === 0) {
+                console.error('About image failed to load. Check path: /images/about.jpg?v=4');
             } else {
-                console.log('Hero image loaded successfully.');
-            }
-            const featureImages = document.querySelectorAll('.feature-card img');
-            featureImages.forEach((img, index) => {
-                if (!img.complete || img.naturalWidth === 0) {
-                    console.error(`Feature${index + 1} image failed to load. Check path: /images/feature${index + 1}.jpg?v=4`);
-                } else {
-                    console.log(`Feature${index + 1} image loaded successfully.');
-                }
-            });
-            const counterImage = document.querySelector('.visit-counter img');
-            if (counterImage && (!counterImage.complete || counterImage.naturalWidth === 0)) {
-                console.error('Counter image failed to load. Check Statcounter URL.');
-            } else {
-                console.log('Counter image loaded successfully.');
+                console.log('About image loaded successfully.');
             }
         });
     </script>
