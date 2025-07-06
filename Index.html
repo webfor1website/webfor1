@@ -31,8 +31,8 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="stylesheet" href="css/styles.css?v=4" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/styles.css?v=4" media="print" onload="this.media='all'">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -61,81 +61,14 @@
     }
     </script>
     <style>
-        body {
-            background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
-            color: #e5e7eb;
-            font-family: 'Poppins', Arial, Helvetica, sans-serif;
-            scroll-behavior: smooth;
-            position: relative;
-            overflow-x: hidden;
-            box-sizing: border-box;
-            margin: 0;
-        }
-        header {
-            background: rgba(17, 24, 39, 0.9);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 20;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        .hero-section {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            z-index: 1;
-            background: #0a0e1a;
-            margin-top: 80px;
-            overflow: hidden;
-        }
-        @media (max-width: 768px) {
-            .hero-section {
-                margin-top: 64px;
-                min-height: 60vh;
-            }
-        }
-        .hero-media {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            opacity: 1;
-            transform: scaleX(1.05);
-        }
-        .hero-overlay {
-            background: rgba(10, 14, 26, 0.7);
-            padding: 1.5rem;
-            border-radius: 8px;
-            max-width: 90%;
-            width: 700px;
-            min-height: 150px;
-            z-index: 2;
-            box-sizing: border-box;
-            margin: 20vh auto 0;
-            text-align: center;
-        }
-        @media (max-width: 768px) {
-            .hero-media {
-                object-fit: cover;
-                object-position: center;
-                transform: scaleX(1.05);
-            }
-            .hero-overlay {
-                padding: 0.75rem;
-                width: 95%;
-                min-height: 120px;
-                margin-top: 10vh;
-            }
-        }
-        #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-        .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; box-shadow: 0 0 8px rgba(45, 212, 191, 0.7); }
-        .hero-fallback { background-color: #2c3e50; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #e5e7eb; font-size: 1rem; }
+        .progress-bar { position: fixed; top: 0; left: 0; width: 0; height: 4px; background: #2dd4bf; z-index: 1000; transition: width 0.2s ease; }
+        .hero-section { position: relative; height: 100vh; background: url('/images/hero.jpg?v=4') no-repeat center/cover, #0a0e1a; }
+        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(10, 14, 26, 0.7); padding: 2rem; border-radius: 12px; max-width: 700px; text-align: center; }
+        #particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .hero-card { background: #1a2332; border: 2px solid #2dd4bf; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hero-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3); }
         @media (prefers-reduced-motion: reduce) {
-            .marquee, .header-pulse, .feature-card:hover, .hero-card:hover, .x-post:hover, .sticky-cta:hover {
+            .marquee, .header-pulse, .hero-card:hover, .feature-card:hover, .x-post:hover, .sticky-cta:hover {
                 animation: none;
                 transform: none;
                 box-shadow: none;
@@ -143,7 +76,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="font-poppins text-gray-200 min-h-screen flex flex-col">
     <div class="progress-bar" id="progress-bar"></div>
     <header class="bg-gray-950 shadow-2xl fixed top-0 z-20 w-full">
         <nav class="container mx-auto p-4 flex justify-between items-center">
@@ -176,15 +109,15 @@
         <picture>
             <source srcset="/images/hero.webp?v=4" type="image/webp">
             <source srcset="/images/hero.jpg?v=4" type="image/jpeg">
-            <img src="/images/fallback.jpg?v=4" alt="$1 website builder hero image with Grok AI, IONOS domain, and Netlify hosting" class="hero-media" width="1080" height="720" fetchpriority="high" loading="eager" aria-label="$1 website builder hero image" onerror="this.onerror=null; this.src='/images/fallback.jpg?v=4'; this.parentElement.classList.add('hero-fallback'); console.error('Hero image failed to load, using fallback.');">
+            <img src="/images/fallback.jpg?v=4" alt="$1 website builder hero image with Grok AI, IONOS domain, and Netlify hosting" class="hero-media" loading="eager" aria-label="$1 website builder hero image" onerror="this.src='/images/fallback.jpg?v=4'; console.error('Hero image failed to load.');">
         </picture>
-    </section>
-    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <div class="hero-overlay">
-            <h2 class="font-poppins text-3xl md:text-6xl font-extrabold text-teal-400 mb-4">Build Your $1 Website with Grok AI</h2>
+            <h2 class="font-poppins text-3xl md:text-5xl font-extrabold text-teal-400 mb-4">Build Your $1 Website with Grok AI</h2>
             <p class="text-base md:text-lg text-gray-200 mb-6 max-w-2xl mx-auto">With Starlink connecting the world, our $1 website builder, powered by Grok’s AI from xAI, IONOS domains, and free GitHub/Netlify hosting, lets anyone create a pro site in hours—no coding needed. Inspired by Tesla and Neuralink, join the #1WebRevolution to transform lives!</p>
             <a href="/guide.html" class="cta-button font-bold" aria-label="Start building your $1 website">Build Your Cheap Website Now</a>
         </div>
+    </section>
+    <main class="container mx-auto py-8 md:py-12 flex-grow">
         <a href="/guide.html" class="cta-button sticky-cta" aria-label="Start building your $1 website">Build Now</a>
         <section class="max-w-3xl mx-auto mb-12 hero-card">
             <h3 class="font-poppins text-xl md:text-2xl font-bold text-teal-400 mb-4 text-center">Why $1 Web Revolution Slays</h3>
@@ -223,7 +156,7 @@
                     <picture>
                         <source srcset="/images/feature1.webp?v=4" type="image/webp">
                         <source srcset="/images/feature1.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load.');">
+                        <img src="/images/feature1.jpg?v=4" alt="IONOS $1 domain setup for webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder IONOS domain interface" onerror="console.error('Feature1 image failed to load.');">
                     </picture>
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/about.html" class="hover:text-teal-300" aria-label="Learn why $1 domains are great">Why $1 Domains?</a>
@@ -241,7 +174,7 @@
                     <picture>
                         <source srcset="/images/feature2.webp?v=4" type="image/webp">
                         <source srcset="/images/feature2.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load.');">
+                        <img src="/images/feature2.jpg?v=4" alt="GitHub setup for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder GitHub setup" onerror="console.error('Feature2 image failed to load.');">
                     </picture>
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/issues.html" class="hover:text-teal-300" aria-label="Learn how to overcome challenges">Overcome Challenges</a>
@@ -259,7 +192,7 @@
                     <picture>
                         <source srcset="/images/feature3.webp?v=4" type="image/webp">
                         <source srcset="/images/feature3.jpg?v=4" type="image/jpeg">
-                        <img src="/images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" width="300" height="180" loading="lazy" aria-label="$1 website builder Netlify deployment" onerror="console.error('Feature3 image failed to load.');">
+                        <img src="/images/feature3.jpg?v=4" alt="Netlify deployment for $1 website builder on webfor1.com" class="w-full h-auto rounded-lg mb-3" loading="lazy" aria-label="$1 website builder Netlify deployment" onerror="console.error('Feature3 image failed to load.');">
                     </picture>
                     <h3 class="font-poppins text-base md:text-lg font-bold text-teal-400 mb-2">
                         <a href="/guide.html" class="hover:text-teal-300" aria-label="View step-by-step guide">Step-by-Step Guide</a>
@@ -317,13 +250,13 @@
         <p class="font-poppins text-sm mt-2">Contact us: <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a></p>
         <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! 🌍</p>
         <div class="mt-3 flex justify-center space-x-4">
-            <a href="https://x.com/WebForOne" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
-            <a href="https://github.com/webfor1" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
+            <a href="https://x.com/WebForOne" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
+            <a href="https://github.com/webfor1" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
             <a href="/contact.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to contact page">Contact</a>
-            <a href="https://starlink.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Starlink">Starlink</a>
-            <a href="https://tesla.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Tesla">Tesla</a>
-            <a href="https://x.ai" target="_blank" rel="noopener" class="text-teal-400 hover:underline" aria-label="Visit xAI">xAI</a>
-            <a href="https://neuralink.com" target="_blank" rel="noopener" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit Neuralink">Neuralink</a>
+            <a href="https://starlink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>
+            <a href="https://tesla.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Tesla">Tesla</a>
+            <a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI">xAI</a>
+            <a href="https://neuralink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Neuralink">Neuralink</a>
         </div>
         <div class="visit-counter">
             <p>Visitors: <img src="https://c.statcounter.com/13148562/0/d16e6059/0/" alt="Website visitor counter" aria-label="Website visitor count"></p>
@@ -383,7 +316,7 @@
                 if (!img.complete || img.naturalWidth === 0) {
                     console.error(`Feature${index + 1} image failed to load. Check path: /images/feature${index + 1}.jpg?v=4`);
                 } else {
-                    console.log(`Feature${index + 1} image loaded successfully.`);
+                    console.log(`Feature${index + 1} image loaded successfully.');
                 }
             });
             const counterImage = document.querySelector('.visit-counter img');
