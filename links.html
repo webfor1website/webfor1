@@ -34,11 +34,14 @@
     <style>
         body {
             background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
-            color: #e5e7eb;
+            color: #ffffff; /* High-contrast white text */
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6; /* Improved readability */
         }
         h1, h2, h3 {
             color: #2dd4bf;
+            font-weight: 700;
+            text-shadow: 0 0 4px rgba(45, 212, 191, 0.5); /* Slight glow for headings */
         }
         .link-card {
             background: #1a2332;
@@ -52,6 +55,10 @@
         .link-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3);
+        }
+        .link-card h3, .link-card p, .link-card ul, .link-card .tip-box {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600; /* Bolder text */
         }
         .highlight {
             background: #2dd4bf;
@@ -67,10 +74,40 @@
             margin: 1rem 0;
             border-radius: 8px;
         }
+        .tip-box p {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600;
+        }
+        .orange-cta {
+            background: #f97316; /* Orange color */
+            color: #0a0e1a; /* Dark text for contrast */
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 0 8px rgba(249, 115, 22, 0.4); /* Matching orange shadow */
+            display: inline-block;
+        }
+        .orange-cta:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        .header-pulse:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .animate-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
         footer {
             position: sticky;
             bottom: 0;
             z-index: 10;
+        }
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8); }
         }
         @keyframes zoomIn {
             0% { transform: scale(0.95); opacity: 0; }
@@ -80,7 +117,7 @@
 <body class="font-poppins text-gray-200 min-h-screen flex flex-col">
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-[#A9A9A9]">$1 Web Revolution</h1>
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow header-pulse">$1 Web Revolution</h1>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,12 +146,20 @@
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section class="text-center mb-16">
             <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">Useful Links to Boost Your $1 Website</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Enhance your $1 website's visibility with links to popular websites and X accounts. These backlinks can improve SEO and drive traffic. Join the #1WebRevolution!</p>
+            <p class="text-lg md:text-xl text-white font-semibold mb-8 max-w-3xl mx-auto">Enhance your $1 website's visibility with links to popular websites and X accounts. These backlinks can improve SEO and drive traffic. Join the #1WebRevolution!</p>
+        </section>
+        <section class="bg-gray-950 text-center py-12 mt-8">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-teal-400 mb-6 animate-glow">Ready to Build Your $1 Website?</h2>
+            <p class="text-lg md:text-xl text-white font-semibold mb-6 max-w-2xl mx-auto">Don’t wait! Secure your dream domain with <a href="https://aklam.io/2dUJvO" class="text-teal-400 hover:underline font-bold" target="_blank" rel="noopener" aria-label="Visit IONOS to buy a $1 domain">IONOS</a> for just $1 and unlock pro-level web design powered by Grok AI. Start today, stand out tomorrow—grab your domain now and create your online masterpiece!</p>
+            <a href="https://aklam.io/2dUJvO" class="orange-cta font-bold" target="_blank" rel="noopener" aria-label="Get your $1 domain from IONOS">Get Your $1 Domain Now</a>
         </section>
         <article class="max-w-4xl mx-auto">
+            <div class="w-full max-w-full overflow-hidden rounded-lg mb-8">
+                <img src="/images/links.jpg?v=4" alt="Useful links to boost your $1 website" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Useful links for $1 website" onerror="console.error('Links image failed to load.');">
+            </div>
             <div class="link-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Popular Websites</h3>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><a href="https://www.tesla.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Tesla website">Tesla</a> - Innovative technology and electric vehicles.</li>
                     <li><a href="https://www.spacex.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit SpaceX website">SpaceX</a> - Pioneering space exploration.</li>
                     <li><a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI website">xAI</a> - Advancing AI research with Grok.</li>
@@ -122,12 +167,12 @@
                     <li><a href="https://www.starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink website">Starlink</a> - Global internet connectivity.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Linking to high-authority sites like these can boost your SEO ranking. Ensure links are relevant to your content.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Linking to high-authority sites like these can boost your SEO ranking. Ensure links are relevant to your content.</p>
                 </div>
             </div>
             <div class="link-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Popular X Accounts</h3>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><a href="https://x.com/elonmusk" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Elon Musk's X profile">@elonmusk</a> - Visionary behind Tesla, SpaceX, and more.</li>
                     <li><a href="https://x.com/SpaceX" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit SpaceX's X profile">@SpaceX</a> - Space exploration updates.</li>
                     <li><a href="https://x.com/Tesla" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Tesla's X profile">@Tesla</a> - Electric vehicle innovations.</li>
@@ -135,10 +180,10 @@
                     <li><a href="https://x.com/Starlink" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink's X profile">@Starlink</a> - Global internet progress.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Follow these accounts and engage with their posts to increase your $1 website's exposure on X.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Follow these accounts and engage with their posts to increase your $1 website's exposure on X.</p>
                 </div>
             </div>
-            <p class="text-base md:text-lg text-gray-300 mb-8">These links to reputable websites and active X accounts can help improve your site's search engine visibility and attract more visitors. Always ensure your content aligns with the linked sites for best SEO results.</p>
+            <p class="text-base md:text-lg text-white font-semibold mb-8">These links to reputable websites and active X accounts can help improve your site's search engine visibility and attract more visitors. Always ensure your content aligns with the linked sites for best SEO results.</p>
         </article>
     </main>
     <footer class="bg-gray-950 text-gray-200 text-center p-8">
