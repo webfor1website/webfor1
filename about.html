@@ -34,11 +34,14 @@
     <style>
         body {
             background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
-            color: #e5e7eb;
+            color: #ffffff; /* High-contrast white text */
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6; /* Improved readability */
         }
         h1, h2, h3 {
             color: #2dd4bf;
+            font-weight: 700;
+            text-shadow: 0 0 4px rgba(45, 212, 191, 0.5); /* Slight glow for headings */
         }
         .section-card {
             background: #1a2332;
@@ -53,6 +56,10 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3);
         }
+        .section-card h3, .section-card p, .section-card ul, .section-card .tip-box {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600; /* Bolder text */
+        }
         .highlight {
             background: #2dd4bf;
             color: #0a0e1a;
@@ -66,6 +73,10 @@
             padding: 1rem;
             margin: 1rem 0;
             border-radius: 8px;
+        }
+        .tip-box p {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600;
         }
         .header-pulse:hover {
             transform: scale(1.05);
@@ -120,7 +131,12 @@
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section class="text-center mb-16">
             <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">About $1 Website Builder with Grok AI</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Discover how $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting, makes professional websites affordable for everyone. Inspired by xAI, Starlink, and Tesla, we’re transforming lives one $1 site at a time!</p>
+            <p class="text-lg md:text-xl text-white font-semibold mb-8 max-w-3xl mx-auto">Discover how $1 Web Revolution, powered by Grok AI, IONOS domains, and Netlify hosting, makes professional websites affordable for everyone. Inspired by xAI, Starlink, and Tesla, we’re transforming lives one $1 site at a time!</p>
+        </section>
+        <section class="bg-gray-950 text-center py-12 mt-8">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-teal-400 mb-6 animate-glow">Ready to Build Your $1 Website?</h2>
+            <p class="text-lg md:text-xl text-white font-semibold mb-6 max-w-2xl mx-auto">Don’t wait! Secure your dream domain with <a href="https://aklam.io/2dUJvO" class="text-teal-400 hover:underline font-bold" target="_blank" rel="noopener" aria-label="Visit IONOS to buy a $1 domain">IONOS</a> for just $1 and unlock pro-level web design powered by Grok AI. Start today, stand out tomorrow—grab your domain now and create your online masterpiece!</p>
+            <a href="https://aklam.io/2dUJvO" class="inline-block bg-teal-400 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-teal-300 transition duration-300" target="_blank" rel="noopener" aria-label="Get your $1 domain from IONOS">Get Your $1 Domain Now</a>
         </section>
         <section class="max-w-4xl mx-auto">
             <div class="section-card">
@@ -128,47 +144,47 @@
                     <img src="/images/about.jpg?v=4" alt="Grok AI coding interface for $1 website builder" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Grok AI coding interface for $1 website" onerror="console.error('About image failed to load.');">
                 </div>
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Meet Grok: Your $1 Website Wizard</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">I’m Grok, created by xAI to make web development accessible. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, $1 Web Revolution proves you can build a pro site without coding skills or big budgets.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">I’m Grok, created by xAI to make web development accessible. With a $1 IONOS domain, free GitHub storage, and Netlify hosting, $1 Web Revolution proves you can build a pro site without coding skills or big budgets.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>AI-Powered Coding</strong>: I generate clean, responsive HTML, CSS, and JavaScript for homepages, blogs, or portfolios.</li>
                     <li><strong>Customization</strong>: Request a teal #2dd4bf vibe, Poppins font, or layouts like sticky navbars or hero sections.</li>
                     <li><strong>Troubleshooting</strong>: Stuck on DNS or broken links? I debug fast—check <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</li>
                     <li><strong>Collaboration</strong>: Tell me “Add a scrolling marquee” or “Make buttons glow,” and I’ll code it.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Save our chats to track your vision. Try prompts like “Design a teal portfolio with a sidebar” or “Add a contact form with email alerts.”</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Save our chats to track your vision. Try prompts like “Design a teal portfolio with a sidebar” or “Add a contact form with email alerts.”</p>
                 </div>
             </div>
             <div class="section-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Why $1 Domains Are Game-Changers</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">A $1 domain from IONOS gives your site a unique address (e.g., yourname.com). Paired with Grok AI and free hosting, it’s the ultimate affordable website solution.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
-                    <li><strong>Affordable Start</strong>: Get a domain for $1 at <a href="https://www.ionos.com" class="text-teal-400 hover:underline" aria-label="Visit IONOS">IONOS</a>.</li>
+                <p class="text-base md:text-lg text-white font-semibold mb-4">A $1 domain from IONOS gives your site a unique address (e.g., yourname.com). Paired with Grok AI and free hosting, it’s the ultimate affordable website solution.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
+                    <li><strong>Affordable Start</strong>: Get a domain for $1 at <a href="https://aklam.io/2dUJvO" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit IONOS to buy a domain">IONOS</a>.</li>
                     <li><strong>Easy Setup</strong>: Use one account to avoid delays. Verify via the <span class="highlight">ICANN link</span> (check spam).</li>
                     <li><strong>Scalable Future</strong>: Start simple, then add blogs or shops with Grok’s help.</li>
                     <li><strong>Brand Power</strong>: A custom domain builds trust over generic URLs.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Choose a short domain like yourname.com. Ask Grok for ideas like “Suggest domain names for a fitness blog.”</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Choose a short domain like yourname.com. Ask Grok for ideas like “Suggest domain names for a fitness blog.”</p>
                 </div>
             </div>
             <div class="section-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">How We Built $1 Web Revolution</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Grok’s AI made $1 Web Revolution a reality. Here’s how we did it:</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">Grok’s AI made $1 Web Revolution a reality. Here’s how we did it:</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Idea to Code</strong>: Planned a bold site with teal #2dd4bf and charcoal #0a0e1a, coded by Grok.</li>
                     <li><strong>Customization</strong>: Added hover effects, gradients, and Poppins font—ask Grok for similar tweaks!</li>
                     <li><strong>Deployment</strong>: Used GitHub for storage and Netlify for hosting, linked to a $1 domain.</li>
                     <li><strong>Debugging</strong>: Fixed ICANN email and DNS issues (see <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>).</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Experiment with prompts like “Add a neon glow navbar” or “Create a one-page portfolio.” Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a>!</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Experiment with prompts like “Add a neon glow navbar” or “Create a one-page portfolio.” Check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a>!</p>
                 </div>
             </div>
             <div class="section-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Our Mission</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">$1 Web Revolution empowers everyone to own their online space with Grok AI, IONOS, and Netlify. Inspired by xAI, Starlink, and Tesla, we’re making professional websites affordable and accessible.</p>
-                <p class="text-base md:text-lg text-gray-300">Ready? Start with our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> or troubleshoot at <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</p>
+                <p class="text-base md:text-lg text-white font-semibold mb-4">$1 Web Revolution empowers everyone to own their online space with Grok AI, IONOS, and Netlify. Inspired by xAI, Starlink, and Tesla, we’re making professional websites affordable and accessible.</p>
+                <p class="text-base md:text-lg text-white font-semibold">Ready? Start with our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> or troubleshoot at <a href="/issues.html" class="text-teal-400 hover:underline" aria-label="Go to issues page">Issues & Fixes</a>.</p>
             </div>
         </section>
     </main>
@@ -177,9 +193,11 @@
         <p class="font-poppins text-sm mt-2">Contact us: <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a></p>
         <p class="font-poppins text-sm mt-2">Access your $1 website anywhere with <a href="https://starlink.com" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>’s global internet! 🌍</p>
         <div class="mt-4 flex justify-center space-x-6">
-            <a href="https://x.com/WebForOne" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our X profile">X (@WebForOne)</a>
-            <a href="https://github.com/webfor1" class="text-teal-400 hover:text-teal-300 transition" aria-label="Visit our GitHub repository">GitHub</a>
-            <a href="/contact.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to contact page">Contact</a>
+            <a href="/index.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to home page">Home</a>
+            <a href="/about.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to about page">About</a>
+            <a href="/guide.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to guide page">Guide</a>
+            <a href="/issues.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to issues and fixes page">Issues & Fixes</a>
+            <a href="/links.html" class="text-teal-400 hover:text-teal-300 transition" aria-label="Go to links page">Links</a>
             <a href="https://starlink.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Starlink">Starlink</a>
             <a href="https://tesla.com" class="text-teal-400 hover:text-teal-300 transition" target="_blank" rel="noopener" aria-label="Visit Tesla">Tesla</a>
             <a href="https://x.ai" class="text-teal-400 hover:underline" target="_blank" rel="noopener" aria-label="Visit xAI">xAI</a>
