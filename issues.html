@@ -34,11 +34,14 @@
     <style>
         body {
             background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%);
-            color: #e5e7eb;
+            color: #ffffff; /* High-contrast white text */
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6; /* Improved readability */
         }
         h1, h2, h3 {
             color: #2dd4bf;
+            font-weight: 700;
+            text-shadow: 0 0 4px rgba(45, 212, 191, 0.5); /* Slight glow for headings */
         }
         .issue-card {
             background: #1a2332;
@@ -53,6 +56,10 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(45, 212, 191, 0.3);
         }
+        .issue-card h3, .issue-card p, .issue-card ul, .issue-card .tip-box {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600; /* Bolder text */
+        }
         .highlight {
             background: #2dd4bf;
             color: #0a0e1a;
@@ -66,6 +73,25 @@
             padding: 1rem;
             margin: 1rem 0;
             border-radius: 8px;
+        }
+        .tip-box p {
+            color: #ffffff; /* High-contrast text */
+            font-weight: 600;
+        }
+        .orange-cta {
+            background: #f97316; /* Orange color */
+            color: #0a0e1a; /* Dark text for contrast */
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            box-shadow: 0 0 8px rgba(249, 115, 22, 0.4); /* Matching orange shadow */
+            display: inline-block;
+        }
+        .orange-cta:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
         .header-pulse:hover {
             transform: scale(1.05);
@@ -91,7 +117,7 @@
 <body class="font-poppins text-gray-200 min-h-screen flex flex-col">
     <header class="bg-gray-950 shadow-2xl sticky top-0 z-20">
         <nav class="container mx-auto p-6 flex justify-between items-center">
-            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-[#A9A9A9]">$1 Web Revolution</h1>
+            <h1 class="font-poppins text-4xl md:text-5xl font-extrabold text-teal-400 animate-glow header-pulse">$1 Web Revolution</h1>
             <div class="md:hidden">
                 <button id="menu-toggle" class="text-teal-400 focus:outline-none" aria-label="Toggle navigation menu">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,79 +146,79 @@
     <main class="container mx-auto py-12 md:py-20 flex-grow">
         <section class="text-center mb-16">
             <h2 class="font-poppins text-5xl md:text-6xl font-extrabold text-teal-400 mb-6 animate-fade-in">Issues & Fixes for Your $1 Website</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Encounter a snag with your $1 website builder? Grok AI, IONOS, and Netlify can be tricky—here’s how to fix common issues fast. Join the #1WebRevolution!</p>
+            <p class="text-lg md:text-xl text-white font-semibold mb-8 max-w-3xl mx-auto">Encounter a snag with your $1 website builder? Grok AI, IONOS, and Netlify can be tricky—here’s how to fix common issues fast. Join the #1WebRevolution!</p>
         </section>
         <section class="bg-gray-950 text-center py-12 mt-8">
             <h2 class="text-4xl md:text-5xl font-extrabold text-teal-400 mb-6 animate-glow">Ready to Build Your $1 Website?</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto">Don’t wait! Secure your dream domain with <a href="https://aklam.io/2dUJvO" class="text-teal-400 hover:underline font-bold" target="_blank" rel="noopener" aria-label="Visit IONOS to buy a $1 domain">IONOS</a> for just $1 and unlock pro-level web design powered by Grok AI. Start today, stand out tomorrow—grab your domain now and create your online masterpiece!</p>
-            <a href="https://aklam.io/2dUJvO" class="inline-block bg-teal-400 text-gray-900 font-semibold py-3 px-6 rounded-lg hover:bg-teal-300 transition duration-300" target="_blank" rel="noopener" aria-label="Get your $1 domain from IONOS">Get Your $1 Domain Now</a>
+            <p class="text-lg md:text-xl text-white font-semibold mb-6 max-w-2xl mx-auto">Don’t wait! Secure your dream domain with <a href="https://aklam.io/2dUJvO" class="text-teal-400 hover:underline font-bold" target="_blank" rel="noopener" aria-label="Visit IONOS to buy a $1 domain">IONOS</a> for just $1 and unlock pro-level web design powered by Grok AI. Start today, stand out tomorrow—grab your domain now and create your online masterpiece!</p>
+            <a href="https://aklam.io/2dUJvO" class="orange-cta font-bold" target="_blank" rel="noopener" aria-label="Get your $1 domain from IONOS">Get Your $1 Domain Now</a>
         </section>
         <article class="max-w-4xl mx-auto">
             <div class="w-full max-w-full overflow-hidden rounded-lg mb-8">
                 <img src="/images/issues.jpg?v=4" alt="Troubleshooting $1 website builder issues" class="w-full h-auto rounded-lg" loading="lazy" aria-label="Troubleshooting $1 website builder" onerror="console.error('Issues image failed to load.');">
             </div>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Building a $1 website with Grok AI, IONOS domains, and Netlify hosting is simple, but issues can pop up. Use this page to troubleshoot and get back on track!</p>
+            <p class="text-base md:text-lg text-white font-semibold mb-8">Building a $1 website with Grok AI, IONOS domains, and Netlify hosting is simple, but issues can pop up. Use this page to troubleshoot and get back on track!</p>
             <div class="issue-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Issue 1: ICANN Verification Email Not Received</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">After buying a $1 domain, the ICANN email might not arrive.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">After buying a $1 domain, the ICANN email might not arrive.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Check Spam/Junk</strong>: Look in your email’s spam or junk folder.</li>
                     <li><strong>Resend Email</strong>: In IONOS, go to <span class="highlight">Domains</span> > <span class="highlight">Privacy & Contact Details</span> > resend verification.</li>
                     <li><strong>Contact Support</strong>: Call 1-844-494-9067 or email support@ionos.com with your <span class="highlight">Customer ID</span>.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Use the same email for all IONOS actions to avoid delays.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Use the same email for all IONOS actions to avoid delays.</p>
                 </div>
             </div>
             <div class="issue-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Issue 2: Website Not Loading on Custom Domain</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Your site works on Netlify’s URL but not your custom domain.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">Your site works on Netlify’s URL but not your custom domain.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Check DNS Settings</strong>: Ensure IONOS uses Netlify’s nameservers (found in Netlify’s <span class="highlight">Domain Management</span>).</li>
                     <li><strong>Wait for Propagation</strong>: DNS changes can take 1-48 hours. Use <a href="https://dnschecker.org" class="text-teal-400 hover:underline" aria-label="Check DNS propagation">DNS Checker</a>.</li>
                     <li><strong>Verify Domain</strong>: In Netlify, confirm the domain is added under <span class="highlight">Custom Domains</span>.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Clear your browser cache or test in a private tab.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Clear your browser cache or test in a private tab.</p>
                 </div>
             </div>
             <div class="issue-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Issue 3: Images Not Displaying</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Images uploaded to GitHub might not show on your site.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">Images uploaded to GitHub might not show on your site.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Check Paths</strong>: Ensure images are in an <code>images/</code> folder and filenames match (e.g., <code>images/hero.jpg</code>).</li>
                     <li><strong>Case Sensitivity</strong>: Use lowercase (e.g., <code>hero.jpg</code>, not <code>Hero.jpg</code>).</li>
                     <li><strong>Re-upload</strong>: Delete and re-upload images in GitHub, then redeploy on Netlify.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Compress images">TinyPNG</a> to reduce load times.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Compress images at <a href="https://tinypng.com" class="text-teal-400 hover:underline" aria-label="Compress images">TinyPNG</a> to reduce load times.</p>
                 </div>
             </div>
             <div class="issue-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Issue 4: Netlify Deployment Fails</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Your site won’t deploy on Netlify.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">Your site won’t deploy on Netlify.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Check Logs</strong>: Go to Netlify’s <span class="highlight">Deploys</span> tab for error messages.</li>
                     <li><strong>Fix Build Settings</strong>: Set Branch = <span class="highlight">main</span>, Build Command = blank, Publish directory = <span class="highlight">/</span>.</li>
                     <li><strong>Validate Code</strong>: Ask Grok to check your HTML/CSS for errors.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Redeploy after fixes by pushing changes to GitHub.</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Redeploy after fixes by pushing changes to GitHub.</p>
                 </div>
             </div>
             <div class="issue-card">
                 <h3 class="font-poppins text-2xl md:text-3xl font-bold text-teal-400 mb-4">Issue 5: Grok AI Code Not Working</h3>
-                <p class="text-base md:text-lg text-gray-300 mb-4">Grok’s generated code might have issues.</p>
-                <ul class="list-disc pl-6 text-base md:text-lg text-gray-300 mb-4">
+                <p class="text-base md:text-lg text-white font-semibold mb-4">Grok’s generated code might have issues.</p>
+                <ul class="list-disc pl-6 text-base md:text-lg text-white font-semibold mb-4">
                     <li><strong>Review Output</strong>: Check for typos or missing tags in the code.</li>
                     <li><strong>Provide Details</strong>: Tell Grok the error (e.g., “CSS not applying”) for a fix.</li>
                     <li><strong>Test Incrementally</strong>: Add code in small parts to isolate problems.</li>
                 </ul>
                 <div class="tip-box">
-                    <p><strong>Pro Tip</strong>: Share your code with Grok and ask, “Debug this for me.”</p>
+                    <p><strong class="text-teal-400">Pro Tip</strong>: Share your code with Grok and ask, “Debug this for me.”</p>
                 </div>
             </div>
-            <p class="text-base md:text-lg text-gray-300 mb-8">Still stuck? Contact us at <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a> or check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> for more help.</p>
+            <p class="text-base md:text-lg text-white font-semibold mb-8">Still stuck? Contact us at <a href="mailto:webfor1website@gmail.com" class="text-teal-400 hover:underline" aria-label="Email us">webfor1website@gmail.com</a> or check our <a href="/guide.html" class="text-teal-400 hover:underline" aria-label="Go to guide page">Guide</a> for more help.</p>
         </article>
     </main>
     <footer class="bg-gray-950 text-gray-200 text-center p-8">
