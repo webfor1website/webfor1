@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">
     <url>
         <loc>https://webfor1.com/</loc>
         <lastmod>2025-07-05</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/hero.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/hero.jpg</image:loc>
             <image:title>$1 Website Builder Hero Image</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/feature1.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/feature1.jpg</image:loc>
             <image:title>IONOS $1 Domain Setup</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/feature2.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/feature2.jpg</image:loc>
             <image:title>GitHub Setup for $1 Website</image:title>
         </image:image>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/feature3.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/feature3.jpg</image:loc>
             <image:title>Netlify Deployment for $1 Website</image:title>
         </image:image>
     </url>
     <url>
         <loc>https://webfor1.com/about.html</loc>
         <lastmod>2025-07-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/about.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/about.jpg</image:loc>
             <image:title>Grok AI Coding Interface</image:title>
         </image:image>
     </url>
     <url>
         <loc>https://webfor1.com/guide.html</loc>
         <lastmod>2025-07-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/guide.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/guide.jpg</image:loc>
             <image:title>Guide to $1 Website Builder</image:title>
         </image:image>
     </url>
     <url>
         <loc>https://webfor1.com/issues.html</loc>
         <lastmod>2025-07-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
         <image:image>
-            <image:loc>https://webfor1.netlify.app/images/issues.jpg?v=4</image:loc>
+            <image:loc>https://webfor1.com/images/issues.jpg</image:loc>
             <image:title>Troubleshooting $1 Website Builder</image:title>
         </image:image>
+    </url>
+    <url>
+        <loc>https://webfor1.com/links.html</loc>
+        <lastmod>2025-07-05</lastmod>
+        <image:image>
+            <image:loc>https://webfor1.com/images/links.jpg</image:loc>
+            <image:title>Useful Links for $1 Website SEO</image:title>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://webfor1.com/contact.html</loc>
+        <lastmod>2025-07-05</lastmod>
     </url>
 </urlset>
