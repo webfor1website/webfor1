@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cost Optimizer - Maximum ROI Solutions</title>
+    <meta name="description" content="Universal Cost Optimizer - Find the most cost-effective options with real-time Google search and AI analysis">
+    <meta name="keywords" content="cost optimizer, price comparison, AI analysis, cost savings, shopping optimization">
+    <meta name="author" content="Cost Optimizer">
+    <meta name="robots" content="index, follow">
+    <title>Cost Optimizer - Find Best Deals with AI Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
     <style>
         * {
             margin: 0;
@@ -12,7 +21,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: #333;
@@ -276,6 +285,15 @@
             margin-bottom: 20px;
         }
 
+        .demo-notice {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ffeaa7;
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -307,6 +325,10 @@
         </header>
 
         <section class="search-section">
+            <div class="demo-notice">
+                <strong>🚀 Demo Mode:</strong> This is a demonstration of the cost optimizer interface. The full version with real-time Google search and AI analysis requires server deployment.
+            </div>
+            
             <form id="searchForm">
                 <div class="input-group">
                     <label for="request">What are you looking for?</label>
@@ -323,10 +345,10 @@
                 </div>
 
                 <button type="submit" class="btn" id="searchBtn">
-                    🌐 Find Optimal Solution (Real-Time Search + AI Analysis)
+                    🌐 Find Optimal Solution (Demo Mode)
                 </button>
                 <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
-                    Performs live Google search and analyzes results with AI to find the best cost-effective options
+                    This demo shows the interface. Full version performs live Google search and AI analysis.
                 </p>
             </form>
         </section>
@@ -388,27 +410,170 @@
                 this.searchBtn.disabled = true;
 
                 try {
-                    const response = await fetch('/optimize', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ request, location })
-                    });
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Generate demo results based on the request
+                    const result = this.generateDemoResults(request, location);
                     this.displayResults(result);
                 } catch (error) {
                     console.error('Search error:', error);
-                    this.showError(error.message || 'Failed to get optimization results. Please try again.');
+                    this.showError('Failed to get optimization results. Please try again.');
                 } finally {
                     this.showLoading(false);
                     this.searchBtn.disabled = false;
+                }
+            }
+
+            generateDemoResults(request, location) {
+                // Generate demo results based on request keywords
+                const lowerRequest = request.toLowerCase();
+                
+                if (lowerRequest.includes('car') || lowerRequest.includes('vehicle')) {
+                    return {
+                        category: 'automotive',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: '2023 Honda Civic LX',
+                                price: '$23,950',
+                                whereToBuy: 'Local Honda Dealership',
+                                reasoning: 'Best balance of price, reliability, and resale value',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: '2023 Toyota Corolla LE',
+                                price: '$22,795',
+                                whereToBuy: 'Local Toyota Dealership',
+                                reasoning: 'Highest reliability and lowest maintenance costs',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: '2023 Hyundai Elantra SE',
+                                price: '$20,995',
+                                whereToBuy: 'Local Hyundai Dealership',
+                                reasoning: 'Lowest initial cost with good fuel economy',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 5,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else if (lowerRequest.includes('beer') || lowerRequest.includes('alcohol')) {
+                    return {
+                        category: 'groceries',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Bud Light Case 24',
+                                price: '$18.99',
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Best price per can for popular domestic beer',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Miller Lite Case 24',
+                                price: '$19.99',
+                                whereToBuy: 'Target',
+                                reasoning: 'Good value with slightly lower calories',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Coors Light Case 24',
+                                price: '$20.49',
+                                whereToBuy: 'Costco',
+                                reasoning: 'Slightly higher price but bulk discount available',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 4,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else if (lowerRequest.includes('laptop') || lowerRequest.includes('computer')) {
+                    return {
+                        category: 'electronics',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Lenovo IdeaPad 3',
+                                price: '$449',
+                                whereToBuy: 'Best Buy',
+                                reasoning: 'Best performance for price point with SSD storage',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'HP Pavilion 15',
+                                price: '$499',
+                                whereToBuy: 'Amazon',
+                                reasoning: 'Reliable brand with good customer support',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Acer Aspire 5',
+                                price: '$379',
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Budget-friendly option with decent specs',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 6,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else {
+                    // Generic demo results
+                    return {
+                        category: 'general',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Premium Option',
+                                price: '$149.99',
+                                whereToBuy: 'Various Retailers',
+                                reasoning: 'Highest quality with best features',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Standard Option',
+                                price: '$99.99',
+                                whereToBuy: 'Amazon',
+                                reasoning: 'Good balance of price and quality',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Budget Option',
+                                price: '$49.99',
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Most affordable with basic functionality',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 3,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
                 }
             }
 
@@ -458,13 +623,13 @@
                 const header = document.createElement('div');
                 header.className = 'option-header';
                 header.innerHTML = `
-                    <div class="option-name">#${rank} ${option.name || option.provider || option.store}</div>
-                    <div class="option-price">$${(option.price || option.cost || 0).toFixed(2)}</div>
+                    <div class="option-name">#${rank} ${option.name}</div>
+                    <div class="option-price">${option.price}</div>
                 `;
 
                 card.appendChild(header);
 
-                // Add details based on option type
+                // Add details
                 const details = document.createElement('div');
                 details.className = 'option-details';
 
@@ -495,30 +660,22 @@
             }
 
             getDetailFields(option) {
-                // Return fields for web analysis options
                 const fields = [];
                 
                 if (option.whereToBuy) {
-                  fields.push({ key: 'whereToBuy', label: 'Where to Buy' });
+                    fields.push({ key: 'whereToBuy', label: 'Where to Buy' });
                 }
                 
                 if (option.rank) {
-                  fields.push({ key: 'rank', label: 'Rank', formatter: (val) => `#${val}` });
+                    fields.push({ key: 'rank', label: 'Rank', formatter: (val) => `#${val}` });
                 }
                 
                 if (option.source) {
-                  fields.push({ key: 'source', label: 'Analysis Source' });
+                    fields.push({ key: 'source', label: 'Analysis Source' });
                 }
                 
-                // Add any additional fields that might exist
-                Object.keys(option).forEach(key => {
-                  if (!['name', 'price', 'whereToBuy', 'rank', 'source', 'reasoning', 'details'].includes(key)) {
-                    fields.push({ key, label: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()) });
-                  }
-                });
-                
                 return fields;
-              }
+            }
 
             createAnalysisSection(analysis) {
                 const section = document.createElement('div');
@@ -533,13 +690,13 @@
                 grid.className = 'analysis-grid';
 
                 Object.entries(analysis).forEach(([key, value]) => {
-                    if (key !== 'bestValue') {
+                    if (key !== 'fullResponse') {
                         const item = document.createElement('div');
                         item.className = 'analysis-item';
                         
                         const valueEl = document.createElement('div');
                         valueEl.className = 'analysis-value';
-                        valueEl.textContent = this.formatAnalysisValue(key, value);
+                        valueEl.textContent = value;
                         
                         const labelEl = document.createElement('div');
                         labelEl.className = 'analysis-label';
@@ -555,28 +712,6 @@
                 return section;
             }
 
-            formatAnalysisValue(key, value) {
-                switch(key) {
-                    case 'averagePrice':
-                    case 'bestROI':
-                        return `$${value.toFixed(2)}`;
-                    case 'lowestDailyCost':
-                        return `$${value.toFixed(2)}`;
-                    case 'totalOptions':
-                    case 'totalStores':
-                    case 'availableStores':
-                        return value.toString();
-                    case 'averageCost':
-                        return `$${value.toFixed(0)}`;
-                    case 'bestQuality':
-                        return `${(value * 100).toFixed(0)}%`;
-                    case 'fastestResponse':
-                        return value;
-                    default:
-                        return value.toString();
-                }
-            }
-
             formatAnalysisLabel(key) {
                 return key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
             }
@@ -585,7 +720,7 @@
                 this.loadingDiv.style.display = show ? 'block' : 'none';
                 if (show) {
                     const loadingText = this.loadingDiv.querySelector('p');
-                    loadingText.textContent = 'Performing Google search and AI analysis with Grok... This may take up to 30 seconds.';
+                    loadingText.textContent = 'Analyzing options and calculating optimal solutions...';
                 } else {
                     this.resultsDiv.style.display = 'block';
                 }
