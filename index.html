@@ -388,7 +388,8 @@
                 this.searchBtn.disabled = true;
 
                 try {
-                    const response = await fetch('/optimize', {
+                    // Call real backend API (deployed on a server that supports Node.js)
+                    const response = await fetch('https://cost-optimizer-backend.onrender.com/optimize', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -397,15 +398,14 @@
                     });
 
                     if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
 
                     const result = await response.json();
                     this.displayResults(result);
                 } catch (error) {
                     console.error('Search error:', error);
-                    this.showError(error.message || 'Failed to get optimization results. Please try again.');
+                    this.showError('Failed to connect to optimization service. Please try again.');
                 } finally {
                     this.showLoading(false);
                     this.searchBtn.disabled = false;
@@ -599,6 +599,194 @@
 
             hideError() {
                 this.errorDiv.style.display = 'none';
+            }
+
+            generateDemoResults(request, location) {
+                // Generate demo results based on request keywords
+                const lowerRequest = request.toLowerCase();
+                
+                if (lowerRequest.includes('milk') || lowerRequest.includes('grocery') || lowerRequest.includes('dairy')) {
+                    return {
+                        category: 'groceries',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Great Value Whole Milk Gallon',
+                                price: 2.98,
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Best price for standard whole milk in Scottsdale area',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Kroger Whole Milk Gallon',
+                                price: 3.19,
+                                whereToBuy: 'Fry\'s Food Store',
+                                reasoning: 'Slightly higher price but closer to 85257 location',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Organic Valley Whole Milk Gallon',
+                                price: 5.49,
+                                whereToBuy: 'Whole Foods',
+                                reasoning: 'Premium organic option for health-conscious buyers',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 4,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else if (lowerRequest.includes('car') || lowerRequest.includes('vehicle')) {
+                    return {
+                        category: 'automotive',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: '2023 Honda Civic LX',
+                                price: 23950,
+                                whereToBuy: 'Local Honda Dealership',
+                                reasoning: 'Best balance of price, reliability, and resale value',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: '2023 Toyota Corolla LE',
+                                price: 22795,
+                                whereToBuy: 'Local Toyota Dealership',
+                                reasoning: 'Highest reliability and lowest maintenance costs',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: '2023 Hyundai Elantra SE',
+                                price: 20995,
+                                whereToBuy: 'Local Hyundai Dealership',
+                                reasoning: 'Lowest initial cost with good fuel economy',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 5,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else if (lowerRequest.includes('beer') || lowerRequest.includes('alcohol')) {
+                    return {
+                        category: 'groceries',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Bud Light Case 24',
+                                price: 18.99,
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Best price per can for popular domestic beer',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Miller Lite Case 24',
+                                price: 19.99,
+                                whereToBuy: 'Target',
+                                reasoning: 'Good value with slightly lower calories',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Coors Light Case 24',
+                                price: 20.49,
+                                whereToBuy: 'Costco',
+                                reasoning: 'Slightly higher price but bulk discount available',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 4,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else if (lowerRequest.includes('laptop') || lowerRequest.includes('computer')) {
+                    return {
+                        category: 'electronics',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Lenovo IdeaPad 3',
+                                price: 449,
+                                whereToBuy: 'Best Buy',
+                                reasoning: 'Best performance for price point with SSD storage',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'HP Pavilion 15',
+                                price: 499,
+                                whereToBuy: 'Amazon',
+                                reasoning: 'Reliable brand with good customer support',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Acer Aspire 5',
+                                price: 379,
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Budget-friendly option with decent specs',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 6,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                } else {
+                    // Generic demo results
+                    return {
+                        category: 'general',
+                        request: request,
+                        topOptions: [
+                            {
+                                name: 'Premium Option',
+                                price: 149.99,
+                                whereToBuy: 'Various Retailers',
+                                reasoning: 'Highest quality with best features',
+                                rank: 1,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Standard Option',
+                                price: 99.99,
+                                whereToBuy: 'Amazon',
+                                reasoning: 'Good balance of price and quality',
+                                rank: 2,
+                                source: 'Demo Analysis'
+                            },
+                            {
+                                name: 'Budget Option',
+                                price: 49.99,
+                                whereToBuy: 'Walmart',
+                                reasoning: 'Most affordable with basic functionality',
+                                rank: 3,
+                                source: 'Demo Analysis'
+                            }
+                        ],
+                        analysis: {
+                            searchResults: 3,
+                            analysisType: 'Demo_Powered',
+                            optionsFound: 3
+                        }
+                    };
+                }
             }
         }
 
