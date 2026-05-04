@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>COST OPTIMIZER - NETLIFY CACHE TEST</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff0000 0%, #00ff00 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: blink 1s infinite;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        .timestamp {
+            font-size: 0.8rem;
+            color: #ffff00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>COST OPTIMIZER</h1>
+        <p>If you see this page, Netlify finally updated!</p>
+        <p>This is a cache test with bright colors.</p>
+        <p>Old $1 website should be gone.</p>
+        <div class="timestamp">Deployed: <span id="time"></span></div>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toISOString();
+    </script>
+</body>
+</html>
